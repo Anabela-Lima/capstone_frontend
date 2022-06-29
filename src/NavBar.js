@@ -10,7 +10,7 @@ function NavBar() {
 
     return(
         <div id="navBar">
-            <Link to="/">
+            <Link to="/Home">
             <button className="buttonDesign" type="submit">Home<AiFillHome/></button>
             </Link>
             <Link to="/About">
