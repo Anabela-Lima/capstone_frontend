@@ -14,11 +14,17 @@ import {BsFacebook} from "react-icons/bs";
 import {MdMarkEmailRead} from "react-icons/md";
 import {AiFillInstagram} from "react-icons/ai";
 import {BsFillTelephoneForwardFill} from "react-icons/bs";
+import {BsArrowReturnLeft} from "react-icons/bs";
 
 const Home = () => {
 
 return(
     <>
+     <div id="return">
+      <Link to="/">
+      <button className='returnButton'><BsArrowReturnLeft/></button>
+      </Link>
+    </div>
     <header>
         <NavBar />
     </header>
@@ -60,9 +66,15 @@ return(
 
             <ul className="Legalstuff"> 
                     <li className="li"><strong>Terms and conditions</strong></li>
+                    <Link to="/Privacy">
                     <li className="li"> Privacy Policy </li>
+                    </Link>
+                    <Link to="/Cookies">
                     <li className="li"> Cookie Settings </li>
+                    </Link>
+                    <Link to="/Legal">
                     <li className="li"> Legal </li>
+                    </Link>
             </ul>
 
     </footer>

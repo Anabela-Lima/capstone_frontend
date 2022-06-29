@@ -20,6 +20,25 @@
     animation: AnimateBG 20s ease infinite;
 }
 
+.returnButton{
+  background-size: 100% 100%;
+  background-image: linear-gradient(
+          -45deg, 
+          #eb9331 0%, 
+          #ffc376 20%, 
+          #fbf1d6 47%, 
+          #d3f5fe 70%,
+          #48c4e3 100%
+    );  
+  animation: AnimateBG 20s ease infinite;
+  border: 2px solid darkblue;
+  border-radius: 3px;
+  border-width: 3px;
+  border-style: solid;
+  color: darkblue;
+  font-size: medium;
+  padding: 5px;
+}
 
 .button{
   position: absolute;
@@ -77,6 +96,11 @@ button:hover{
 
 button:focus{
   outline: darkblue;
+}
+
+#return{
+  padding-left: 0.25cm;
+  padding-top: 0.25cm;
 }
 
 #navBar{

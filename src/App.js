@@ -5,12 +5,14 @@ import Landing from './components/Landing';
 
 function App() {
   return (
+    <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Landing />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/Home" element={<Home/>} />
         </Routes>
       </BrowserRouter>
+    </>
   );
 }
 
