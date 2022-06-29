@@ -1,16 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import Landing from './Landing';
 
 function App() {
   return (
-    <>
-    <p id='head1' className='header'>Welcome to NoCap Travel</p>
-      <p id='head2' className='header'>Awesome Places</p>
-      <p id='head3' className='header'>Awesome Prices</p>
-      <p id='head4' className='header'>Awesome Friends</p>
-      <p id='head5' className='header'>All at your fingertips</p>
-        <button>Get Started</button>
-    </>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Landing />} />
+          <Route path="/Home" element={<Home/>} />
+        </Routes>
+      </BrowserRouter>
   );
 }
 

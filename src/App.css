@@ -21,9 +21,9 @@
 }
 
 
-button{
+.button{
   position: absolute;
-  border: 2px solid white;
+  border: 2px solid darkblue;
   background: transparent;
   font-family: 'Roboto', sans-serif;
   color: darkblue;
@@ -50,145 +50,110 @@ button:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.x1{
-  -webkit-animation: floatUp 4s infinite linear;
-  -moz-animation: floatUp 4s infinite linear;
-  -o-animation: floatUp 4s infinite linear;
-  animation: floatUp 4s infinite linear;
-   -webkit-transform: scale(1.0);
-   -moz-transform: scale(1.0);
-   -o-transform: scale(1.0);
-  transform: scale(1.0);
-}
-
-.x2{
-  -webkit-animation: floatUp 7s infinite linear;
-  -moz-animation: floatUp 7s infinite linear;
-  -o-animation: floatUp 7s infinite linear;
-  animation: floatUp 7s infinite linear;
-  -webkit-transform: scale(1.6);
-  -moz-transform: scale(1.6);
-  -o-transform: scale(1.6);
-  transform: scale(1.6);
-  left: 15%;
-}
-
-.x3{
-  -webkit-animation: floatUp 2.5s infinite linear;
-  -moz-animation: floatUp 2.5s infinite linear;
-  -o-animation: floatUp 2.5s infinite linear;
-  animation: floatUp 2.5s infinite linear;
-  -webkit-transform: scale(.5);
-  -moz-transform: scale(.5);
-  -o-transform: scale(.5);
-  transform: scale(.5);
-  left: -15%;
-}
-
-.x4{
-  -webkit-animation: floatUp 4.5s infinite linear;
-  -moz-animation: floatUp 4.5s infinite linear;
-  -o-animation: floatUp 4.5s infinite linear;
-  animation: floatUp 4.5s infinite linear;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-  left: -34%;
-}
-
-.x5{
-  -webkit-animation: floatUp 8s infinite linear;
-  -moz-animation: floatUp 8s infinite linear;
-  -o-animation: floatUp 8s infinite linear;
-  animation: floatUp 8s infinite linear;
-  -webkit-transform: scale(2.2);
-  -moz-transform: scale(2.2);
-  -o-transform: scale(2.2);
-  transform: scale(2.2);
-  left: -57%;
-}
-
-.x6{
-  -webkit-animation: floatUp 3s infinite linear;
-  -moz-animation: floatUp 3s infinite linear;
-  -o-animation: floatUp 3s infinite linear;
-  animation: floatUp 3s infinite linear;
-  -webkit-transform: scale(.8);
-  -moz-transform: scale(.8);
-  -o-transform: scale(.8);
-  transform: scale(.8);
-  left: -81%;
-}
-
-.x7{
-  -webkit-animation: floatUp 5.3s infinite linear;
-  -moz-animation: floatUp 5.3s infinite linear;
-  -o-animation: floatUp 5.3s infinite linear;
-  animation: floatUp 5.3s infinite linear;
-  -webkit-transform: scale(3.2);
-  -moz-transform: scale(3.2);
-  -o-transform: scale(3.2);
-  transform: scale(3.2);
-  left: 37%;
-}
-
-.x8{
-  -webkit-animation: floatUp 4.7s infinite linear;
-  -moz-animation: floatUp 4.7s infinite linear;
-  -o-animation: floatUp 4.7s infinite linear;
-  animation: floatUp 4.7s infinite linear;
-  -webkit-transform: scale(1.7);
-  -moz-transform: scale(1.7);
-  -o-transform: scale(1.7);
-  transform: scale(1.7);
-  left: 62%;
-}
-
-.x9{
-  -webkit-animation: floatUp 4.1s infinite linear;
-  -moz-animation: floatUp 4.1s infinite linear;
-  -o-animation: floatUp 4.1s infinite linear;
-  animation: floatUp 4.1s infinite linear;
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
-  left: 85%;
+.buttonDesign{
+  /* background color */
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+          -45deg, 
+          #eb9331 0%, 
+          #ffc376 20%, 
+          #fbf1d6 47%, 
+          #d3f5fe 70%,
+          #48c4e3 100%
+    );  
+  animation: AnimateBG 20s ease infinite;
+  width: 160px;
+  /* border */
+  border: 2px solid darkblue;
+  border-radius: 3px;
+  border-width: 3px;
+  border-style: solid;
+  /* text components */
+  color: darkblue;
+  font-size: 20px;
+  /* format */
+  padding: 10px 0 10px;
 }
 
 button:focus{
   outline: none;
 }
 
-@-webkit-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+#navBar{
+  padding-left: 1cm;
+  padding-right: 1cm;
+  padding-top: 1cm;
+  padding-bottom: 1cm;
+  display: flex;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
 }
-@-moz-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+
+/* #navBar1{
+  position: relative;
+  top: 40%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 2em;
 }
-@-o-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+
+#navBar2{
+  position: relative;
+  top: 40%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 2em;
 }
-@keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+
+#navBar3{
+  position: relative;
+  top: 40%;
+  left: 41%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 2em;
 }
+
+#navBar4{
+  display: flex;
+  flex-flow: wrap;
+  transform: translate(5%, 5%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 2em;
+}
+
+#navBar5{
+  position: block;
+  top: 40%;
+  left: 77%;
+  transform: translate(0%, 0%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 2em;
+}
+
+#navBar6{
+  position: relative;
+  top: 40%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 2em;
+} */
 
 .header{
   position: absolute;
@@ -201,7 +166,7 @@ button:focus{
   font-size: 2em;
 }
 
-#head1, #head2,#head3, #head4, #head5{
+#head1,#head2,#head3, #head4, #head5{
   opacity: 0;
 }
 
@@ -346,6 +311,7 @@ button:focus{
   font-size: 1.2em;
   color: darkblue;
   position: fixed;
+
   -webkit-transform: translate(95vw,90vh);
   -moz-transform: translate(95vw,90vh);
   transform: translate(95vw,90vh);
