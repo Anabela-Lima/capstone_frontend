@@ -41,7 +41,7 @@
 }
 
 button:hover{
-  border: 2px solid #104F55;
+  border: 2px solid #0cdaf5;
   background-color: rgba(365,365,365,0.5);
   cursor: pointer;
   color: darkblue;
@@ -51,8 +51,6 @@ button:hover{
 }
 
 .buttonDesign{
-    width: 100%;
-    height: 100%;
     background-size: 100% 100%;
     background-image: linear-gradient(
           -45deg, 
@@ -84,12 +82,10 @@ button:focus{
 #navBar{
   padding-left: 1cm;
   padding-right: 1cm;
-  padding-top: 1cm;
-  padding-bottom: 1cm;
+  padding-top: 2cm;
+  padding-bottom: 0%;
   display: flex;
-  justify-content:center;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
 }
 
 .header{
@@ -101,6 +97,68 @@ button:focus{
   font-weight: 200;
   color: white;
   font-size: 40px;
+}
+
+.homeTitle{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 40px;
+}
+
+#homePara1{
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 30%;
+  padding-left: 15%;
+  padding-right: 15%;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: darkblue;
+}
+
+#homePara2{
+  position: relative;
+  flex-direction: column;
+  flex-wrap:wrap;
+  padding-left: 15%;
+  padding-right: 15%;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: darkblue;
+}
+
+#homePara3{
+  position: relative;
+  flex-direction: column;
+  flex-wrap:wrap;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 20%;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: darkblue;
+}
+
+.p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: darkblue;
+  font-size: large;
+}
+
+.homeHeader{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: darkblue;
+  display: inline-block;
+  font-size: xx-large;
+  justify-content: space-between;
 }
 
 #head1,#head2,#head3, #head4, #head5{
@@ -244,13 +302,50 @@ button:focus{
 }
 
 #footer{
-  font-family: 'Roboto', sans-serif;
   font-size: 1.2em;
   color: darkblue;
-  position: fixed;
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
 
-  -webkit-transform: translate(95vw,90vh);
-  -moz-transform: translate(95vw,90vh);
-  transform: translate(95vw,90vh);
-  transform: translate(95vw,90vh);
+.helpline{
+  display: grid;
+  justify-content: right;
+  font-size: large;
+  padding-left: 1cm;
+}
+
+.socials{
+  display: grid;
+  justify-content: center;
+  font-size: large;
+}
+  
+.Legalstuff{
+  display: grid;
+  justify-content: left;
+  padding-right: 1cm;
+  font-size: large;
+}
+
+.copyrights{
+    display: grid;
+    justify-content: center;
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    font-size: large;
+}
+
+.li{
+  list-style-type: none;
+}
+
+.ul{
+    list-style-type: none;
 }
