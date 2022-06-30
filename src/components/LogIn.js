@@ -1,6 +1,7 @@
 import "./LogIn.css";
 import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
+import {AiTwotoneLock} from "react-icons/ai";
 
 const LogIn = () => {
 
@@ -15,11 +16,11 @@ const LogIn = () => {
                     <button className="createAcc" value="submit">Create your account</button>
                     </Link>
                 </h1>
-                <div>
+                <div className="unameForm">
                 <FiUser/><input type="uname" placeholder="Username"></input>
                 </div>
-                <div>
-                <FiUser/><input type="password" placeholder="Password"></input>
+                <div className="passwordForm">
+                <AiTwotoneLock/><input type="password" placeholder="Password"></input>
                 </div>
 
                 <button className="logInBtn">Log In</button>

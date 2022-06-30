@@ -34,4 +34,21 @@ font-weight:bolder;
 color:#FFFFFF;
 }
 
+.passwordForm{
+    position: absolute;
+    width: 100%;
+    top: 40%;
+}
+
+input[type=password]{
+    width: 90%;
+    padding-left: 1cm;
+    font-size: xx-large;
+    font-family: 'Inter', sans-serif;
+    font-weight:bolder;
+    color:#FFFFFF;
+    background-color: transparent;
+    border-style: ridge;
+}
+
 
