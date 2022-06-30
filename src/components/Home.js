@@ -15,11 +15,13 @@ import {MdMarkEmailRead} from "react-icons/md";
 import {AiFillInstagram} from "react-icons/ai";
 import {BsFillTelephoneForwardFill} from "react-icons/bs";
 import {BsArrowReturnLeft} from "react-icons/bs";
+import Social from "./Social";
 
 const Home = () => {
 
 return(
     <>
+    <Social/>
     <footer>
         <NavBar />
     </footer>
