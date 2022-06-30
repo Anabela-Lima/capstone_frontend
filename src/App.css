@@ -1,3 +1,5 @@
+/* General CSS Page / Colour Design */
+
 @keyframes AnimateBG { 
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -20,27 +22,11 @@
     animation: AnimateBG 20s ease infinite;
 }
 
-.returnButton{
-  background-size: 100% 100%;
-  background-image: linear-gradient(
-          -45deg, 
-          #eb9331 0%, 
-          #ffc376 20%, 
-          #fbf1d6 47%, 
-          #d3f5fe 70%,
-          #48c4e3 100%
-    );  
-  animation: AnimateBG 20s ease infinite;
-  border: 2px solid darkblue;
-  border-radius: 3px;
-  border-width: 3px;
-  border-style: solid;
-  color: darkblue;
-  font-size: medium;
-  padding: 5px;
-}
 
-.button{
+
+/* Nav Bar and Button Design */
+
+.welcomeButton{
   position: absolute;
   border: 2px solid darkblue;
   background: transparent;
@@ -57,6 +43,7 @@
   right: 0px;
   margin: auto;
   transition: .3s;
+  background-color: transparent;
 }
 
 button:hover{
@@ -67,49 +54,101 @@ button:hover{
   opacity: .8;
   transition: .3s;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: transparent;
 }
 
-.buttonDesign{
-    background-size: 100% 100%;
-    background-image: linear-gradient(
-          -45deg, 
-          #eb9331 0%, 
-          #ffc376 20%, 
-          #fbf1d6 47%, 
-          #d3f5fe 70%,
-          #48c4e3 100%
-    );  
-    animation: AnimateBG 20s ease infinite;
-  /* background color */
-  width: 160px;
-  /* border */
-  border: 2px solid darkblue;
-  border-radius: 3px;
-  border-width: 3px;
-  border-style: solid;
+.buttonMenu{
   /* text components */
   color: darkblue;
-  font-size: 20px;
+  font-size: 100px;
+  border-style: none;
+  border: none;
+  border-color: none;
   /* format */
-  padding: 10px 0 10px;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 20px 0px 0px;
+  background-color: transparent;
+  background: none;
+}
+
+.buttonUser{
+/* background color */
+/* border */
+/* text components */
+color: darkblue;
+font-size: 100px;
+border-style: none;
+/* format */
+position: absolute;
+left: 25%;
+top: 20%;
+background-color: transparent;
+box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+border-radius: 20px 20px 0px 0px;
+}
+
+
+.buttonCreate{
+/* background color */
+/* border */
+/* text components */
+color: orange;
+font-size: 100px;
+border-style: none;
+/* format */
+position: absolute;
+left: 40%;
+right: 40%;
+top: 20%;
+box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+border-radius: 20px 20px 0px 0px;
+background-color: transparent;
+}
+
+
+.buttonHome{
+color: darkblue;
+font-size: 100px;
+border-style: none;
+/* format */
+position: absolute;
+right: 25%;
+top: 20%;
+box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+border-radius: 20px 20px 0px 0px;
+background-color: transparent;
+}
+
+.buttonPie{
+/* text components */
+color: darkblue;
+font-size: 100px;
+width: auto;
+border-style: none;
+/* format */
+position: absolute;
+right: 10%;
+top: 20%;
+box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+border-radius: 20px 20px 0px 0px;
+background-color: transparent;
 }
 
 button:focus{
   outline: darkblue;
 }
 
-#return{
-  padding-left: 0.25cm;
-  padding-top: 0.25cm;
-}
-
-#navBar{
-  padding-left: 1cm;
-  padding-right: 1cm;
-  padding-top: 2cm;
-  padding-bottom: 0%;
-  display: flex;
-  justify-content: center;
+.navBar{
+position: absolute;
+width: 100%;
+height: 10%;
+bottom: 0%;
+background-color: #fffff878;
+box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+border-radius: 20px 20px 0px 0px;
 }
 
 .header{
