@@ -38,17 +38,46 @@ color:#FFFFFF;
     position: absolute;
     width: 100%;
     top: 40%;
+    left: 5%;
+    font-size: 50px;
+    display: flex;
 }
 
 input[type=password]{
-    width: 90%;
+    position: relative;
+    width: 70%;
+    left:5%;
     padding-left: 1cm;
     font-size: xx-large;
     font-family: 'Inter', sans-serif;
     font-weight:bolder;
     color:#FFFFFF;
     background-color: transparent;
-    border-style: ridge;
+    border-style: none;
+    border-bottom: 1px solid black;
+
 }
 
+.unameForm{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    left: 5%;
+    font-size: 50px;
+    display: flex;
+}
 
+input[type=uname]{
+    position: relative;
+    width: 70%;
+    left:5%;
+    padding-left: 1cm;
+    font-size: xx-large;
+    font-family: 'Inter', sans-serif;
+    font-weight:bolder;
+    color:#FFFFFF;
+    background-color: transparent;
+    border-style: none;
+    border-bottom: 1px solid black;
+
+}
