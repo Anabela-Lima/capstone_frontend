@@ -80,9 +80,6 @@ const LogIn = () => {
               <div id="center-container">
                 <div id="register-form-container-log-in">
                   <div id="log-in-title">Log In 
-                    <Link to="/">
-                    <button id="create-account-btn" value="submit"> or Create your New Account</button>
-                    </Link>
                   </div>
                   <div className="log-in-form-container">
                     <UserIcon className="register-form-icons"/>
