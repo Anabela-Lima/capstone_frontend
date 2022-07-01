@@ -5,6 +5,9 @@ import { ReactComponent as UserIcon } from './../assets/images/user.svg';
 import { ReactComponent as PenIcon } from './../assets/images/edit.svg';
 import { ReactComponent as MailIcon } from './../assets/images/mail.svg';
 import { ReactComponent as LockIcon} from './../assets/images/lock.svg';
+import {AiFillInstagram} from "react-icons/ai";
+import {BsFacebook} from "react-icons/bs";
+import { AiFillTwitterCircle} from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
 const LogIn = () => {
@@ -117,14 +120,29 @@ const LogIn = () => {
                   <button id="register-log-in-btn">Register</button>
                   </Link>
                 </div>
+
+                <div id="social-heading">
+                    <h1>Or Sign in With...</h1>
+                  </div>
+
                 <div id="sign-in-socials-container">
+
+                <div id="horizontal-line-1-sign-in-with"></div>
+
                 <Link to="/Facebook">
-                  <button id="forgot-pass-btn" value="submit">Forgot Password?</button>
+                  <button id="fb-btn" value="submit"><BsFacebook/></button>
                   </Link>
-                  <div id="vertical-line"></div>
-                  <Link to="/">
-                  <button id="register-log-in-btn" value="submit">Register</button>
+
+                  <Link to="/Insta">
+                  <button id="tweet-btn" value="submit"><AiFillTwitterCircle/></button>
                   </Link>
+
+                  <Link to="/Insta">
+                  <button id="insta-btn" value="submit"><AiFillInstagram/></button>
+                  </Link>
+                  
+                  <div id="horizontal-line-2-sign-in-with"></div>
+
                 </div>
               </div>
               <div id="log-in-account-button-container">

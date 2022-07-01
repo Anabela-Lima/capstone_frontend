@@ -90,35 +90,68 @@ top: 0;
 
 #sign-in-socials-container{
     position: absolute;
-    bottom: 10%;
+    top: 75%;
     width: 80%;
-    height: 30%;
+    height: 50%;
     border-radius: 80px;
     display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction:row;
+    justify-content: center;
     align-items: left;
-    row-gap: 10px;
+}
+
+#social-heading{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0%;
+    height: 10%;
+    top: 69%;
+    position: absolute;
 }
 
 #horizontal-line-1-sign-in-with{
     position: absolute;
-    border-left: 2px solid white;
-    width: 40px;
+    border-bottom: 2px solid white;
+    width: 20%;
     position: absolute;
-    bottom: 50%;
-    margin-left: -3px;
-    top: 0;
+    left: 5%;
+    top: 4%;
 }
 
-#horizontal-line-1-sign-in-with{
+#horizontal-line-2-sign-in-with{
         position: absolute;
-        border-left: 2px solid white;
-        width: 40px;
+        border-bottom: 2px solid white;
+        width: 20%;
+        top: 4%;
         position: absolute;
-        bottom: 50%;
-        margin-left: -3px;
-        top: 0;
+        right: 5%;
+    
+}
+
+#tweet-btn{
+    background-color: transparent;
+    color: lightgray;
+    border: none;
+    font-size: 90px;
+}
+
+#insta-btn{
+    background-color: transparent;
+    color: lightgray;
+    border: none;
+    font-size: 90px;
+    margin-left: 15%;
+}
+
+#fb-btn{
+    background-color: transparent;
+    color: lightgray;
+    border: none;
+    font-size: 80px;
+    margin-top: 3%;
+    margin-left: -20%;
 }
 
 #log-in-title {
