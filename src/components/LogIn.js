@@ -1,13 +1,14 @@
 import "./LogIn.css";
 import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
-import {AiTwotoneLock} from "react-icons/ai";
+import { AiTwotoneLock} from "react-icons/ai";
 
 const LogIn = () => {
 
     return(
         <>
-        <div id="logInBody">
+        <div>
+            <img ></img>
 
             <form className="containerForm">
 
@@ -29,6 +30,7 @@ const LogIn = () => {
             </form>
 
         </div>
+
         </>
     );
 }
