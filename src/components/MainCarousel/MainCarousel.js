@@ -1,10 +1,11 @@
 import React from 'react'
 import './MainCarousel.css'
-import backgroundIslandImage from '../../assets/images/start_screen_background.png';
-import { ReactComponent as UserIcon } from '../../assets/images/user.svg';
-import { ReactComponent as PenIcon } from '../../assets/images/edit.svg';
-import { ReactComponent as MailIcon } from '../../assets/images/mail.svg';
-import { ReactComponent as LockIcon} from '../../assets/images/lock.svg';
+import backgroundIslandImage from './../assets/images/start_screen_background.png';
+import { ReactComponent as UserIcon } from './../assets/images/user.svg';
+import { ReactComponent as PenIcon } from './../assets/images/edit.svg';
+import { ReactComponent as MailIcon } from './../assets/images/mail.svg';
+import { ReactComponent as LockIcon} from './../assets/images/lock.svg';
+import {Link} from "react-router-dom";
 
 const MainCarousel = () => {
 
@@ -86,6 +87,11 @@ const MainCarousel = () => {
               <div id="center-container">
                 <div id="register-form-container">
                   <div id="register-title">Register</div>
+                  <div>
+                    <Link to="/LogIn">
+                    <button id="log-in-btn" value="submit">Or, Log in</button>
+                    </Link>
+                  </div>
                   <div className="register-form-container">
                     <UserIcon className="register-form-icons"/>
                     <input 
