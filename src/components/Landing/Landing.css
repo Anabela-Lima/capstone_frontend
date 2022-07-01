@@ -1,5 +1,170 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
+#welcome-carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#background-img-welcome{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    position: absolute;
+    filter: brightness(80%);
+}
+
+.welcomeButton{
+  position: absolute;
+  border: 2px solid #FFFFFF;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+  width: 70%;
+  height: 5%;
+  font-size: 2em;
+  border-radius: 10px;
+  top: 55vh;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  transition: .3s;
+  background-color: transparent;
+}
+
+
+.landing-bottom-container{
+    position: absolute;
+    bottom: 30%;
+    width: 70%;
+    height: 10%;
+    background: 
+    linear-gradient(216.22deg, rgba(218, 218, 218, 0.6) 13.37%, rgba(176, 176, 176, 0.2) 95.51%);
+    backdrop-filter: blur(20px);
+    border-radius: 80px;
+    display: inline-flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 11%;
+    padding-left: 1cm;
+    padding-right: 1cm;
+}
+
+#paragraph1{
+    font-family: 'Inter', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* graphic / text elements */
+
+.headerFix{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: white;
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+.header{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: white;
+    font-size: 80px;
+    font-weight: bolder;
+  }
+
+  #head1,#head2,#head3, #head4, #head5, #headx{
+    opacity: 0;
+  }
+
+  #gosplit-logo{
+      height: 300px;
+      width: 465px;
+      position: absolute;
+      top: 25%;
+      left: 27%;
+  }
+  
+  #headx{
+    -webkit-animation: fadeOut 5 25s ease-in;
+    -moz-animation: fadeOut 5 25s ease-in;
+    -o-animation: fadeOut 5 25s ease-in;
+    animation: fadeOut 5 25s ease-in;
+    color: #FFFFFF;
+  }
+
+  #head1{
+    color: #FFFFFF;
+  }
+  
+  #head2{
+    -webkit-animation: fadeOut 1 5s ease-in;
+    -moz-animation: fadeOut 1 5s ease-in;
+    -o-animation: fadeOut 1 5s ease-in;
+    animation: fadeOut 1 5s ease-in;
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    animation-delay: 6s;
+    color: #FFFFFF;
+  }
+  
+  #head3{
+    -webkit-animation: fadeOut 1 5s ease-in;
+    -moz-animation: fadeOut 1 5s ease-in;
+    -o-animation: fadeOut 1 5s ease-in;
+    animation: fadeOut 1 5s ease-in;
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    animation-delay: 12s;
+    color: #FFFFFF;
+  }
+  
+  #head4{
+    -webkit-animation: fadeOut 1 5s ease-in;
+    -moz-animation: fadeOut 1 5s ease-in;
+    -o-animation: fadeOut 1 5s ease-in;
+    animation: fadeOut 1 5s ease-in;
+    -webkit-animation-delay: 17s;
+    -moz-animation-delay: 17s;
+    -o-animation-delay: 17s;
+    animation-delay: 17s;
+    color: #FFFFFF;
+  }
+  
+  #head5{
+    -webkit-animation: finalFade 1 5s ease-in;
+    -moz-animation: finalFade 1 5s ease-in;
+    -o-animation: finalFade 1 5s ease-in;
+    animation: finalFade 1 5s ease-in;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 22s;
+    -moz-animation-delay: 22s;
+    -o-animation-delay: 22s;
+    animation-delay: 22s;
+    color: #FFFFFF;
+  }
+
 
 #log-in-carousel-container {
     width: 100%;
@@ -13,17 +178,18 @@
     z-index: -1;
     object-fit: cover;
     position: absolute;
-    filter: brightness(70%) blur(2px);
+    filter: brightness(70%) blur(4px);
     /* filter: blur(4px); */
 }
 
 
-#center-container {
+#landing-center-container {
     width: 100%;
     height: auto;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    color: #FFFFFF;
 }
 
 #register-form-container-log-in {

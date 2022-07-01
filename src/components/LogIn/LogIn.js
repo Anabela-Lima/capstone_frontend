@@ -61,9 +61,15 @@ const LogIn = () => {
       <>
         <div id="swipe-indicator-container">
             <div id="swipe-indicators">
+              <Link to="/">
               <div id="first-circle"></div>
+              </Link>
+              <Link to="/LogIn">
               <div id="second-circle"></div>
+              </Link>
+              <Link to="/Register">
               <div id="third-circle"></div>
+              </Link>
             </div>
         </div>
         <div id="page-name-container">
@@ -75,7 +81,7 @@ const LogIn = () => {
 
   return (
     <>
-      <div id="carousel-container">
+      <div id="log-in-carousel-container">
           <img src={backgroundIslandImage} alt="" id="background-img-log-in"/>
               <div id="center-container">
                 <div id="register-form-container-log-in">

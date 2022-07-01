@@ -68,13 +68,19 @@ const MainCarousel = () => {
       <>
         <div id="swipe-indicator-container">
             <div id="swipe-indicators">
+              <Link to="/">
               <div id="first-circle"></div>
+              </Link>
+              <Link to="/LogIn">
               <div id="second-circle"></div>
+              </Link>
+              <Link to="/Register">
               <div id="third-circle"></div>
+              </Link>
             </div>
         </div>
         <div id="page-name-container">
-          <span id="page-name-text">Register</span>
+          <span id="page-name-text">Sign in</span>
         </div>
       </>
     )
@@ -89,7 +95,7 @@ const MainCarousel = () => {
                   <div id="register-title">Register</div>
                   <div>
                     <Link to="/LogIn">
-                    <button id="log-in-btn" value="submit">Or, Log in</button>
+                    <button id="log-in-btn" value="submit">Or Click Here to Log in</button>
                     </Link>
                   </div>
                   <div className="register-form-container">

@@ -13,7 +13,7 @@
     object-fit: cover;
     position: absolute;
     mix-blend-mode: darken;
-    filter: brightness(80%);
+    filter: brightness(70%) blur(2px);
 }
 
 
