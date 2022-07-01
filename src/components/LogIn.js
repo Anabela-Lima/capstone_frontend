@@ -11,9 +11,9 @@ const LogIn = () => {
 
             <form className="containerForm">
 
-                <h1> Log in, or 
+                <h1 className="createAccHeading"> Log in, or 
                     <Link to="/CreateAccount">
-                    <button className="createAcc" value="submit">Create your account</button>
+                    <button className="createAccBtn" value="submit">Create your account</button>
                     </Link>
                 </h1>
                 <div className="unameForm">

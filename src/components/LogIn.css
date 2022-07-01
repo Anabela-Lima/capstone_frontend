@@ -2,7 +2,7 @@
 #logInBody{
 position: absolute;
 width: 80%;
-height: 40%;
+height: 30%;
 left: 10%;
 right: 10%;
 top: 25%;
@@ -34,13 +34,50 @@ font-weight:bolder;
 color:#FFFFFF;
 }
 
+.createAccHeading{
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    position: relative;
+    display: inline-flex;
+    padding-top: 10%;
+    left: 20%;
+}
+
+.forgotPswBtn{
+    position: absolute;
+    top: 75%;
+    left: 35%;
+    width: 30%;
+    font-family: 'Inter', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: none;
+    background-color: transparent;
+}
+
+.createAccBtn{
+    background-color: transparent;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    position: relative;
+    left: 5%;
+}
+
 .passwordForm{
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 55%;
     left: 5%;
     font-size: 50px;
     display: flex;
+    color:#FFFFFF;
 }
 
 input[type=password]{
@@ -54,17 +91,18 @@ input[type=password]{
     color:#FFFFFF;
     background-color: transparent;
     border-style: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(250, 246, 246);
 
 }
 
 .unameForm{
     position: absolute;
     width: 100%;
-    top: 30%;
+    top: 40%;
     left: 5%;
     font-size: 50px;
     display: flex;
+    color:#FFFFFF;
 }
 
 input[type=uname]{
@@ -79,5 +117,10 @@ input[type=uname]{
     background-color: transparent;
     border-style: none;
     border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(250, 246, 246);
+}
 
+::placeholder{
+text-align: left;
+color: lightcyan;
 }
