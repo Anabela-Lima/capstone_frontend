@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+
+#carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#background-img {
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+    position: absolute;
+    mix-blend-mode: darken;
+    filter: brightness(80%);
+}
+
+
+#center-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-form-container {
+    position: absolute;
+    bottom: 700px;
+    width: 90%;
+    height: 900px;
+    background: 
+    linear-gradient(216.22deg, rgba(218, 218, 218, 0.6) 13.37%, rgba(176, 176, 176, 0.2) 95.51%);
+    backdrop-filter: blur(20px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+
+#register-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 65px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.register-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid;
+    border-bottom-color: white;
+    column-gap: 18px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#password-strength-indicator {
+    position: absolute;
+    bottom: 110px;
+    right: 110px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.indicator-bar {
+    width: 47px;
+    height: 16px;
+    opacity: 0.8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+#low-strength {
+    background: #032456;
+}
+
+#mid-strength {
+    background: #1524B0;
+}
+
+#high-strength {
+    background: #3072D6;
+}
+
+.register-form-icons {
+    height: 70px;
+    width: 70px;
+    color: white;
+    stroke-width: 1px;
+}
+
+.register-form {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    height: 110px;
+    min-width: 80%;
+    text-justify: center;
+    font-size: 40px;
+    color: white;
+}
+
+::placeholder{
+    font-size: 40px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+#register-account-button-container {
+    width: 100%;
+    position: absolute;
+    bottom: 450px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-account-button-background {
+    width: 80%;
+    height: 100px;
+    /* background-color: #FFFFFF; */
+    /* border: 1px solid #FFFFFF; */
+    backdrop-filter: blur(30px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 30px;
+    border-width: 2px;
+    background:
+     linear-gradient(216.22deg, rgba(218, 218, 218, 0.6) 13.37%, rgba(176, 176, 176, 0.35) 95.51%);
+}
+
+#register-account-button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+#register-account-button-text {
+    font-size: 40px;
+    color: white;
+    opacity: 1;
+}
+
+
+#swipe-indicator-container {
+    width: 100%;
+    position: absolute;
+    bottom: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#swipe-indicators {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+}
+
+
+#first-circle {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 50%;
+}
+
+
+#second-circle {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 50%;
+}
+
+
+#third-circle {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background: #FFC376;
+    border-radius: 50%;
+}
+
+
+#page-name-container {
+    width: 100%;
+    position: absolute;
+    bottom: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+#page-name-text {
+    font-size: 40px;
+    color: white;
+}
