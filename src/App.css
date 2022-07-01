@@ -1,5 +1,11 @@
 /* General CSS Page / Colour Design */
 
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
 @keyframes AnimateBG { 
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}

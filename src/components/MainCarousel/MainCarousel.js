@@ -1,10 +1,10 @@
 import React from 'react'
 import './MainCarousel.css'
-import backgroundIslandImage from '../../assets/images/start_screen_background.png';
-import { ReactComponent as UserIcon } from '../../assets/images/user.svg';
-import { ReactComponent as PenIcon } from '../../assets/images/edit.svg';
-import { ReactComponent as MailIcon } from '../../assets/images/mail.svg';
-import { ReactComponent as LockIcon} from '../../assets/images/lock.svg';
+import backgroundIslandImage from '../../components/assets/images/start_screen_background.png';
+import { ReactComponent as UserIcon } from '../../components/assets/images/user.svg';
+import { ReactComponent as PenIcon } from '../../components/assets/images/edit.svg';
+import { ReactComponent as MailIcon } from '../../components/assets/images/mail.svg';
+import { ReactComponent as LockIcon} from '../../components/assets/images/lock.svg';
 
 const MainCarousel = () => {
 
