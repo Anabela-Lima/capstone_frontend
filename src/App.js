@@ -12,9 +12,6 @@ import { ReactComponent as PieChartIcon } from './components/assets/images/pie-c
 
 const App = () => {
 
-  const [selected, setSelected] = useState('user-icon')
-  const [visualSlide, setVisualSlide] = useState(null)
-  const [secondarySize, setSecondarySize] = useState('75px');
   const [isVisible, setIsVisible] = useState({
     user: true,
     home: false,
@@ -22,11 +19,16 @@ const App = () => {
     pieChart: false
   })
 
+  const [visual, setVisual] = useState({
+    slide: null,
+    secondaryNavHeight: "75px"
+  })
 
   useEffect(() => {
-    setVisualSlide(
-      `${document.getElementById('user-icon').getBoundingClientRect().left - 50}px`
-    )
+    setVisual({
+      slide: `${document.getElementById('user-icon').getBoundingClientRect().left - 50}px`,
+      secondaryNavHeight: "75px"
+    })
   }, [])
 
   const navHandleOnClick = (e) => {
@@ -41,9 +43,10 @@ const App = () => {
 
     switch(true) {
       case parentElements.includes('user-icon'):
-        setSelected('user-icon');
-        setVisualSlide(`${userIconLeft - 50}px`)
-        setSecondarySize('75px')
+        setVisual({
+          slide: `${userIconLeft - 50}px`,
+          secondaryNavHeight: "75px"
+        })
         setIsVisible({
           user: true,
           home: false,
@@ -52,9 +55,10 @@ const App = () => {
         })
         break;
       case parentElements.includes('home-icon'):
-        setSelected('home-icon');
-        setVisualSlide(`${userIconLeft + elementDistance - 50}px`)
-        setSecondarySize('75px')
+        setVisual({
+          slide: `${userIconLeft + elementDistance - 50}px`,
+          secondaryNavHeight: "75px"
+        })
         setIsVisible({
           user: false,
           home: true,
@@ -63,9 +67,10 @@ const App = () => {
         })
         break;
       case parentElements.includes('plus-icon'):
-        setSelected('plus-icon');
-        setVisualSlide(`${userIconLeft + elementDistance * 2 - 50}px`)
-        setSecondarySize('1575px')
+        setVisual({
+          slide: `${userIconLeft + elementDistance * 2 - 50}px`,
+          secondaryNavHeight: "1575px"
+        })
         setIsVisible({
           user: false,
           home: false,
@@ -74,9 +79,10 @@ const App = () => {
         })
         break;
       case parentElements.includes('piechart-icon'):
-        setSelected('piechart-icon')
-        setVisualSlide(`${userIconLeft + elementDistance * 3 - 50}px`)
-        setSecondarySize('75px')
+        setVisual({
+          slide: `${userIconLeft + elementDistance * 3 - 50}px`,
+          secondaryNavHeight: '75px'
+        })
         setIsVisible({
           user: false,
           home: false,
@@ -95,13 +101,13 @@ const App = () => {
         <div id="main-nav-section">
         <div id="just-another-container">
           <div id="main-nav-container">
-            <div id="visual-selector" style={{left: visualSlide}}></div>
+            <div id="visual-selector" style={{left: visual.slide}}></div>
             <div id="main-nav-background"></div>
             <div id="main-nav-icons-container">
             <div className="moveable-container">
               <div 
                 className={
-                  selected === 'user-icon' ? 
+                  isVisible.user ? 
                   "icon-container container-selected" : 
                   "icon-container"
                 }
@@ -109,7 +115,7 @@ const App = () => {
                 onClick={navHandleOnClick}
               >
                 <UserIcon className={
-                  selected === 'user-icon' ?
+                  isVisible.user ?
                   'main-nav-icon icon-selected' :
                   'main-nav-icon'
                 }/>
@@ -118,7 +124,7 @@ const App = () => {
             <div className='moveable-container'>
               <div 
                 className={
-                  selected === 'home-icon' ? 
+                  isVisible.home ? 
                   "icon-container container-selected" : 
                   "icon-container"
                 }
@@ -126,7 +132,7 @@ const App = () => {
                 onClick={navHandleOnClick}
               >
                 <HomeIcon className={
-                  selected === 'home-icon' ? 
+                  isVisible.home ? 
                   'main-nav-icon icon-selected' : 
                   'main-nav-icon'
                 }/>
@@ -135,7 +141,7 @@ const App = () => {
             <div className='moveable-container'>
               <div 
                 className={
-                  selected === 'plus-icon' ? 
+                  isVisible.plus ? 
                   "icon-container container-selected" : 
                   "icon-container"
                 }
@@ -143,7 +149,7 @@ const App = () => {
                 onClick={navHandleOnClick}
               >
                 <PlusIcon className={
-                  selected === 'plus-icon' ? 
+                  isVisible.plus ? 
                   'main-nav-icon icon-selected' : 
                   'main-nav-icon'
                 }/>
@@ -152,7 +158,7 @@ const App = () => {
             <div className='moveable-container'>
               <div 
                 className={
-                  selected === 'piechart-icon' ?
+                  isVisible.pieChart ?
                   "icon-container container-selected" : 
                   "icon-container"
                 }
@@ -160,7 +166,7 @@ const App = () => {
                 onClick={navHandleOnClick}
               >
                 <PieChartIcon className={
-                  selected === 'piechart-icon' ? 
+                  isVisible.pieChart ? 
                   'main-nav-icon icon-selected' : 
                   'main-nav-icon'
                 }/>
@@ -226,7 +232,7 @@ const App = () => {
     return (
       <>
         <div id="secondary-nav-section">
-          <div id="secondary-nav-control-container" style={{height: secondarySize}}>
+          <div id="secondary-nav-control-container" style={{height: visual.secondaryNavHeight}}>
             <div id="secondary-nav-background"></div>
             <div id="secondary-nav-content-container">
              {secondaryNavContent()}
