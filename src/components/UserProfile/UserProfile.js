@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTransition, animated } from 'react-spring';
 import './UserProfile.css'
 import './UserProfileActivity.css'
 import mainProfileImage from '../assets/images/main-profile-image.png'
 import { ReactComponent as UserIcon } from '../../components/assets/images/user.svg'
 import { ReactComponent as SearchIcon } from '../../components/assets/images/search.svg'
+import { ReactComponent as CreditCardIcon } from '../../components/assets/images/credit-card.svg'
+import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
+import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
 
 const UserProfile = () => {
 
@@ -38,6 +41,18 @@ const UserProfile = () => {
   //         break;
   //     }
   // }
+
+  const [tripData, setTripData] = useState([]);
+  const [friendData, setFriendData] = useState([]);
+
+  useEffect(() => {
+    // Get trip and friend data here
+
+    setTripData([])
+
+    setFriendData([])
+
+  }, [])
 
   const mockTripData = [
     {
@@ -84,27 +99,43 @@ const UserProfile = () => {
 
   const mockFriendData = [
     {
-      name: "Daniel Davis",
+      firstname: 'Daniel',
+      lastname: 'Davis',
       imgUrl: "",
     },
     {
-      name: "Jack Feathers",
+      firstname: "Jack",
+      lastname: 'Feathers',
       imgUrl: "",
     },
     {
-      name: "Summer Halts",
+      firstname: "Summer",
+      lastname: "Halts",
       imgUrl: "",
     },
     {
-      name: "Jess Bevers",
+      firstname: "Jess",
+      lastname: "Bevers",
       imgUrl: "",
     },
     {
-      name: "Jonathan Welsh",
+      firstname: "Jonathan",
+      lastname: "Welsh",
       imgUrl: ""
     },
     {
-      name: "Mary Thomas",
+      firstname: "Mary",
+      lastname: "Thomas",
+      imgUrl: ""
+    },
+    {
+      firstname: "Extra",
+      lastname: "Person",
+      imgUrl: ""
+    },
+    {
+      firstname: "Extra",
+      lastname: "Person",
       imgUrl: ""
     }
   ]
@@ -208,6 +239,53 @@ const UserProfile = () => {
   }
 
 
+  const friendsCardsList = () => {
+
+    const friendsList = mockFriendData.map(data => {
+      return (
+        <div className="friend-section">
+          <div className="friend-section-background"></div>
+          <div className="friend-section-top-content">
+            <div className="friend-section-friend-image-container">
+              <img src="" alt="" className="friend-section-friend-image"/>
+            </div>
+            <div className="friend-section-friend-name">{data.firstname} {data.lastname}</div>
+            <div className="friend-section-friend-buttons">
+              <div className="friend-section-button-text-container">
+                <span className="friend-section-button-text">Pay</span>
+                <div className="friend-section-button-container">
+                  <button className="friend-section-button"></button>
+                  <CreditCardIcon className="friend-section-button-icon"/>
+                </div>
+              </div>
+              <div className="friend-section-button-text-container">
+                <span className="friend-section-button-text">Chat</span>
+                <div className="friend-section-button-container">
+                  <button className="friend-section-button"></button>
+                  <MessageSquareIcon className="friend-section-button-icon"/>
+                </div>
+              </div>
+              <div className="friend-section-button-text-container">
+                <span className="friend-section-button-text">Remove</span>
+                <div className="friend-section-button-container">
+                  <button className="friend-section-button"></button>
+                  <UserMinusIcon className="friend-section-button-icon"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    })
+
+    return (
+      <>
+        {friendsList}
+      </>
+    )
+  }
+
+
   const userProfileSwitchableContent = () => {
     return (
       <>
@@ -242,7 +320,7 @@ const UserProfile = () => {
                 </div>
               </div>
               <div id="friend-list">
-
+                {friendsCardsList()}
               </div>
             </animated.div> :
             ''
