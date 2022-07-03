@@ -37,12 +37,16 @@ const App = () => {
       e.target.parentElement.parentElement.id
     ];
 
+    console.log(e.target)
+    console.log(parentElements)
+
     const userIconLeft = document.getElementById('user-icon').getBoundingClientRect().left;
     const homeIconLeft = document.getElementById('home-icon').getBoundingClientRect().left;
     const elementDistance = homeIconLeft - userIconLeft;
 
     switch(true) {
       case parentElements.includes('user-icon'):
+        if (isVisible.user) break;
         setVisual({
           slide: `${userIconLeft - 50}px`,
           secondaryNavHeight: "75px"
@@ -55,6 +59,7 @@ const App = () => {
         })
         break;
       case parentElements.includes('home-icon'):
+        if (isVisible.home) break;
         setVisual({
           slide: `${userIconLeft + elementDistance - 50}px`,
           secondaryNavHeight: "75px"
@@ -67,6 +72,7 @@ const App = () => {
         })
         break;
       case parentElements.includes('plus-icon'):
+        if (isVisible.plus) break;
         setVisual({
           slide: `${userIconLeft + elementDistance * 2 - 50}px`,
           secondaryNavHeight: "1575px"
@@ -79,6 +85,7 @@ const App = () => {
         })
         break;
       case parentElements.includes('piechart-icon'):
+        if (isVisible.pieChart) break;
         setVisual({
           slide: `${userIconLeft + elementDistance * 3 - 50}px`,
           secondaryNavHeight: '75px'
@@ -91,6 +98,16 @@ const App = () => {
         })
         break;
       default:
+        setVisual({
+          slide: `${userIconLeft - 50}px`,
+          secondaryNavHeight: "75px"
+        })
+        setIsVisible({
+          user: true,
+          home: false,
+          plus: false,
+          pieChart: false
+        })
         break;
     }
   }
@@ -118,7 +135,9 @@ const App = () => {
                   isVisible.user ?
                   'main-nav-icon icon-selected' :
                   'main-nav-icon'
-                }/>
+                }
+                  id="user-icon-icon"
+                />
               </div>
             </div>
             <div className='moveable-container'>
@@ -180,6 +199,50 @@ const App = () => {
     )
   }
 
+  const [userNavSelection, setUserNavSelection] = useState({
+    userProfile: true,
+    userSocial: false,
+    userPrivacy: false,
+    slide: "27px"
+  });
+
+  const userSecondaryNavHandleOnClick = (e) => {
+    switch(e.target.id){
+      case "user-nav-social":
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: true,
+          userPrivacy: false,
+          slide: "214px"
+        })
+        break;
+      case "user-nav-privacy":
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: true,
+          slide: "410px"
+        })
+        break;
+      case "user-nav-profile":
+        setUserNavSelection({
+          userProfile: true,
+          userSocial: false,  
+          userPrivacy: false,
+          slide: "27px"
+        })
+        break;
+      default:
+        setUserNavSelection({
+          userProfile: true,
+          userSocial: false,  
+          userPrivacy: false,
+          slide: "27px"
+        })
+        break;
+    }
+  }
+
   const fadeTransition = {
     from: {opacity: 0},
     enter: {opacity: 1},
@@ -198,7 +261,36 @@ const App = () => {
             {
               userContentTransition((style, item) => {
                 return item.user ? 
-                <animated.div style={style} id="test-content">User Content</animated.div> :
+                <animated.div style={style} id="user-nav-content">
+                  <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div>
+                  <div 
+                    className="secondary-navigation-bar-text-container" 
+                    onClick={userSecondaryNavHandleOnClick}
+                  >
+                    <span 
+                      className="secondary-navigation-bar-text"
+                      id="user-nav-profile" 
+                    >Profile</span>
+                  </div>
+                  <div 
+                    className="secondary-navigation-bar-text-container"
+                    onClick={userSecondaryNavHandleOnClick}
+                  >
+                    <span 
+                      className="secondary-navigation-bar-text" 
+                      id="user-nav-social" 
+                    >Social</span>
+                  </div>
+                  <div 
+                    className="secondary-navigation-bar-text-container"
+                    onClick={userSecondaryNavHandleOnClick}
+                  >
+                    <span 
+                      className="secondary-navigation-bar-text" 
+                      id="user-nav-privacy"
+                    >Privacy</span>
+                  </div>
+                </animated.div> :
                 ''
               })
             }

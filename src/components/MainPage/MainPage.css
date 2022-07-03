@@ -48,28 +48,6 @@
     color: white;
 }
 
-#navigation-bar-selected {
-    position: absolute;
-    width: 300px;
-    height: 95%;
-    background: #FFFFFF;
-    opacity: 1;
-    border: 1px solid #FFFFFF;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
-    border-radius: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.75s ease-in-out 0s;
-}
-
-#navigation-bar-selected-text {
-    font-size: 55px;
-    color: #D4770F;
-    font-weight: 600;
-}
-
-
 #user-profile-container {
     width: 90%;
     position: absolute;
