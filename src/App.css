@@ -6,7 +6,10 @@
   background-color: #061E33;
 }
 
-
+.main-content-animated-div {
+  height: 100%;
+  width: 100%;
+}
 
 
 /* MAIN NAVIGATION BAR */
@@ -206,7 +209,7 @@
 
 #main-content-container {
   width: 90%;
-  height: inherit
+  height: inherit;
 }
 
 /* MAIN CONTENT CONTAINER */

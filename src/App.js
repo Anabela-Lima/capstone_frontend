@@ -333,6 +333,10 @@ const App = () => {
     )
   }
 
+  const userProfileTransition = useTransition(userNavSelection, fadeTransition);
+  const userSocialTransition = useTransition(userNavSelection, fadeTransition);
+  const userPrivacyTransition = useTransition(userNavSelection, fadeTransition);
+
 
   const mainContentSection = () => {
 
@@ -344,7 +348,34 @@ const App = () => {
       <>
         <div id="main-content-section">
           <div id="main-content-container">
-            <UserProfile/>
+          {
+            userProfileTransition((style, item) => {
+              return item.userProfile ? 
+              <animated.div style={style} className="main-content-animated-div">
+                <UserProfile />
+              </animated.div> 
+              : ''
+            })
+          }
+          {
+            userSocialTransition((style, item) => {
+              return item.userSocial ? 
+              <animated.div style={style} className="main-content-animated-div">
+                  User Social
+              </animated.div> 
+              : ''
+            })
+          }
+          {
+            userPrivacyTransition((style, item) => {
+              return item.userPrivacy ? 
+              <animated.div style={style} className="main-content-animated-div">
+                User Privacy
+              </animated.div> 
+              : ''
+            })
+          }
+          
           </div>
         </div>
       </>
