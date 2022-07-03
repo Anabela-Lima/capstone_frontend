@@ -336,6 +336,7 @@ const UserProfile = () => {
     const name = e.target.attributes.buttonname.value;
     switch(name) {
       case "user-profile-activity-btn":
+        if (isVisible.activity) break;
         setIsVisible({
           activity: true,
           media: false,
@@ -343,6 +344,7 @@ const UserProfile = () => {
         })
         break;
       case "user-profile-media-btn":
+        if (isVisible.media) break;
         setIsVisible({
           activity: false,
           media: true,
@@ -350,6 +352,7 @@ const UserProfile = () => {
         })
         break;
       case "user-profile-friends-btn":
+        if (isVisible.friends) break;
         setIsVisible({
           activity: false,
           media: false,
