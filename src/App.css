@@ -3,7 +3,7 @@
 
 #root {
   height: 100vh;
-  width: 100vw;
+  background-color: #061E33;
 }
 
 
@@ -87,9 +87,6 @@
   transition: all 0.25s ease-in-out 0s;
   overflow: hidden;
 }
-svg {
-  width: 1em;
-}
 
 .container-selected {
   transform: translate(0px, -10px);
@@ -123,7 +120,7 @@ svg {
 #secondary-nav-control-container {
   width: 65%;
   position: relative;
-  transition: all 0.55s ease-in-out;
+  transition: all 0.55s ease-in-out 0.5s;
 }
 
 #secondary-nav-background {
@@ -194,6 +191,25 @@ svg {
 /* NAVIGATION BAR SPAWN */
 
 
+
+/* MAIN CONTENT CONTAINER */
+
+#main-content-section {
+  position: absolute;
+  top: 2.5%;
+  width: 100vw;
+  height: 82vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+#main-content-container {
+  width: 90%;
+  height: inherit
+}
+
+/* MAIN CONTENT CONTAINER */
 
 
 /* Nav Bar and Button Design */

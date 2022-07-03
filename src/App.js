@@ -1,8 +1,7 @@
 import './App.css';
-import './ReactTransitions.css'
 import React, { useEffect, useState } from 'react';
 import { useTransition, animated } from 'react-spring';
-import MainPage from './components/MainPage/MainPage';
+import UserProfile from './components/UserProfile/UserProfile';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
@@ -24,6 +23,13 @@ const App = () => {
     secondaryNavHeight: "75px"
   })
 
+  const [userNavSelection, setUserNavSelection] = useState({
+    userProfile: true,
+    userSocial: false,
+    userPrivacy: false,
+    slide: "27px"
+  })
+
   useEffect(() => {
     setVisual({
       slide: `${document.getElementById('user-icon').getBoundingClientRect().left - 50}px`,
@@ -35,14 +41,11 @@ const App = () => {
     const parentElements = [
       e.target.parentElement.id,
       e.target.parentElement.parentElement.id
-    ];
+    ]
 
-    console.log(e.target)
-    console.log(parentElements)
-
-    const userIconLeft = document.getElementById('user-icon').getBoundingClientRect().left;
-    const homeIconLeft = document.getElementById('home-icon').getBoundingClientRect().left;
-    const elementDistance = homeIconLeft - userIconLeft;
+    const userIconLeft = document.getElementById('user-icon').getBoundingClientRect().left
+    const homeIconLeft = document.getElementById('home-icon').getBoundingClientRect().left
+    const elementDistance = homeIconLeft - userIconLeft
 
     switch(true) {
       case parentElements.includes('user-icon'):
@@ -199,12 +202,6 @@ const App = () => {
     )
   }
 
-  const [userNavSelection, setUserNavSelection] = useState({
-    userProfile: true,
-    userSocial: false,
-    userPrivacy: false,
-    slide: "27px"
-  });
 
   const userSecondaryNavHandleOnClick = (e) => {
     switch(e.target.id){
@@ -247,6 +244,7 @@ const App = () => {
     from: {opacity: 0},
     enter: {opacity: 1},
     leave: {opacity: 0},
+    delay: 200,
     exitBeforeEnter: true
   }
 
@@ -327,8 +325,26 @@ const App = () => {
           <div id="secondary-nav-control-container" style={{height: visual.secondaryNavHeight}}>
             <div id="secondary-nav-background"></div>
             <div id="secondary-nav-content-container">
-             {secondaryNavContent()}
+              {secondaryNavContent()}
             </div>
+          </div>
+        </div>
+      </>
+    )
+  }
+
+
+  const mainContentSection = () => {
+
+    /* 
+        main-content-section --> sets the height section
+        main-content-container --> sets the width
+    */
+    return (
+      <>
+        <div id="main-content-section">
+          <div id="main-content-container">
+            <UserProfile/>
           </div>
         </div>
       </>
@@ -338,7 +354,8 @@ const App = () => {
   return (
     <>
       {/* <MainCarousel /> */}
-      <MainPage />
+      {/* <MainPage /> */}
+      {mainContentSection()}
       {secondaryNav()}
       {mainNav()}
     </>
