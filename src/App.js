@@ -2,6 +2,8 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { useTransition, animated } from 'react-spring';
 import UserProfile from './components/UserProfile/UserProfile';
+import UserSocial from './components/UserSocial/UserSocial';
+import UserPrivacy from './components/UserPrivacy/UserPrivacy';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
@@ -60,6 +62,12 @@ const App = () => {
           plus: false,
           pieChart: false
         })
+        setUserNavSelection({
+          userProfile: true,
+          userSocial: false,
+          userPrivacy: false,
+          slide: "27px"
+        })
         break;
       case parentElements.includes('home-icon'):
         if (isVisible.home) break;
@@ -72,6 +80,12 @@ const App = () => {
           home: true,
           plus: false,
           pieChart: false
+        })
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          slide: userNavSelection.slide
         })
         break;
       case parentElements.includes('plus-icon'):
@@ -86,6 +100,12 @@ const App = () => {
           plus: true,
           pieChart: false
         })
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          slide: userNavSelection.slide
+        })
         break;
       case parentElements.includes('piechart-icon'):
         if (isVisible.pieChart) break;
@@ -99,6 +119,12 @@ const App = () => {
           plus: false,
           pieChart: true
         })
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          slide: userNavSelection.slide
+        })
         break;
       default:
         setVisual({
@@ -110,6 +136,12 @@ const App = () => {
           home: false,
           plus: false,
           pieChart: false
+        })
+        setUserNavSelection({
+          userProfile: true,
+          userSocial: false,
+          userPrivacy: false,
+          slide: userNavSelection.slide
         })
         break;
     }
@@ -206,6 +238,7 @@ const App = () => {
   const userSecondaryNavHandleOnClick = (e) => {
     switch(e.target.id){
       case "user-nav-social":
+        if (userNavSelection.userSocial) break;
         setUserNavSelection({
           userProfile: false,
           userSocial: true,
@@ -214,6 +247,7 @@ const App = () => {
         })
         break;
       case "user-nav-privacy":
+        if (userNavSelection.userPrivacy) break;
         setUserNavSelection({
           userProfile: false,
           userSocial: false,
@@ -222,6 +256,7 @@ const App = () => {
         })
         break;
       case "user-nav-profile":
+        if (userNavSelection.userProfile) break;
         setUserNavSelection({
           userProfile: true,
           userSocial: false,  
@@ -361,7 +396,7 @@ const App = () => {
             userSocialTransition((style, item) => {
               return item.userSocial ? 
               <animated.div style={style} className="main-content-animated-div">
-                  User Social
+                  <UserSocial />
               </animated.div> 
               : ''
             })
@@ -370,7 +405,7 @@ const App = () => {
             userPrivacyTransition((style, item) => {
               return item.userPrivacy ? 
               <animated.div style={style} className="main-content-animated-div">
-                User Privacy
+                <UserPrivacy />
               </animated.div> 
               : ''
             })
