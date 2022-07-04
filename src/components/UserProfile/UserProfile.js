@@ -13,27 +13,22 @@ import axios from 'axios';
 
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen}) => {
 
+  const mockLoggedInAsID = 9;
 
-  const [tripData, setTripData] = useState([]);
-
-  useEffect(() => {
-    // Get trip and friend data here
-
-    setTripData([])
-
-    setFriendData([])
-
-  }, [])
-
-
+  const [userLoggedInDetails, setUserLoggedInDetails] = useState({});
   const [tripInformation, setTripInformation] = useState([]);
   const [friendData, setFriendData] = useState([]);
 
-
-  const mockLoggedInAsID = 8;
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:8080/user/getUserByID?userID=${mockLoggedInAsID}`)
+    .then(response => {
+      const userInfo = response.data;
+      setUserLoggedInDetails(userInfo);
+    })
+  }, []);
 
   useEffect(() => { 
-    axios.get(`http://127.0.0.1:8080/user/trips`)
+    axios.get(`http://localhost:8080/user/tripsByUser?userID=${mockLoggedInAsID}`)
     .then(response => {
       const tripInfo = response.data;
       setTripInformation(tripInfo);
@@ -766,17 +761,18 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
             </div>
             <div id="user-profile-picture-container">
               <div id="user-profile-picture-ring"></div>
-              <img src={mainProfileImage} alt="" id="user-profile-image" />
+              <img src={userLoggedInDetails.imgURL} alt="" id="user-profile-image" />
             </div>
-            <div id="user-profile-name">Ayana Zhen</div>
-            <div id="user-profile-location">London, UK</div>
+            <div id="user-profile-name">
+              {userLoggedInDetails.firstname} {userLoggedInDetails.lastname}
+              </div>
+            <div id="user-profile-location">{userLoggedInDetails.city}, {userLoggedInDetails.country}</div>
           </div>
           <div id="user-profile-status-container">
             <div id="user-profile-status-background"></div>
             <div id="user-profile-status-text-container">
               <span id="user-profile-status-text"> 
-                Nothing feels as good as going from a place you 
-                love to a place youv’e never been #CatchMeIfYouCan
+                {userLoggedInDetails.profileDescription}
               </span>
             </div>
           </div>

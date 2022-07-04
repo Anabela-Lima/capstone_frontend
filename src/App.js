@@ -16,6 +16,40 @@ import { ReactComponent as PieChartIcon } from './components/assets/images/pie-c
 
 const App = () => {
 
+  // will be a prop
+  const userLoggedInID = 9;
+
+  // new trip form 
+  const [tripTitle, setTripTitle] = useState("");
+  const [tripCountry, setTripCountry] = useState("");
+  const [tripDescription, setTripDescription] = useState("");
+  const[startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  const handleTripTitle = (event)  => setTripTitle(event.target.value);
+  const handleTripCountry = (event) => setTripCountry(event.target.value);
+  const handleTripDescription = (event) => setTripDescription(event.target.value);
+  const handleStartDate = (event) => setStartDate(event.target.value);
+  const handleEndDate = (event) => setEndDate(event.target.value);
+
+  const createNewTrip = (event) => {
+    // event.preventDefault();
+    const options = {
+      method: "POST",
+    }
+
+    fetch(`http://127.0.0.1:8080/user/trip/new?userId=${userLoggedInID}&name=${tripTitle}&country=${tripCountry}&description=${tripDescription}&startDate=${startDate}%2000%3A00%3A00&endDate=${endDate}%2000%3A00%3A00`,
+    options)
+    .then((response) => {
+      setTripTitle("");
+      setTripCountry("");
+      setTripDescription("");
+      setStartDate(new Date());
+      setEndDate(new Date());
+    })
+    .catch(err => console.log(err))
+  };
+
   const [isVisible, setIsVisible] = useState({
     user: true,
     home: false,
@@ -422,7 +456,27 @@ const App = () => {
             {
               plusContentTransition((style, item) => {
                 return item.plus ? 
-                <animated.div style={style} id="test-content">Plus Content</animated.div> : 
+                <animated.div style={style} id="test-content">
+                  <form onSubmit = {createNewTrip}>
+                    <label>
+                      Trip name: <input type="text" placeholder='Trip Title' onChange={handleTripTitle}/>
+                    </label>
+                    <label>
+                      Country: <input type="text" placeholder='Country' onChange={handleTripCountry}/>
+                    </label>
+                    <label>
+                      Trip Description: <input type="text" placeholder='Trip Description' onChange={handleTripDescription}/>
+                    </label>
+                    <label>
+                      Start Date: <input type="date"  onChange={handleStartDate}/>
+                    </label>
+                    <label>
+                      End Date: <input type="date" onChange={handleEndDate} />
+                    </label>
+                  
+                  <input type="submit" value="Add Trip!"/>
+                  </form>
+                </animated.div> : 
                 ''
               })
             }
