@@ -9,38 +9,8 @@ import { ReactComponent as CreditCardIcon } from '../../components/assets/images
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
 
-const UserProfile = () => {
+const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen}) => {
 
-  // const [slide, setSlide] = React.useState({
-  //   text: "Social",
-  //   left: "335px"
-  // });
-
-
-  // const moveSlider = (e) => {
-  //     switch(e.target.id) {
-  //       case "nav-profile":
-  //         setSlide({
-  //           text: "Profile",
-  //           left: "40px"
-  //         });
-  //         break;
-  //       case "nav-privacy":
-  //         setSlide({
-  //           left: "640px",
-  //           text: "Privacy"
-  //         });
-  //         break;
-  //       case "nav-social":
-  //         setSlide({
-  //           left: "335px",
-  //           text: "Social"
-  //         });
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  // }
 
   const [tripData, setTripData] = useState([]);
   const [friendData, setFriendData] = useState([]);
@@ -61,7 +31,67 @@ const UserProfile = () => {
       country: "Morocco",
       date: "2022-06-30",
       imgUrl: "https://www.mickeyshannon.com/photos/moraine-lake-sunrise-brilliance.jpg",
-      attendees: [1,2,3,4,5]
+      attendees: [1,2,3,4,5],
+      activities: [
+        {
+          day: 1,
+          name: "Mouton Noir Brunch",
+          price: 235.00,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/0f/14/c0/ed/roesti.jpg",
+          attendees: [1,2,3,4,5],
+        },
+        {
+          day: 1,
+          name: "3 Days Desert Tou",
+          price: 400.00,
+          category: "Physical",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/ec/e0/09.jpg",
+          attendees: [1,2,3,4]
+        },
+        {  
+          day: 1,
+          name: "Alas Mountains Hot Air Balloon",
+          price: 648.00,
+          category: "Physical",
+          imgUrl: "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/71/ea/a0.jpg",
+          attendees: [1,2,3,4,6],
+        },
+        { day: 1,
+          name: "Agadir Day Trip To Legzira ",
+          price: 350.00,
+          category: "Physical",
+          imgUrl: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/73/d2/54.jpg",
+          attendees: [1,2,3,4,5,6,8,10],
+        },
+        {
+          day: 2,
+          name: "Marrakech: Private Guided Half-Day City Tours",
+          price: 585.00,
+          category: "Physical",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/e8/d3/84.jpg",
+          attendees: [1,2,3,5,7]
+        },
+        {
+          day: 2,
+          name: "Libzar",
+          price: 200.00,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/07/0a/87/c9/libzar.jp",
+          attendees: [1, 2,3,5,7,8,10]
+        },
+        {
+          day: 2,
+          name: "Desert Agafay and Atlas Mountains & Camel ride Day",
+          price: 900.00,
+          category: "Entertainment",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/71/23/18.jpg",
+          attendees: [1,2,3,4,5,6,7,9,10]
+        }
+
+
+
+      ]
     },
     {
       id: 2,
@@ -69,15 +99,173 @@ const UserProfile = () => {
       country: "Italy",
       date: "2022-07-30",
       imgUrl: "https://www.mickeyshannon.com/photos/maroon-bells-magic.jpg",
-      attendees: [1,2,3,4,5,6,7,8,9,10]
+      attendees: [1,2,3,4,5,6,7,8,9,10],
+      activities: [
+
+
+        {
+          day: 1,
+          name: "Pisa, Siena and San Gimignano Day Trip ",
+          price: 250.45,
+          category: "Physical",
+          imgUrl: "https://images.musement.com/default/0001/20/pisa-siena-san-gimignano-and-chianti-day-tour-in-tuscany-with-typical-lunch_header-19719.jpeg?q=50&fit=crop&auto=format&w=1024&h=400",
+          attendees: [1,2,3,4,6,9]
+        }
+
+
+        ,{
+          
+          day: 2,
+          name: "La Forchetta d´Oro",
+          price: 648.00,
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/1c/2d/45/81/la-forchetta-d-oro.jpg",
+          category: "Food",
+          attendees: [1,9,3,7,5,6],
+
+        }
+
+        ,{
+          
+          day: 2,
+          name: "Ambrosia Rooftop Restaurant & Bar",
+          price: 350.00,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/04/02/75/3f/ambrosia.jpg",
+          attendees: [1,9,4,7,5,6,10,],
+
+        }
+
+        ,{
+          
+          day: 3,
+          name: "VITA NOVA",
+          price: 150.50,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/16/ba/3e/e7/esterno.jpg",
+          attendees: [1,2,3,4,5,6,7],
+          
+        }
+        
+        ,{
+          day: 3,
+          name: "Tour Tuscan Hill Towns by Bicycle ",
+          price:  599.99,
+          category: "Physical",
+          imgUrl: "https://cdn.thecrazytourist.com/wp-content/uploads/2017/08/Valley-of-the-Temples.jpg",
+          attendees: [1,2,3,4,6,9,10]
+        }
+
+        ,{
+          day: 3,
+          name: "Tour Tuscan Hill Towns by Bicycle ",
+          price: 150,
+          category: "Physical",
+          imgUrl: "https://www.bikeadventures.co.uk/media/2014/10/tuscany.jpg",
+          attendees: [1,2,3,4,6,9,10]
+        }
+        
+
+        ,{
+          day: 3,
+          name: "Tour Tuscan Hill Towns by Bicycle ",
+          price: 150,
+          category: "Physical",
+          imgUrl: "https://www.bikeadventures.co.uk/media/2014/10/tuscany.jpg",
+          attendees: [1,2,3,4,6,9,10]
+        }
+       
+      ]
     },
+    //------------------
     {
       id: 3,
       name: "Work Trip",
       country: "Iceland",
       date: "2022-08-05",
       imgUrl: "https://www.mickeyshannon.com/photos/summit-county-sunrise.jpg",
-      attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+      attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
+      activities: [
+        {
+          day: 1,
+          name: "Golden Circle & Glacier Snowmobiling Day Trip from Reykjavik",
+          price: 235,
+          category: "Physical",
+          imgUrl: "",
+          attendees: [1,2,3,4,5],
+        },
+        {
+          day: 1,
+          name: "Peaky Blinders Tour",
+          price: 200,
+          category: "Physical",
+          imgUrl: "",
+          attendees: [1,2,3,4]
+        },
+       
+        {
+          day: 2,
+          name: "",
+          price: 1000,
+          category: "",
+          imgUrl: "",
+          attendees: [1,2,3]
+        },
+        {
+          day: 2,
+          name: "",
+          price: 1000,
+          category: "",
+          imgUrl: "",
+          attendees: [1, 2]
+        },
+        {
+          day: 2,
+          name: "",
+          price: 200,
+          category: "",
+          imgUrl: "",
+          attendees: [1]
+        }
+
+       ,{
+          day: 2,
+          name: "",
+          price: 1000,
+          category: "",
+          imgUrl: "",
+          attendees: [1, 2]
+        },
+        {
+          day: 3,
+          name: "",
+          price: 200,
+          category: "",
+          imgUrl: "",
+          attendees: [1]
+        }
+
+        ,{
+          day: 3,
+          name: "",
+          price: 1000,
+          category: "",
+          attendees: [1, 2]
+        },
+        {
+          day: 3,
+          name: "",
+          price: 200,
+          category: "",
+          imgUrl: "",
+          attendees: [1]
+        }
+
+
+
+
+      ]
+
+      
     },
     {
       id: 4,
@@ -197,10 +385,17 @@ const UserProfile = () => {
 
   const tripCardsList = () => {
     const tripList = mockTripData.map(data => {
+      const id = data.id;
       return (
-          <div className="trip-section" key={data.id}>
+          <div 
+            className="trip-section" 
+            key={data.id}
+          >
             <div className="trip-indicator">-</div>
-            <div className="trip-card">
+            <div 
+              className="trip-card"
+              onClick={() => goToTripScreenFromUserProfile(id)}
+            >
               <div className="trip-card-background"></div>
               <div className="trip-card-layout">
                 <div className="trip-card-layout-top">
@@ -373,29 +568,6 @@ const UserProfile = () => {
   return (
     <>
       <div id="main-page-container"> 
-        {/* <div id="main-page-navigation-container"></div> */}
-            {/* <div id="main-page-navigation-bar"></div>
-            <div className="navigation-bar-text-container">
-              <span 
-                className="navigation-bar-text"
-                id="nav-profile" 
-                onClick={moveSlider}
-              >Profile</span>
-              <span 
-                className="navigation-bar-text" 
-                id="nav-social" 
-                onClick={moveSlider}
-              >Social</span>
-              <span 
-                className="navigation-bar-text" 
-                id="nav-privacy"
-                onClick={moveSlider}
-              >Privacy</span>
-            </div>
-            <div id="navigation-bar-selected" style={{left: slide.left}}>
-              <span id="navigation-bar-selected-text">{slide.text}</span>
-            </div> */}
-
 
         <div id="user-profile-container">
           <div id="green-circle"></div>

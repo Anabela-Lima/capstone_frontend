@@ -4,6 +4,9 @@ import { useTransition, animated } from 'react-spring';
 import UserProfile from './components/UserProfile/UserProfile';
 import UserSocial from './components/UserSocial/UserSocial';
 import UserPrivacy from './components/UserPrivacy/UserPrivacy';
+import PieChartHistory from './components/PieChartHistory/PieChartHistory';
+import PieChartReport from './components/PieChartReport/PieChartReport';
+import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
@@ -29,6 +32,9 @@ const App = () => {
     userProfile: true,
     userSocial: false,
     userPrivacy: false,
+    piechartSplitPay: false,
+    piechartReport: false,
+    piechartHistory: false,
     slide: "27px"
   })
 
@@ -66,6 +72,9 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: "27px"
         })
         break;
@@ -85,6 +94,9 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: userNavSelection.slide
         })
         break;
@@ -104,6 +116,9 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: userNavSelection.slide
         })
         break;
@@ -123,7 +138,10 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
-          slide: userNavSelection.slide
+          piechartSplitPay: true,
+          piechartReport: false,
+          piechartHistory: false,
+          slide: "40px"
         })
         break;
       default:
@@ -141,6 +159,9 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: userNavSelection.slide
         })
         break;
@@ -243,6 +264,9 @@ const App = () => {
           userProfile: false,
           userSocial: true,
           userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: "214px"
         })
         break;
@@ -252,6 +276,9 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: true,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: "410px"
         })
         break;
@@ -261,6 +288,9 @@ const App = () => {
           userProfile: true,
           userSocial: false,  
           userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: "27px"
         })
         break;
@@ -269,7 +299,62 @@ const App = () => {
           userProfile: true,
           userSocial: false,  
           userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
           slide: "27px"
+        })
+        break;
+    }
+  }
+
+  const piechartSecondaryNavHandleOnClick = (e) => {
+    switch(e.target.id) {
+      case "piechart-nav-splitpay":
+        if (userNavSelection.piechartSplitPay) break;
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: true,
+          piechartReport: false,
+          piechartHistory: false,
+          slide: "40px"
+        })
+        break;
+      case "piechart-nav-history":
+        if (userNavSelection.piechartHistory) break;
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: true,
+          slide: "410px"
+        })
+        break;
+      case "piechart-nav-report":
+        if (userNavSelection.piechartReport) break;
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: true,
+          piechartHistory: false,
+          slide: "214px"
+        })
+        break;
+      default:
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: true,
+          piechartReport: false,
+          piechartHistory: false,
+          slide: "40px"
         })
         break;
     }
@@ -296,32 +381,32 @@ const App = () => {
                 return item.user ? 
                 <animated.div style={style} id="user-nav-content">
                   <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div>
-                  <div 
-                    className="secondary-navigation-bar-text-container" 
-                    onClick={userSecondaryNavHandleOnClick}
-                  >
-                    <span 
-                      className="secondary-navigation-bar-text"
-                      id="user-nav-profile" 
-                    >Profile</span>
-                  </div>
-                  <div 
-                    className="secondary-navigation-bar-text-container"
-                    onClick={userSecondaryNavHandleOnClick}
-                  >
-                    <span 
-                      className="secondary-navigation-bar-text" 
-                      id="user-nav-social" 
-                    >Social</span>
-                  </div>
-                  <div 
-                    className="secondary-navigation-bar-text-container"
-                    onClick={userSecondaryNavHandleOnClick}
-                  >
-                    <span 
-                      className="secondary-navigation-bar-text" 
-                      id="user-nav-privacy"
-                    >Privacy</span>
+                    <div 
+                      className="secondary-navigation-bar-text-container" 
+                      onClick={userSecondaryNavHandleOnClick}
+                    >
+                      <span 
+                        className="secondary-navigation-bar-text"
+                        id="user-nav-profile" 
+                      >Profile</span>
+                    </div>
+                    <div 
+                      className="secondary-navigation-bar-text-container"
+                      onClick={userSecondaryNavHandleOnClick}
+                    >
+                      <span 
+                        className="secondary-navigation-bar-text" 
+                        id="user-nav-social" 
+                      >Social</span>
+                    </div>
+                    <div 
+                      className="secondary-navigation-bar-text-container"
+                      onClick={userSecondaryNavHandleOnClick}
+                    >
+                      <span 
+                        className="secondary-navigation-bar-text" 
+                        id="user-nav-privacy"
+                      >Privacy</span>
                   </div>
                 </animated.div> :
                 ''
@@ -344,7 +429,36 @@ const App = () => {
             {
               pieChartContentTransition((style, item) => {
                 return item.pieChart ? 
-                <animated.div style={style} id="test-content">PieChart Content</animated.div> : 
+                <animated.div style={style} id="user-nav-content">
+                <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div>
+                    <div 
+                      className="secondary-navigation-bar-text-container" 
+                      onClick={piechartSecondaryNavHandleOnClick}
+                    >
+                      <span 
+                        className="secondary-navigation-bar-text"
+                        id="piechart-nav-splitpay" 
+                      >SplitPay</span>
+                    </div>
+                    <div 
+                      className="secondary-navigation-bar-text-container"
+                      onClick={piechartSecondaryNavHandleOnClick}
+                    >
+                      <span 
+                        className="secondary-navigation-bar-text" 
+                        id="piechart-nav-report" 
+                      >Report</span>
+                    </div>
+                    <div 
+                      className="secondary-navigation-bar-text-container"
+                      onClick={piechartSecondaryNavHandleOnClick}
+                    >
+                      <span 
+                        className="secondary-navigation-bar-text" 
+                        id="piechart-nav-history"
+                      >History</span>
+                  </div>
+                </animated.div> : 
                 ''
               })
             }
@@ -372,6 +486,17 @@ const App = () => {
   const userSocialTransition = useTransition(userNavSelection, fadeTransition);
   const userPrivacyTransition = useTransition(userNavSelection, fadeTransition);
 
+  const piechartSplitPayTransition = useTransition(userNavSelection, fadeTransition);
+  const piechartReportTransition = useTransition(userNavSelection, fadeTransition);
+  const piechartHistoryTransition = useTransition(userNavSelection, fadeTransition);
+
+  const goToTripScreenFromUserProfile = (string) => {
+    console.log("Go to Trip Screen From User Profile Pressed " + string);
+  }
+
+  const goToUserProfileFromTripScreen = () => {
+    console.log("Go to User Profile From Trip Screen Pressed")
+  }
 
   const mainContentSection = () => {
 
@@ -387,7 +512,10 @@ const App = () => {
             userProfileTransition((style, item) => {
               return item.userProfile ? 
               <animated.div style={style} className="main-content-animated-div">
-                <UserProfile />
+                <UserProfile 
+                  goToTripScreenFromUserProfile={goToTripScreenFromUserProfile}
+                  goToUserProfileFromTripScreen={goToUserProfileFromTripScreen}
+                />
               </animated.div> 
               : ''
             })
@@ -410,7 +538,33 @@ const App = () => {
               : ''
             })
           }
-          
+          {
+            piechartSplitPayTransition((style, item) => {
+              return item.piechartSplitPay ?
+              <animated.div style={style} className="main-content-animated-div">
+                <PieChartSplitPay />
+              </animated.div> 
+              : ''
+            })
+          }
+          {
+            piechartReportTransition((style, item) => {
+              return item.piechartReport ? 
+              <animated.div style={style} className="main-content-animated-div">
+                <PieChartReport />
+              </animated.div>
+              : ''
+            })
+          }
+          {
+            piechartHistoryTransition((style, item) => {
+              return item.piechartHistory ?
+              <animated.div style={style} className="main-content-animated-div">
+                <PieChartHistory />
+              </animated.div>
+              : ''
+            }) 
+          }
           </div>
         </div>
       </>
