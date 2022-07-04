@@ -6,15 +6,19 @@ import UserPrivacy from './components/UserPrivacy/UserPrivacy';
 import PieChartHistory from './components/PieChartHistory/PieChartHistory';
 import PieChartReport from './components/PieChartReport/PieChartReport';
 import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
+import Friends from './components/Friends/Friends';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
 import { ReactComponent as PlusIcon } from './components/assets/images/plus.svg';
 import { ReactComponent as PieChartIcon } from './components/assets/images/pie-chart.svg';
+import { ReactComponent as SearchIcon } from './components/assets/images/search.svg';
 import { useTransition, animated } from "react-spring";
 
 
 const App = () => {
+
+  // TODO: home is actually search
 
   const [isVisible, setIsVisible] = useState({
     user: true,
@@ -35,6 +39,7 @@ const App = () => {
     piechartSplitPay: false,
     piechartReport: false,
     piechartHistory: false,
+    searchUsers: false,
     slide: "27px"
   })
 
@@ -75,6 +80,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "27px"
         })
         break;
@@ -97,6 +103,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: true,
           slide: userNavSelection.slide
         })
         break;
@@ -119,6 +126,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: userNavSelection.slide
         })
         break;
@@ -141,6 +149,7 @@ const App = () => {
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "40px"
         })
         break;
@@ -162,6 +171,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: userNavSelection.slide
         })
         break;
@@ -206,7 +216,7 @@ const App = () => {
                 id="home-icon"
                 onClick={navHandleOnClick}
               >
-                <HomeIcon className={
+                <SearchIcon className={
                   isVisible.home ? 
                   'main-nav-icon icon-selected' : 
                   'main-nav-icon'
@@ -267,6 +277,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "214px"
         })
         break;
@@ -279,6 +290,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "410px"
         })
         break;
@@ -291,6 +303,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "27px"
         })
         break;
@@ -302,6 +315,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "27px"
         })
         break;
@@ -319,6 +333,7 @@ const App = () => {
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "40px"
         })
         break;
@@ -331,6 +346,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: true,
+          searchUsers: false,
           slide: "410px"
         })
         break;
@@ -343,6 +359,7 @@ const App = () => {
           piechartSplitPay: false,
           piechartReport: true,
           piechartHistory: false,
+          searchUsers: false,
           slide: "214px"
         })
         break;
@@ -354,6 +371,7 @@ const App = () => {
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
+          searchUsers: false,
           slide: "40px"
         })
         break;
@@ -415,14 +433,18 @@ const App = () => {
             {
               homeContentTranstion((style, item) => {
                 return item.home ? 
-                <animated.div style={style} id="test-content">Home Content</animated.div> : 
+                <animated.div style={style} id="test-content">
+                  Search Users
+                </animated.div> : 
                 ''
               })
             }
             {
               plusContentTransition((style, item) => {
                 return item.plus ? 
-                <animated.div style={style} id="test-content">Plus Content</animated.div> : 
+                <animated.div style={style} id="test-content">
+                  Plus Content
+                </animated.div> : 
                 ''
               })
             }
@@ -489,6 +511,8 @@ const App = () => {
   const piechartSplitPayTransition = useTransition(userNavSelection, fadeTransition);
   const piechartReportTransition = useTransition(userNavSelection, fadeTransition);
   const piechartHistoryTransition = useTransition(userNavSelection, fadeTransition);
+
+  const searchUsersTransition = useTransition(userNavSelection, fadeTransition);
 
   const goToTripScreenFromUserProfile = (string) => {
     console.log("Go to Trip Screen From User Profile Pressed " + string);
@@ -564,6 +588,15 @@ const App = () => {
               </animated.div>
               : ''
             }) 
+          }
+          {
+            searchUsersTransition((style, item) => {
+              return item.searchUsers ?
+              <animated.div style={style} className="main-content-animated-div">
+                <Friends />
+              </animated.div> 
+              : ''
+            })
           }
           </div>
         </div>
