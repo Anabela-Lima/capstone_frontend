@@ -1,26 +1,219 @@
 /* General CSS Page / Colour Design */
 
-@keyframes AnimateBG { 
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+
+#root {
+  height: 100vh;
+  background-color: #061E33;
+}
+
+.main-content-animated-div {
+  height: 100%;
+  width: 100%;
 }
 
 
-#background1 {
-    width: 100%;
-    height: 100%;
-    background-size: 300% 300%;
-    background-image: linear-gradient(
-          -45deg, 
-          #eb9331 0%, 
-          #ffc376 20%, 
-          #fbf1d6 47%, 
-          #d3f5fe 70%,
-          #48c4e3 100%
-    );  
-    animation: AnimateBG 20s ease infinite;
+/* MAIN NAVIGATION BAR */
+
+#main-nav-section {
+  position: absolute;
+  width: 100%;
+  bottom: 1.25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#just-another-container {
+  width: 90%;
+}
+
+#main-nav-container {
+  width: 100%;
+  height: 130px;
+  position: relative;
+}
+
+#visual-selector {
+  position: absolute;
+  width: 50px;
+  height: 0px;
+  background-color: #111B52;
+  top: 100px;
+  left: 108.875px;
+  border: 5px solid #111B52;
+  border-radius: 5px;
+  z-index: 1;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#main-nav-background {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: 
+  linear-gradient(
+    268.47deg,
+     #FFFFFF 29.45%,
+      rgba(255, 255, 255, 0.8) 95.46%
+  );
+  opacity: 0.7;
+  box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 45px;
+}
+
+#main-nav-icons-container {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 3.5%;
+}
+
+.moveable-container {
+  height: 60px;
+  width: 60px;
+  position: relative;
+}
+
+.icon-container {
+  position: absolute;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease-in-out 0s;
+  overflow: hidden;
+}
+
+.container-selected {
+  transform: translate(0px, -10px);
+}
+
+.main-nav-icon {
+  height: 100%;
+  width: 100%;
+  stroke: #535353;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.icon-selected {
+  bottom: 10px;
+  stroke: black;
+}
+/* MAIN NAVIGATION BAR */
+
+
+/* NAVIGATION BAR SPAWN */
+
+#secondary-nav-section {
+  position: absolute;
+  width: 100%;
+  bottom: calc(2% + 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#secondary-nav-control-container {
+  width: 65%;
+  position: relative;
+  transition: all 0.55s ease-in-out 0.5s;
+}
+
+#secondary-nav-background {
+  position: absolute;
+  height: inherit;
+  width: 100%;
+  background: 
+  linear-gradient(
+    268.47deg,
+     #FFFFFF 29.45%,
+      rgba(255, 255, 255, 0.8) 95.46%
+  );
+  opacity: 0.7;
+  box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 45px;
+}
+
+#secondary-nav-content-container {
+  position: absolute;
+  height: inherit;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#test-content {
+  font-size: 40px;
+  position: absolute;
+  width: 100%;
+}
+
+#user-nav-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.secondary-navigation-bar-text {
+  font-size: 40px;
+  z-index: 99;
+}
+
+.secondary-navigation-bar-text-container {
+  width: 110px;
+}
+
+#navigation-bar-selected {
+  position: absolute;
+  width: 200px;
+  height: 80%;
+  background: #FFFFFF;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.75s ease-in-out 0s;
+  z-index: -1;
+}
+
+
+/* NAVIGATION BAR SPAWN */
+
+
+
+/* MAIN CONTENT CONTAINER */
+
+#main-content-section {
+  position: absolute;
+  top: 2.5%;
+  width: 100vw;
+  height: 82vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+#main-content-container {
+  width: 90%;
+  height: inherit;
+}
+
+/* MAIN CONTENT CONTAINER */
+
 
 /* Nav Bar and Button Design */
 
