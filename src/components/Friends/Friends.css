@@ -1,0 +1,120 @@
+#headingUser{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#pUsername{
+    color: lightcyan;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#search-page-container{
+    height: 100%;
+    width: 100%;
+    display: list-item;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+
+#search-users-container {
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+#search-users-searchbox-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    background: 
+    linear-gradient(
+        264.58deg,
+         rgba(255, 255, 255, 0.15) 7.55%,
+          rgba(250, 250, 250, 0.05) 94.61%
+        );
+    opacity: 0.8;
+    backdrop-filter: blur(20px);
+    /* border: none; */
+}
+
+#search-users-searchbox {
+    position: absolute;
+    background: transparent;
+    border: none;
+    height: 100%;
+    width: 90%;
+    color: white;
+    font-size: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#search-users-searchbox-icon-container {
+    height: 80%;
+    width: 80px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-users-search-icon {
+    height: 50%;
+    width: 50%;
+}
+
+.search-user-image-container {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#users-list{
+    display: contents;
+}
+
+
+.user-image-style {
+    height: 100%;
+    width: auto;
+}
+
+.one-user {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    background: linear-gradient(264.58deg, rgba(255, 255, 255, 0.15) 6.52%, rgba(255, 255, 255, 0) 93.58%);
+    opacity: 0.8;
+    backdrop-filter: blur(20px);
+}
+
+#addFriendBtn{
+    font-family: 'Inter', sans-serif;
+    height: 60px;
+    font-size: 30px;
+    color: darkblue;
+    font-weight: bold;
+    padding-top: 0cm;
+    background: linear-gradient(268.47deg,
+    #FFFFFF 29.45%,
+    rgba(255, 255, 255, 0.8) 95.46%
+  );
+  border-radius: 20px;
+}
