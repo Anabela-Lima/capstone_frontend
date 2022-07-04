@@ -9,13 +9,9 @@ import { ReactComponent as CreditCardIcon } from '../../components/assets/images
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
 
-<<<<<<< HEAD
 import axios from 'axios';
 
-const UserProfile = () => {
-=======
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen}) => {
->>>>>>> origin/react-components-copy
 
 
   const [tripData, setTripData] = useState([]);
@@ -568,12 +564,8 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   }
 
   const tripCardsList = () => {
-<<<<<<< HEAD
     const tripList = tripInformation.map(data => {
-=======
-    const tripList = mockTripData.map(data => {
       const id = data.id;
->>>>>>> origin/react-components-copy
       return (
           <div 
             className="trip-section" 
