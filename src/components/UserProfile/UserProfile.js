@@ -9,6 +9,8 @@ import { ReactComponent as CreditCardIcon } from '../../components/assets/images
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
 
+import axios from 'axios';
+
 const UserProfile = () => {
 
   // const [slide, setSlide] = React.useState({
@@ -43,7 +45,6 @@ const UserProfile = () => {
   // }
 
   const [tripData, setTripData] = useState([]);
-  const [friendData, setFriendData] = useState([]);
 
   useEffect(() => {
     // Get trip and friend data here
@@ -53,6 +54,26 @@ const UserProfile = () => {
     setFriendData([])
 
   }, [])
+
+
+  const [tripInformation, setTripInformation] = useState([]);
+  const [friendData, setFriendData] = useState([]);
+
+  useEffect(() => { 
+    axios.get(`http://127.0.0.1:8080/user/trips`)
+    .then(response => {
+      const tripInfo = response.data;
+      setTripInformation(tripInfo);
+    })
+    .catch(err => console.log(err));
+  }, [tripInformation]);
+
+  useEffect(() => {
+    
+  }, [friendData]);
+
+
+
 
   const mockTripData = [
     {
@@ -196,7 +217,7 @@ const UserProfile = () => {
   }
 
   const tripCardsList = () => {
-    const tripList = mockTripData.map(data => {
+    const tripList = tripInformation.map(data => {
       return (
           <div className="trip-section" key={data.id}>
             <div className="trip-indicator">-</div>
@@ -207,7 +228,7 @@ const UserProfile = () => {
                   <div className="trip-card-layout-top-left">
                     <div className="trip-image-container">
                       <img 
-                        src={data.imgUrl}
+                        src={data.imgURL}
                         alt="" 
                         className="trip-image"
                       />
@@ -220,10 +241,12 @@ const UserProfile = () => {
                 </div>
                 <div className="trip-card-layout-bottom">
                   <div className="trip-card-layout-bottom-left">
-                    {attendeeIconsGenerator(data.attendees)}
+                    {attendeeIconsGenerator(data.tripAssignments.map(
+                      user => user.id
+                    ))}
                   </div>
                   <div className="trip-card-layout-bottom-right">
-                    {data.date}
+                    {data.startDate.substring(0,10)}
                   </div>
                 </div>
               </div>
