@@ -33,7 +33,7 @@ const App = () => {
   const handleEndDate = (event) => setEndDate(event.target.value);
 
   const createNewTrip = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     const options = {
       method: "POST",
     }
