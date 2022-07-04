@@ -52,6 +52,7 @@ const App = () => {
     .catch(err => console.log(err))
   };
 
+  // Sets which nav button is selected
   const [isVisible, setIsVisible] = useState({
     user: true,
     home: false,
@@ -59,11 +60,13 @@ const App = () => {
     pieChart: false
   })
 
+  // This controls the secondary nav bar's size- gray display sliding up
   const [visual, setVisual] = useState({
     slide: null,
     secondaryNavHeight: "75px"
   })
 
+  // decides what shows up on the main screen
   const [userNavSelection, setUserNavSelection] = useState({
     userProfile: true,
     userSocial: false,
@@ -221,6 +224,8 @@ const App = () => {
         break;
     }
   }
+
+  // html for main nav bar
 
   const mainNav = () => {
     return (
