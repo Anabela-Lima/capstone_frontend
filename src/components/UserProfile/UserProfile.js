@@ -43,8 +43,6 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   }, [friendData]);
 
 
-
-
   
   const mockTripData = [
     {
@@ -53,7 +51,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
       country: "Morocco",
       date: "2022-06-30",
       imgUrl: "https://www.mickeyshannon.com/photos/moraine-lake-sunrise-brilliance.jpg",
-      attendees: [1,2,3,4,5],
+      attendees: [2,3,4,5,6,17,18,19,20],
       activities: [
         {
           day: 1,
@@ -61,7 +59,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 235.00,
           category: "Food",
           imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/0f/14/c0/ed/roesti.jpg",
-          attendees: [1,2,3,4,5],
+          attendees: [2,3,4,5,18,19,20],
         },
         {
           day: 1,
@@ -69,7 +67,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 400.00,
           category: "Physical",
           imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/ec/e0/09.jpg",
-          attendees: [1,2,3,4]
+          attendees: [2,3,4,5,6,17,18]
         },
         {  
           day: 1,
@@ -77,14 +75,14 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 648.00,
           category: "Physical",
           imgUrl: "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/71/ea/a0.jpg",
-          attendees: [1,2,3,4,6],
+          attendees: [2,3,4,5,6,17,18,19,20],
         },
         { day: 1,
           name: "Agadir Day Trip To Legzira ",
           price: 350.00,
           category: "Physical",
           imgUrl: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/73/d2/54.jpg",
-          attendees: [1,2,3,4,5,6,8,10],
+          attendees: [2,3,4,5,6,17,18,19],
         },
         {
           day: 2,
@@ -92,7 +90,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 585.00,
           category: "Physical",
           imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/e8/d3/84.jpg",
-          attendees: [1,2,3,5,7]
+          attendees: [2,3,4,5,6,17,18,19,20]
         },
         {
           day: 2,
@@ -100,7 +98,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 200.00,
           category: "Food",
           imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/07/0a/87/c9/libzar.jp",
-          attendees: [1, 2,3,5,7,8,10]
+          attendees: [2,3,4,5,6]
         },
         {
           day: 2,
@@ -108,12 +106,11 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 900.00,
           category: "Entertainment",
           imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/71/23/18.jpg",
-          attendees: [1,2,3,4,5,6,7,9,10]
+          attendees: [2,3,4,5,6,17,18,19,20]
         }
 
-
-
       ]
+
     },
     {
       id: 2,
@@ -121,7 +118,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
       country: "Italy",
       date: "2022-07-30",
       imgUrl: "https://www.mickeyshannon.com/photos/maroon-bells-magic.jpg",
-      attendees: [1,2,3,4,5,6,7,8,9,10],
+      attendees: [0,1,7,8,9,10,11,12,13,14,15],
       activities: [
 
 
@@ -131,7 +128,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 250.45,
           category: "Physical",
           imgUrl: "https://images.musement.com/default/0001/20/pisa-siena-san-gimignano-and-chianti-day-tour-in-tuscany-with-typical-lunch_header-19719.jpeg?q=50&fit=crop&auto=format&w=1024&h=400",
-          attendees: [1,2,3,4,6,9]
+          attendees: [7,8,9,10,11,12,13,14,15]
         }
 
 
@@ -142,7 +139,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 648.00,
           imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/1c/2d/45/81/la-forchetta-d-oro.jpg",
           category: "Food",
-          attendees: [1,9,3,7,5,6],
+          attendees: [0,1,7,8,9,10,11,12,13,14,15],
 
         }
 
@@ -153,7 +150,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 350.00,
           category: "Food",
           imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/04/02/75/3f/ambrosia.jpg",
-          attendees: [1,9,4,7,5,6,10,],
+          attendees: [0,1,7,8,9,10,11,12,13],
 
         }
 
@@ -164,7 +161,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 150.50,
           category: "Food",
           imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/16/ba/3e/e7/esterno.jpg",
-          attendees: [1,2,3,4,5,6,7],
+          attendees: [0,1,7,8,9,10,11,12,13,14,15],
           
         }
         
@@ -174,7 +171,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price:  599.99,
           category: "Physical",
           imgUrl: "https://cdn.thecrazytourist.com/wp-content/uploads/2017/08/Valley-of-the-Temples.jpg",
-          attendees: [1,2,3,4,6,9,10]
+          attendees: [0,1,7,8,9,10,11,12]
         }
 
         ,{
@@ -183,7 +180,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 150,
           category: "Physical",
           imgUrl: "https://www.bikeadventures.co.uk/media/2014/10/tuscany.jpg",
-          attendees: [1,2,3,4,6,9,10]
+          attendees: [0,1,7,8,9,10,11,12,13,14,15]
         }
         
 
@@ -193,7 +190,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           price: 150,
           category: "Physical",
           imgUrl: "https://www.bikeadventures.co.uk/media/2014/10/tuscany.jpg",
-          attendees: [1,2,3,4,6,9,10]
+          attendees: [0,1,7,8,9,10,11,12,13]
         }
        
       ]
