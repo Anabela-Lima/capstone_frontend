@@ -367,28 +367,28 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
       activities: [
         {
           day: 1,
-          name: "",
-          price: 1000.00,
-          category: "Physical",
-          imgUrl: "",
-          attendees: [1,2,3,4,5,6,10,21,18,15,13],
+          name: "Tsukiji Hongwanji Temple",
+          price: 200.00,
+          category: "Entertainment",
+          imgUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-s/01/1b/97/75/bon-odori-at-tsukiji.jpg?w=600&h=-1&s=1",
+          attendees: [1,2,3,4,5,6,10,21,],
         },
         {
           day: 1,
-          name: "Ice Cave by Katla Volcano Super Jeep Tour from Vik",
+          name: "India Gate",
           price: 1800.00,
           category: "Physical",
-          imgUrl: "",
-          attendees: [1,2,3,4,6,8,10,12,16,19,20,21]
+          imgUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/dc/5a/af/india-gate-a-beautiful.jpg?w=1200&h=-1&s=1",
+          attendees: [1,2,3,4,6,8,10,12]
         },
        
         {
           day: 2,
-          name: "",
-          price: 4000.00,
+          name: "Chi Ni",
+          price: 1000.00,
           category: "",
-          imgUrl: "",
-          attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/9d/52/1d/dine-at-chi-ni-for-an.jpg",
+          attendees: [1,2,3,4,5,6,7,8,9,10,11]
         },
         {
           day: 2,
@@ -400,45 +400,46 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
         },
         {
           day: 2,
-          name: "Pakkhus Restaurant",
+          name: "",
           price: 950.00,
           category: "Food",
-          imgUrl: "",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/14/2d/91/33/club-honk.jpg",
           attendees: [1,2,3,4,5,6,10,11,12,13,14,15,16,17,19]
         }
 
        ,{
           day: 2,
-          name: "",
+          name: "Honk",
           price: 3000.00,
           category: "Entertainment",
-          imgUrl: "",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/14/2d/91/33/club-honk.jpg",
           attendees: [1, 2,3,4,5,6,7,8,10,11,15,17,19,20]
         },
         {
           day: 3,
-          name: "",
-          price: 3800.00,
-          category: "Entertainment",
-          imgUrl: "",
-          attendees: [1,2,3,6,10,11]
+          name: "DLF Promenade Mall",
+          price: 2800.00,
+          category: "Other",
+          imgUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/c9/ca/0e/dlf-promenade-mall.jpg?w=1200&h=-1&s=1",
+          attendees: [1,2,3,6,10,21]
         }
 
         ,{
           day: 3,
-          name: "Private G tour by jeep",
+          name: "All Inclusive Taj Mahal & Agra Fort Tour from Delhi by Express Train",
           price: 800,
-          category: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/93/7a/f2.jpg",
-          attendees: [1,2,3,4,5,6,7]
+          category: "Travel",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0e/57/b2/e2.jpg",
+          attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
         },
 
         {
           day: 3,
-          name: " Ultimate Iceland Ring Road Private Tour",
-          price: 9000.00,
+          name: "Private Day Tour to Haridwar and Rishikesh from Delhi",
+          price: 800.00,
           category: "Travel",
-          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/84/f1/ac.jpg",
-          attendees: [1,2,3,4,5,6,7,8,9,10,14,17]
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/c6/5c/2f.jpg",
+          attendees: [2,3,5,6,7,8,9,10]
         }
       ]   
     }
