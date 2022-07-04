@@ -477,13 +477,30 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
       imgUrl: ""
     },
     {
-      firstname: "Extra",
-      lastname: "Person",
+      firstname: "Ana",
+      lastname: "Lima",
       imgUrl: ""
     },
     {
-      firstname: "Extra",
-      lastname: "Person",
+      firstname: "Harry",
+      lastname: "Zhen",
+      imgUrl: ""
+    }
+
+    ,{
+      firstname: "Jenna",
+      lastname: "Vlahos",
+      imgUrl: ""
+    }
+
+    ,{
+      firstname: "Naeem",
+      lastname: "Khan",
+      imgUrl: ""
+    }
+    ,{
+      firstname: "Scott",
+      lastname: "Khan",
       imgUrl: ""
     }
   ]
