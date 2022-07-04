@@ -1,0 +1,584 @@
+/* General CSS Page / Colour Design */
+
+
+#root {
+  height: 100vh;
+  background-color: #061E33;
+}
+
+.main-content-animated-div {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* MAIN NAVIGATION BAR */
+
+#main-nav-section {
+  position: absolute;
+  width: 100%;
+  bottom: 1.25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#just-another-container {
+  width: 90%;
+}
+
+#main-nav-container {
+  width: 100%;
+  height: 130px;
+  position: relative;
+}
+
+#visual-selector {
+  position: absolute;
+  width: 50px;
+  height: 0px;
+  background-color: #111B52;
+  top: 100px;
+  left: 108.875px;
+  border: 5px solid #111B52;
+  border-radius: 5px;
+  z-index: 1;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#main-nav-background {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: 
+  linear-gradient(
+    268.47deg,
+     #FFFFFF 29.45%,
+      rgba(255, 255, 255, 0.8) 95.46%
+  );
+  opacity: 0.7;
+  box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 45px;
+}
+
+#main-nav-icons-container {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 3.5%;
+}
+
+.moveable-container {
+  height: 60px;
+  width: 60px;
+  position: relative;
+}
+
+.icon-container {
+  position: absolute;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease-in-out 0s;
+  overflow: hidden;
+}
+
+.container-selected {
+  transform: translate(0px, -10px);
+}
+
+.main-nav-icon {
+  height: 100%;
+  width: 100%;
+  stroke: #535353;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.icon-selected {
+  bottom: 10px;
+  stroke: black;
+}
+/* MAIN NAVIGATION BAR */
+
+
+/* NAVIGATION BAR SPAWN */
+
+#secondary-nav-section {
+  position: absolute;
+  width: 100%;
+  bottom: calc(2% + 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#secondary-nav-control-container {
+  width: 65%;
+  position: relative;
+  transition: all 0.55s ease-in-out 0.5s;
+}
+
+#secondary-nav-background {
+  position: absolute;
+  height: inherit;
+  width: 100%;
+  background: 
+  linear-gradient(
+    268.47deg,
+     #FFFFFF 29.45%,
+      rgba(255, 255, 255, 0.8) 95.46%
+  );
+  opacity: 0.7;
+  box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 45px;
+}
+
+#secondary-nav-content-container {
+  position: absolute;
+  height: inherit;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#test-content {
+  font-size: 40px;
+  position: absolute;
+  width: 100%;
+}
+
+#user-nav-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.secondary-navigation-bar-text {
+  font-size: 40px;
+  z-index: 99;
+}
+
+.secondary-navigation-bar-text-container {
+  width: 110px;
+}
+
+#navigation-bar-selected {
+  position: absolute;
+  width: 200px;
+  height: 80%;
+  background: #FFFFFF;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.75s ease-in-out 0s;
+  z-index: -1;
+}
+
+
+/* NAVIGATION BAR SPAWN */
+
+
+
+/* MAIN CONTENT CONTAINER */
+
+#main-content-section {
+  position: absolute;
+  top: 2.5%;
+  width: 100vw;
+  height: 82vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+#main-content-container {
+  width: 90%;
+  height: inherit;
+}
+
+/* MAIN CONTENT CONTAINER */
+
+
+/* Nav Bar and Button Design */
+
+button:hover{
+  border: 2px solid #0cdaf5;
+  background-color: rgba(365,365,365,0.5);
+  cursor: pointer;
+  color: darkblue;
+  opacity: .8;
+  transition: .3s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: transparent;
+}
+
+.buttonMenu{
+  /* text components */
+  color: darkblue;
+  font-size: 100px;
+  border-style: none;
+  border: none;
+  border-color: none;
+  /* format */
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  padding-top: 2%;
+  background-color: white;
+  background: none;
+}
+
+.buttonUser{
+/* background color */
+/* border */
+/* text components */
+color: darkblue;
+font-size: 100px;
+border-style: none;
+/* format */
+position: absolute;
+left: 25%;
+top: 10%;
+padding-top: 2%;
+background-color: transparent;
+}
+
+
+.buttonCreate{
+/* background color */
+/* border */
+/* text components */
+color: orange;
+font-size: 100px;
+border-style: none;
+/* format */
+position: absolute;
+height: 60%;
+left: 40%;
+right: 40%;
+top: 10%;
+padding-top: 2%;
+height: 80%;
+background-color: transparent;
+box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+border-radius: 20px 20px 20px 20px;
+}
+
+
+.buttonHome{
+color: darkblue;
+font-size: 100px;
+border-style: none;
+/* format */
+position: absolute;
+right: 25%;
+top: 10%;
+padding-top: 2%;
+background-color: transparent;
+}
+
+.buttonPie{
+/* text components */
+color: darkblue;
+font-size: 100px;
+width: auto;
+border-style: none;
+/* format */
+position: absolute;
+right: 10%;
+top: 10%;
+padding-top: 2%;
+background-color: transparent;
+}
+
+button:focus{
+  outline: darkblue;
+}
+
+.navBar{
+position: absolute;
+width: 100%;
+height: 10%;
+bottom: 0%;
+background-color: #fffff878;
+box-shadow: 0px -20px 100px -5px rgba(0, 0, 0, 0.25);
+border-radius: 20px 20px 0px 0px;
+}
+
+.header{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 40px;
+}
+
+.homeTitle{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 40px;
+}
+
+#homePara1{
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 30%;
+  padding-left: 15%;
+  padding-right: 15%;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: darkblue;
+}
+
+#homePara2{
+  position: relative;
+  flex-direction: column;
+  flex-wrap:wrap;
+  padding-left: 15%;
+  padding-right: 15%;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: darkblue;
+}
+
+#homePara3{
+  position: relative;
+  flex-direction: column;
+  flex-wrap:wrap;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 20%;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: darkblue;
+}
+
+.p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: darkblue;
+  font-size: large;
+}
+
+.homeHeader{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: darkblue;
+  display: inline-block;
+  font-size: xx-large;
+  justify-content: space-between;
+}
+
+#head1,#head2,#head3, #head4, #head5{
+  opacity: 0;
+}
+
+#head1{
+  -webkit-animation: fadeOut 1 5s ease-in;
+  -moz-animation: fadeOut 1 5s ease-in;
+  -o-animation: fadeOut 1 5s ease-in;
+  animation: fadeOut 1 5s ease-in;
+  color: darkblue;
+}
+
+#head2{
+  -webkit-animation: fadeOut 1 5s ease-in;
+  -moz-animation: fadeOut 1 5s ease-in;
+  -o-animation: fadeOut 1 5s ease-in;
+  animation: fadeOut 1 5s ease-in;
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  -o-animation-delay: 6s;
+  animation-delay: 6s;
+  color: darkblue;
+}
+
+#head3{
+  -webkit-animation: fadeOut 1 5s ease-in;
+  -moz-animation: fadeOut 1 5s ease-in;
+  -o-animation: fadeOut 1 5s ease-in;
+  animation: fadeOut 1 5s ease-in;
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  -o-animation-delay: 12s;
+  animation-delay: 12s;
+  color: darkblue;
+}
+
+#head4{
+  -webkit-animation: fadeOut 1 5s ease-in;
+  -moz-animation: fadeOut 1 5s ease-in;
+  -o-animation: fadeOut 1 5s ease-in;
+  animation: fadeOut 1 5s ease-in;
+  -webkit-animation-delay: 17s;
+  -moz-animation-delay: 17s;
+  -o-animation-delay: 17s;
+  animation-delay: 17s;
+  color: darkblue;
+}
+
+#head5{
+  -webkit-animation: finalFade 1 5s ease-in;
+  -moz-animation: finalFade 1 5s ease-in;
+  -o-animation: finalFade 1 5s ease-in;
+  animation: finalFade 1 5s ease-in;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 22s;
+  -moz-animation-delay: 22s;
+  -o-animation-delay: 22s;
+  animation-delay: 22s;
+  color: darkblue;
+}
+
+@-webkit-keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@-moz-keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@-o-keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 0;}
+}
+
+@-moz-keyframes fadeOut{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 0;}
+}
+
+@-o-keyframes fadeOut{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 0;}
+}
+
+@keyframes fadeOut{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 0;}
+}
+
+@-webkit-keyframes finalFade{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 1;}
+}
+
+@-moz-keyframes finalFade{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 1;}
+}
+
+@-o-keyframes finalFade{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 1;}
+}
+
+@keyframes finalFade{
+  0%{opacity: 0;}
+  30%{opacity: 1;}
+  80%{opacity: .9;}
+  100%{opacity: 1;}
+}
+
+#footer{
+  font-size: 1.2em;
+  color: darkblue;
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+
+.helpline{
+  display: grid;
+  justify-content: right;
+  font-size: large;
+  padding-left: 1cm;
+}
+
+.socials{
+  display: grid;
+  justify-content: center;
+  font-size: large;
+}
+  
+.Legalstuff{
+  display: grid;
+  justify-content: left;
+  padding-right: 1cm;
+  font-size: large;
+}
+
+.copyrights{
+    display: grid;
+    justify-content: center;
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    font-size: large;
+}
+
+.li{
+  list-style-type: none;
+}
+
+.ul{
+    list-style-type: none;
+}
