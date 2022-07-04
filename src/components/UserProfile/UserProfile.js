@@ -188,100 +188,259 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
         {
           day: 1,
           name: "Golden Circle & Glacier Snowmobiling Day Trip from Reykjavik",
-          price: 235,
+          price: 1000.00,
           category: "Physical",
-          imgUrl: "",
-          attendees: [1,2,3,4,5],
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/70/1c/17.jpg",
+          attendees: [1,2,3,4,5,6,10,21,18,15,13],
         },
         {
           day: 1,
-          name: "Peaky Blinders Tour",
-          price: 200,
+          name: "Ice Cave by Katla Volcano Super Jeep Tour from Vik",
+          price: 1800.00,
           category: "Physical",
-          imgUrl: "",
-          attendees: [1,2,3,4]
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0e/c4/81/53.jpg",
+          attendees: [1,2,3,4,6,8,10,12,16,19,20,21]
         },
        
         {
           day: 2,
-          name: "",
-          price: 1000,
+          name: "2hr Midnight Sun ATV Adventure from Reykjavik",
+          price: 4000.00,
           category: "",
           imgUrl: "",
-          attendees: [1,2,3]
+          attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]
         },
         {
           day: 2,
-          name: "",
-          price: 1000,
-          category: "",
-          imgUrl: "",
-          attendees: [1, 2]
+          name: "Tanginn",
+          price: 900.00,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/0f/61/d1/54/tanginn.jpg",
+          attendees: [1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20]
         },
         {
           day: 2,
-          name: "",
-          price: 200,
-          category: "",
-          imgUrl: "",
-          attendees: [1]
+          name: "Pakkhus Restaurant",
+          price: 950.00,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/1a/02/37/8c/pakkhus-restaurant.jpg",
+          attendees: [1,2,3,4,5,6,10,11,12,13,14,15,16,17,19]
         }
 
        ,{
           day: 2,
-          name: "",
-          price: 1000,
-          category: "",
-          imgUrl: "",
-          attendees: [1, 2]
+          name: "Combo: Active Volcano Guided Geldingadalur Hike and the Reykjanes Peninsula",
+          price: 3000.00,
+          category: "Entertainment",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/e4/38/8c.jpg",
+          attendees: [1, 2,3,4,5,6,7,8,10,11,15,17,19,20]
         },
         {
           day: 3,
-          name: "",
-          price: 200,
-          category: "",
-          imgUrl: "",
-          attendees: [1]
+          name: "Blue Lagoon & Reykjavík Sightseeing",
+          price: 3800.00,
+          category: "Entertainment",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/25/01/df.jpg",
+          attendees: [1,2,3,6,10,11]
         }
 
         ,{
           day: 3,
-          name: "",
-          price: 1000,
-          category: "",
-          attendees: [1, 2]
+          name: "Private G tour by jeep",
+          price: 800,
+          category: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/93/7a/f2.jpg",
+          attendees: [1,2,3,4,5,6,7]
         },
+
         {
           day: 3,
-          name: "",
-          price: 200,
-          category: "",
-          imgUrl: "",
-          attendees: [1]
+          name: " Ultimate Iceland Ring Road Private Tour",
+          price: 9000.00,
+          category: "Travel",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/84/f1/ac.jpg",
+          attendees: [1,2,3,4,5,6,7,8,9,10,14,17]
         }
-
-
-
-
-      ]
-
-      
+      ]   
     },
+
+    //-----------------------------
     {
       id: 4,
       name: "More Trips",
       country: "Japan",
       date: "2022-09-26",
       imgUrl: "https://www.mickeyshannon.com/photos/mount-sneffels-majesty.jpg",
-      attendees: [1, 2]
+      attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20],
+      activities: [
+        {
+          day: 1,
+          name: "Han no Daidokoro Kadochika",
+          price: 730,
+          category: "Physical",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/12/cf/f3/47/beef-on-the-bbq.jpg",
+          attendees: [1,2,3,4,5,6,10,21,18,15,13],
+        },
+        {
+          day: 1,
+          name: "Tokyo Private Chauffeur Driving Sightseeing Tour - English Speaking Driver",
+          price: 1200.00,
+          category: "Entertainment",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/0e/b9/79.jpg",
+          attendees: [1,2,3,4,6,8,10,12,16,19,20,21]
+        },
+       
+        {
+          day: 2,
+          name: "Geisha Experience at Chaya in Tokyo",
+          price: 1000.00,
+          category: "Entertainment",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/81/30/0e.jpg",
+          attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]
+        },
+        {
+          day: 2,
+          name: "Gyopao Gyoza Shinjuku",
+          price: 780.00,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-s/1b/e3/b4/a1/caption.jpg",
+          attendees: [1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        },
+        {
+          day: 2,
+          name: "",
+          price: 950.00,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/photo-o/0d/53/b6/45/bistro.jpg",
+          attendees: [1,2,3,4,5,6,10,11,12,13,14,15,16,17,19]
+        }
+
+       ,{
+          day: 2,
+          name: "Cherry Blossom Private Tour",
+          price: 382.10,
+          category: "Physical",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0d/b5/26/25.jpg",
+          attendees: [1, 2,3,4,5,6,7,8,10,11,15,17,19,20]
+        },
+        {
+          day: 3,
+          name: "Japanese Whisky Tasting in Tokyo",
+          price: 580.90,
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0c/0d/8d/44.jpg",
+          attendees: [1,2,3,6,10,11,15,19,21]
+        }
+
+        ,{
+          day: 3,
+          name: "Ebisu Local Food Tour: Shibuya's Most Popular Neighborhood",
+          price: 830.00,
+          category: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/22/bf/b6.jpg",
+          attendees: [1,2,3,4,5,6,7]
+        },
+
+        {
+          day: 3,
+          name: "Meiji Shrine Imperial Garden",
+          price: 1000.00,
+          category: "Travel",
+          imgUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/44/05/cd/photo6jpg.jpg?w=1200&h=1200&s=1",
+          attendees: [1,2,3,4,5,6,7,8,9,10,14,17]
+        }
+
+      ]
+
     },
+
+
+
+
+    //--------
+
     {
       id: 5,
       name: "Yay Trips",
       country: "India",
       date: "2022-12-21",
       imgUrl: "https://www.mickeyshannon.com/photos/light-on-the-cliffs-of-the-napali-coast-kauai.jpg",
-      attendees: [1,2,3,4]
+      attendees: [1,2,3,4],
+      activities: [
+        {
+          day: 1,
+          name: "",
+          price: 1000.00,
+          category: "Physical",
+          imgUrl: "",
+          attendees: [1,2,3,4,5,6,10,21,18,15,13],
+        },
+        {
+          day: 1,
+          name: "Ice Cave by Katla Volcano Super Jeep Tour from Vik",
+          price: 1800.00,
+          category: "Physical",
+          imgUrl: "",
+          attendees: [1,2,3,4,6,8,10,12,16,19,20,21]
+        },
+       
+        {
+          day: 2,
+          name: "",
+          price: 4000.00,
+          category: "",
+          imgUrl: "",
+          attendees: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]
+        },
+        {
+          day: 2,
+          name: "Tanginn",
+          price: 900.00,
+          category: "Food",
+          imgUrl: "",
+          attendees: [1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20]
+        },
+        {
+          day: 2,
+          name: "Pakkhus Restaurant",
+          price: 950.00,
+          category: "Food",
+          imgUrl: "",
+          attendees: [1,2,3,4,5,6,10,11,12,13,14,15,16,17,19]
+        }
+
+       ,{
+          day: 2,
+          name: "",
+          price: 3000.00,
+          category: "Entertainment",
+          imgUrl: "",
+          attendees: [1, 2,3,4,5,6,7,8,10,11,15,17,19,20]
+        },
+        {
+          day: 3,
+          name: "",
+          price: 3800.00,
+          category: "Entertainment",
+          imgUrl: "",
+          attendees: [1,2,3,6,10,11]
+        }
+
+        ,{
+          day: 3,
+          name: "Private G tour by jeep",
+          price: 800,
+          category: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/93/7a/f2.jpg",
+          attendees: [1,2,3,4,5,6,7]
+        },
+
+        {
+          day: 3,
+          name: " Ultimate Iceland Ring Road Private Tour",
+          price: 9000.00,
+          category: "Travel",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/84/f1/ac.jpg",
+          attendees: [1,2,3,4,5,6,7,8,9,10,14,17]
+        }
+      ]   
     }
   ]
 
