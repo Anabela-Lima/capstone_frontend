@@ -43,8 +43,6 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   }, [friendData]);
 
 
-
-
   
   const mockTripData = [
     {
@@ -508,6 +506,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
       imgUrl: ""
     }
   ]
+
   const [isVisible, setIsVisible] = useState({
     activity: true,
     media: false,
@@ -564,7 +563,8 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   }
 
   const tripCardsList = () => {
-    const tripList = tripInformation.map(data => {
+    const tripList = mockTripData.map(data => {
+    // const tripList = tripInformation.map(data => {
       const id = data.id;
       return (
           <div 
@@ -582,7 +582,8 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
                   <div className="trip-card-layout-top-left">
                     <div className="trip-image-container">
                       <img 
-                        src={data.imgURL}
+                        // src={data.imgURL}
+                        src={data.imgUrl}
                         alt="" 
                         className="trip-image"
                       />
@@ -595,12 +596,16 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
                 </div>
                 <div className="trip-card-layout-bottom">
                   <div className="trip-card-layout-bottom-left">
-                    {attendeeIconsGenerator(data.tripAssignments.map(
+                    {/* {attendeeIconsGenerator(data.tripAssignments.map(
                       user => user.id
-                    ))}
+                    ))} */}
+                    {
+                      attendeeIconsGenerator(data.attendees)
+                    }
                   </div>
                   <div className="trip-card-layout-bottom-right">
-                    {data.startDate.substring(0,10)}
+                    {/* {data.startDate.substring(0,10)} */}
+                    {data.date}
                   </div>
                 </div>
               </div>
