@@ -508,6 +508,8 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
       imgUrl: ""
     }
   ]
+
+  
   const [isVisible, setIsVisible] = useState({
     activity: true,
     media: false,
