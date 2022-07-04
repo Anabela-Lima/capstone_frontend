@@ -30,7 +30,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   const [friendData, setFriendData] = useState([]);
 
   useEffect(() => { 
-    axios.get(`http://127.0.0.1:8080/user/trips`)
+    axios.get(`http://localhost:8080/user/trips`)
     .then(response => {
       const tripInfo = response.data;
       setTripInformation(tripInfo);
