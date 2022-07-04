@@ -12,21 +12,21 @@ function NavBar() {
 
     return(
         <>
-        <div className="navBar">
-        <Link to="/Trips">
-        <button className="buttonMenu" type="submit"><FiMenu/></button>
-        </Link>
-        <Link to="/LogIn">
-        <button className="buttonUser" type="submit"><FiUser/></button>
-        </Link>
-        <button className="buttonCreate" type="submit"><BsPlusCircleFill/></button>
-        <Link to="/Home">
-        <button className="buttonHome" type="submit"><BiHomeAlt/></button>
-        </Link>
-        <Link to="/Spend">
-        <button className="buttonPie" type="submit"><FiPieChart/></button>
-        </Link>
-        </div>
+            <div className="navBar">
+                <Link to="/Trips">
+                <button className="buttonMenu" type="submit"><FiMenu/></button>
+                </Link>
+                <Link to="/Friends">
+                <button className="buttonUser" type="submit"><FiUser/></button>
+                </Link>
+                <button className="buttonCreate" type="submit"><BsPlusCircleFill/></button>
+                <Link to="/Home">
+                <button className="buttonHome" type="submit"><BiHomeAlt/></button>
+                </Link>
+                <Link to="/Spend">
+                <button className="buttonPie" type="submit"><FiPieChart/></button>
+                </Link>
+            </div>
         </>
     );
 }
