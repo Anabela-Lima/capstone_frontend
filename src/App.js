@@ -40,6 +40,8 @@ const App = () => {
     piechartReport: false,
     piechartHistory: false,
     searchUsers: false,
+    searchSupport: false,
+    searchReport: false,
     slide: "27px"
   })
 
@@ -81,6 +83,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "27px"
         })
         break;
@@ -104,7 +108,9 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: true,
-          slide: userNavSelection.slide
+          searchSupport: false,
+          searchReport: false,
+          slide: '30px'
         })
         break;
       case parentElements.includes('plus-icon'):
@@ -127,6 +133,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: userNavSelection.slide
         })
         break;
@@ -150,6 +158,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "40px"
         })
         break;
@@ -172,6 +182,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: userNavSelection.slide
         })
         break;
@@ -278,6 +290,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "214px"
         })
         break;
@@ -291,6 +305,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "410px"
         })
         break;
@@ -298,12 +314,14 @@ const App = () => {
         if (userNavSelection.userProfile) break;
         setUserNavSelection({
           userProfile: true,
-          userSocial: false,  
+          userSocial: false,
           userPrivacy: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "27px"
         })
         break;
@@ -316,6 +334,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "27px"
         })
         break;
@@ -334,6 +354,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "40px"
         })
         break;
@@ -347,6 +369,8 @@ const App = () => {
           piechartReport: false,
           piechartHistory: true,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "410px"
         })
         break;
@@ -360,6 +384,8 @@ const App = () => {
           piechartReport: true,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
           slide: "214px"
         })
         break;
@@ -372,6 +398,72 @@ const App = () => {
           piechartReport: false,
           piechartHistory: false,
           searchUsers: false,
+          searchSupport: false,
+          searchReport: false,
+          slide: "40px"
+        })
+        break;
+    }
+  }
+
+  const searchSecondaryNavHandleOnClick = (e) => {
+    switch(e.target.id){
+      case "search-nav-search":
+        if (userNavSelection.searchUsers) break;
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
+          searchUsers: true,
+          searchSupport: false,
+          searchReport: false,
+          slide: "30px"
+        })
+        break;
+      case "search-nav-report":
+        if (userNavSelection.searchReport) break;
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
+          searchUsers: false,
+          searchSupport: false,
+          searchReport: true,
+          slide: "214px"
+        })
+        break;
+      case "search-nav-support":
+        if (userNavSelection.searchSupport) break;
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
+          searchUsers: false,
+          searchSupport: true,
+          searchReport: false,
+          slide: "410px"
+        })
+        break;
+      default:
+        setUserNavSelection({
+          userProfile: false,
+          userSocial: false,
+          userPrivacy: false,
+          piechartSplitPay: false,
+          piechartReport: false,
+          piechartHistory: false,
+          searchUsers: true,
+          searchSupport: false,
+          searchReport: false,
           slide: "40px"
         })
         break;
@@ -433,8 +525,35 @@ const App = () => {
             {
               homeContentTranstion((style, item) => {
                 return item.home ? 
-                <animated.div style={style} id="test-content">
-                  Search Users
+                <animated.div style={style} id="user-nav-content">
+                  <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div>
+                      <div 
+                        className="secondary-navigation-bar-text-container" 
+                        onClick={searchSecondaryNavHandleOnClick}
+                      >
+                        <span 
+                          className="secondary-navigation-bar-text"
+                          id="search-nav-search" 
+                        >Search</span>
+                      </div>
+                      <div 
+                        className="secondary-navigation-bar-text-container"
+                        onClick={searchSecondaryNavHandleOnClick}
+                      >
+                        <span 
+                          className="secondary-navigation-bar-text" 
+                          id="search-nav-report" 
+                        >Report</span>
+                      </div>
+                      <div 
+                        className="secondary-navigation-bar-text-container"
+                        onClick={searchSecondaryNavHandleOnClick}
+                      >
+                        <span 
+                          className="secondary-navigation-bar-text" 
+                          id="search-nav-support"
+                        >Support</span>
+                    </div>
                 </animated.div> : 
                 ''
               })
@@ -513,6 +632,8 @@ const App = () => {
   const piechartHistoryTransition = useTransition(userNavSelection, fadeTransition);
 
   const searchUsersTransition = useTransition(userNavSelection, fadeTransition);
+  const searchReportTransition = useTransition(userNavSelection, fadeTransition);
+  const searchSupportTransition = useTransition(userNavSelection, fadeTransition);
 
   const goToTripScreenFromUserProfile = (string) => {
     console.log("Go to Trip Screen From User Profile Pressed " + string);
@@ -532,6 +653,8 @@ const App = () => {
       <>
         <div id="main-content-section">
           <div id="main-content-container">
+
+          {/* USER SCREEN ------------------------------------------------------------------------------------------------ */}
           {
             userProfileTransition((style, item) => {
               return item.userProfile ? 
@@ -562,6 +685,10 @@ const App = () => {
               : ''
             })
           }
+          {/* USER SCREEN ------------------------------------------------------------------------------------------------ */}
+
+
+          {/* PIECHART SCREEN ------------------------------------------------------------------------------------------------ */}
           {
             piechartSplitPayTransition((style, item) => {
               return item.piechartSplitPay ?
@@ -589,6 +716,9 @@ const App = () => {
               : ''
             }) 
           }
+          {/* PIECHART SCREEN ------------------------------------------------------------------------------------------------ */}
+
+          {/* MAGNIFIER SCREEN ------------------------------------------------------------------------------------------------ */}
           {
             searchUsersTransition((style, item) => {
               return item.searchUsers ?
@@ -598,6 +728,25 @@ const App = () => {
               : ''
             })
           }
+          {
+            searchReportTransition((style, item) => {
+              return item.searchReport ?
+              <animated.div style={style} className="main-content-animated-div">
+                SEARCH REPORT
+              </animated.div> : ''
+            }) 
+          }
+          {
+            searchSupportTransition((style, item) => {
+              return item.searchSupport ?
+              <animated.div style={style} className="main-content-animate-div">
+                SEARCH SUPPORT
+              </animated.div> : ''
+            })
+          }
+          {/* MAGNIFIER SCREEN ------------------------------------------------------------------------------------------------ */}
+
+
           </div>
         </div>
       </>
