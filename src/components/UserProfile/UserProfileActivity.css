@@ -310,11 +310,12 @@
 .friend-section-friend-image-container {
     height: 100%;
     width: 150px;
+    border-radius: 50%;
     background-color: hotpink;
 }
 
 .friend-section-friend-image {
-
+    height: 150px;
 }
 
 .friend-section-friend-name {
