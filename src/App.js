@@ -14,7 +14,6 @@ import { ReactComponent as HomeIcon } from './components/assets/images/home.svg'
 import { ReactComponent as PlusIcon } from './components/assets/images/plus.svg';
 import { ReactComponent as PieChartIcon } from './components/assets/images/pie-chart.svg';
 import { ReactComponent as SearchIcon } from './components/assets/images/search.svg';
-import { useTransition, animated } from "react-spring";
 
 
 const App = () => {
