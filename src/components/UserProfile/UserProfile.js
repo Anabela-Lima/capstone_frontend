@@ -29,6 +29,9 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   const [tripInformation, setTripInformation] = useState([]);
   const [friendData, setFriendData] = useState([]);
 
+
+  const mockLoggedInAsID = 8;
+
   useEffect(() => { 
     axios.get(`http://127.0.0.1:8080/user/trips`)
     .then(response => {
@@ -39,13 +42,13 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   }, [tripInformation]);
 
   useEffect(() => {
-    
+    axios.get(`http://localhost:8080/friend/friendsByID?userID=${mockLoggedInAsID}`)
+    .then(response => {
+      const friendData = response.data;
+      setFriendData(friendData);
+    })
   }, [friendData]);
 
-
-
-
-  
   const mockTripData = [
     {
       id: 1,
@@ -618,13 +621,15 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
 
   const friendsCardsList = () => {
 
-    const friendsList = mockFriendData.map(data => {
+    const friendsList = friendData.map(data => {
       return (
         <div className="friend-section">
           <div className="friend-section-background"></div>
           <div className="friend-section-top-content">
-            <div className="friend-section-friend-image-container">
-              <img src="" alt="" className="friend-section-friend-image"/>
+            <div className="friend-section-friend-image-container"
+            style={{overflow: 'hidden'}}>
+              <img src={data.imgURL} alt="" className="friend-section-friend-image"
+              />
             </div>
             <div className="friend-section-friend-name">{data.firstname} {data.lastname}</div>
             <div className="friend-section-friend-buttons">
@@ -750,7 +755,6 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   return (
     <>
       <div id="main-page-container"> 
-
         <div id="user-profile-container">
           <div id="green-circle"></div>
           <div id="blue-circle"></div>
