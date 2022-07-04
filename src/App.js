@@ -6,6 +6,7 @@ import UserPrivacy from './components/UserPrivacy/UserPrivacy';
 import PieChartHistory from './components/PieChartHistory/PieChartHistory';
 import PieChartReport from './components/PieChartReport/PieChartReport';
 import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
+import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
 import { ReactComponent as PlusIcon } from './components/assets/images/plus.svg';
