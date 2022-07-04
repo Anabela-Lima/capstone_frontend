@@ -1,20 +1,16 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import { useTransition, animated } from 'react-spring';
 import UserProfile from './components/UserProfile/UserProfile';
 import UserSocial from './components/UserSocial/UserSocial';
 import UserPrivacy from './components/UserPrivacy/UserPrivacy';
 import PieChartHistory from './components/PieChartHistory/PieChartHistory';
 import PieChartReport from './components/PieChartReport/PieChartReport';
 import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
-import MainCarousel from './components/MainCarousel/MainCarousel';
-<<<<<<< HEAD
-import Friends from './components/Friends/Friends';
-=======
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
 import { ReactComponent as PlusIcon } from './components/assets/images/plus.svg';
 import { ReactComponent as PieChartIcon } from './components/assets/images/pie-chart.svg';
+import { useTransition, animated } from "react-spring";
 
 
 const App = () => {
@@ -573,27 +569,14 @@ const App = () => {
       </>
     )
   }
->>>>>>> 845f0796818c646331907f39844835b1dbe6b715
 
   return (
     <>
-<<<<<<< HEAD
-      <BrowserRouter>
-        <Routes>
-          <Route path="/LogIn" element={<LogIn />} />
-          <Route path="/Home" element={<Home/>} />
-          <Route path="/Register" element={<MainCarousel />} />
-          <Route path="/" element={<Landing />} />
-          <Route path="/Friends" element={<Friends />} />
-        </Routes>
-      </BrowserRouter>
-=======
       {/* <MainCarousel /> */}
       {/* <MainPage /> */}
       {mainContentSection()}
       {secondaryNav()}
       {mainNav()}
->>>>>>> 845f0796818c646331907f39844835b1dbe6b715
     </>
   );
 }
