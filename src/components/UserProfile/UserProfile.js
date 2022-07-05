@@ -9,40 +9,7 @@ import { ReactComponent as CreditCardIcon } from '../../components/assets/images
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
 
-import axios from 'axios';
-
-const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen}) => {
-
-  const mockLoggedInAsID = 9;
-
-  const [userLoggedInDetails, setUserLoggedInDetails] = useState({});
-  const [tripInformation, setTripInformation] = useState([]);
-  const [friendData, setFriendData] = useState([]);
-
-  useEffect(() => {
-    axios.get(`http://127.0.0.1:8080/user/getUserByID?userID=${mockLoggedInAsID}`)
-    .then(response => {
-      const userInfo = response.data;
-      setUserLoggedInDetails(userInfo);
-    })
-  }, []);
-
-  useEffect(() => { 
-    axios.get(`http://localhost:8080/user/tripsByUser?userID=${mockLoggedInAsID}`)
-    .then(response => {
-      const tripInfo = response.data;
-      setTripInformation(tripInfo);
-    })
-    .catch(err => console.log(err));
-  }, [tripInformation]);
-
-  useEffect(() => {
-    axios.get(`http://localhost:8080/friend/friendsByID?userID=${mockLoggedInAsID}`)
-    .then(response => {
-      const friendData = response.data;
-      setFriendData(friendData);
-    })
-  }, [friendData]);
+const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen, userLoggedInDetails, tripInformation, friendData}) => {
 
   const mockTripData = [
     {
