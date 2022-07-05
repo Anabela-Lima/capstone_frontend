@@ -36,25 +36,20 @@ const UserPrivacy = () => {
       </div>
 
       </div>
-      
-
-
       <div id= "instaSection1">
-     
       <div id = "instaSection2" className = "segment">  
-        <InstaIcon className = "icon" id="instaIcon"/>  <span className= "mainText">Ayana Zhen</span> 
+        <InstaIcon className = "icon" id="instaIcon"/>  <span className= "mainText">@AyanaZhen</span> 
         <div id= "instaCircleRight" className='circlesRight'> </div> 
         <div id= "instaCircleLeft" className='circlesLeft'> </div> 
         <CheckIcon  className = "icon checkIcon" id="instaCheckIcon"/>
       </div>
-
       </div>
       
 
       <div id= "LinkedInSection1">
-     
+
       <div id = "LinkedInSection2" className = "segment">  
-        <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span className= "mainText">LinkedIn</span> 
+        <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span className= "mainText">Ayana Zhen</span> 
         <div id= "instaCircleRight" className='circlesRight'> </div> 
         <div id= "instaCircleLeft" className='circlesLeft'> </div> 
         <CheckIcon  className = "icon checkIcon" id="linkedInCheckIcon"/>
@@ -103,14 +98,7 @@ const UserPrivacy = () => {
       <section id= "buttonSection">
         <button id= "saveBtn"> <span id= "saveBtnText"> Save </span> </button>
       </section>
-     
-
     
-    
-
-
-
-
  
 
     </section>
