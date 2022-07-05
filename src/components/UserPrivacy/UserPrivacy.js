@@ -16,17 +16,44 @@ const UserPrivacy = () => {
 // on change text  
 
 const [isEditing, setIsEditing] = useState(false) ;  // use state (changes state of something)  with initial value= (so isEditing will have an initial value of false), returns an array of 2 elements: isEditing is our state, then we setIsEditing is what allows us to update the isEditing
-
-
+const [isEditing1, setIsEditing1] = useState(false) ;
+const [isEditing2, setIsEditing2] = useState(false) ;
+const [isEditing3, setIsEditing3] = useState(false) ;
+const [isEditing4, setIsEditing4] = useState(false) ;
 // changeIcon
 
 
 const changeIcon = () => {
+
   // alert("Field has been changed")
   setIsEditing(true)
   setTimeout(() => {
     setIsEditing(false)
   }, 1000)
+  
+}
+
+
+const changeIcon1 = () => {
+
+  // alert("Field has been changed")
+  setIsEditing1(true)
+  setTimeout(() => {
+    setIsEditing1(false)
+  }, 1000)
+  
+}
+
+
+
+const changeIcon2 = () => {
+
+  // alert("Field has been changed")
+  setIsEditing2(true)
+  setTimeout(() => {
+    setIsEditing2(false)
+  }, 1000)
+  
 }
 
 
@@ -42,7 +69,6 @@ const changeIcon = () => {
 
   
       <div id= "twitterSection1">
-     
       <div id = "twitterSection2" className = "segment">  
         <TwitterIcon  className = "icon" id="twitterIcon"/> 
         <span id= "twitterTag" contentEditable="true" onInput={changeIcon} className= "mainText"> @Ayana85 </span>
@@ -54,27 +80,43 @@ const changeIcon = () => {
             :  // else return 
             <CheckIcon className = "icon checkIcon" id="twitterCheckIcon"/>
         }
-        {/* <Edit className = "icon checkIcon" id="twitterCheckIcon"/> */}
+  
       </div>
 
       </div>
       <div id= "instaSection1">
       <div id = "instaSection2" className = "segment">  
-        <InstaIcon className = "icon" id="instaIcon"/><span className= "mainText">@AyanaZhen</span> 
+        <InstaIcon className = "icon" id="instaIcon"/>
+        <span contentEditable= "true" onInput= {changeIcon1} className= "mainText">@AyanaZhen</span> 
         <div id= "instaCircleRight" className='circlesRight'> </div> 
         <div id= "instaCircleLeft" className='circlesLeft'> </div> 
-        <CheckIcon  className = "icon checkIcon" id="instaCheckIcon"/>
+
+        {
+            isEditing1 ?  // if is edtiting is true return:
+            <Edit className = "icon checkIcon" id="twitterCheckIcon"/>
+            :  // else return 
+            <CheckIcon className = "icon checkIcon" id="twitterCheckIcon"/>
+        }
+
+
       </div>
+        
       </div>
       
 
       <div id= "LinkedInSection1">
 
       <div id = "LinkedInSection2" className = "segment">  
-        <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span className= "mainText">Ayana Zhen</span> 
+        <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span contentEditable= "true" onInput= {changeIcon2}  className= "mainText">Ayana Zhen</span> 
         <div id= "instaCircleRight" className='circlesRight'> </div> 
         <div id= "instaCircleLeft" className='circlesLeft'> </div> 
-        <CheckIcon  className = "icon checkIcon" id="linkedInCheckIcon"/>
+        {
+            isEditing2 ?  // if is edtiting is true return:
+            <Edit className = "icon checkIcon" id="twitterCheckIcon"/>
+            :  // else return 
+            <CheckIcon className = "icon checkIcon" id="twitterCheckIcon"/>
+        }
+  
       </div>
 
       </div>
@@ -83,7 +125,7 @@ const changeIcon = () => {
       <div id= "chain1Section1">
      
       <div id = "chain1Section2" className = "segment">  
-        <Chain  className = "icon" id="chain1Icon"/><span className= "mainText">Link Account</span>  
+        <Chain  className = "icon" id="chain1Icon"/><span className= "mainText"> NoCap-Finance</span>  
         <div id= "chain1CircleRight" className='circlesRight'> </div> 
         <div id= "chain1CircleLeft" className='circlesLeft'> </div> 
         <CheckIcon  className = "icon checkIcon" id="chain1CheckIcon"/>
