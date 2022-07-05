@@ -1,18 +1,33 @@
 import React from 'react'
 import './UserPrivacy.css'
+import { useState } from "react";
 import { ReactComponent as TwitterIcon } from '../../components/assets/images/twitter (1).svg'
 import { ReactComponent as LinkedInIcon } from '../../components/assets/images/linkedin.svg'
 import { ReactComponent as InstaIcon } from '../../components/assets/images/instagram.svg'
 import { ReactComponent as Chain } from '../../components/assets/images/link.svg'
 import { ReactComponent as CheckIcon } from '../../components/assets/images/check.svg'
 import { ReactComponent as ChevronRight } from '../../components/assets/images/chevron-right.svg'
-
-
-
+import { ReactComponent as Edit } from '../../components/assets/images/edit.svg'
 
 
 
 const UserPrivacy = () => {
+
+// on change text  
+
+const [isEditing, setIsEditing] = useState(false) ;  // use state (changes state of something)  with initial value= (so isEditing will have an initial value of false), returns an array of 2 elements: isEditing is our state, then we setIsEditing is what allows us to update the isEditing
+
+
+// changeIcon
+
+
+const changeIcon = () => {
+  // alert("Field has been changed")
+  setIsEditing(true)
+  setTimeout(() => {
+    setIsEditing(false)
+  }, 1000)
+}
 
 
 
@@ -29,16 +44,23 @@ const UserPrivacy = () => {
       <div id= "twitterSection1">
      
       <div id = "twitterSection2" className = "segment">  
-        <TwitterIcon  className = "icon" id="twitterIcon"/> <span className= "mainText"> @Ayana85 </span>
+        <TwitterIcon  className = "icon" id="twitterIcon"/> 
+        <span id= "twitterTag" contentEditable="true" onInput={changeIcon} className= "mainText"> @Ayana85 </span>
         <div id= "twitterCircleRight" className='circlesRight'> </div> 
         <div id= "twitterCircleLeft" className='circlesLeft'> </div> 
-        <CheckIcon  className = "icon checkIcon" id="twitterCheckIcon"/>
+        {
+            isEditing ?  // if is edtiting is true return:
+            <Edit className = "icon checkIcon" id="twitterCheckIcon"/>
+            :  // else return 
+            <CheckIcon className = "icon checkIcon" id="twitterCheckIcon"/>
+        }
+        {/* <Edit className = "icon checkIcon" id="twitterCheckIcon"/> */}
       </div>
 
       </div>
       <div id= "instaSection1">
       <div id = "instaSection2" className = "segment">  
-        <InstaIcon className = "icon" id="instaIcon"/>  <span className= "mainText">@AyanaZhen</span> 
+        <InstaIcon className = "icon" id="instaIcon"/><span className= "mainText">@AyanaZhen</span> 
         <div id= "instaCircleRight" className='circlesRight'> </div> 
         <div id= "instaCircleLeft" className='circlesLeft'> </div> 
         <CheckIcon  className = "icon checkIcon" id="instaCheckIcon"/>
