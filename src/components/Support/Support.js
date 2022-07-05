@@ -41,6 +41,7 @@ const Support = () => {
                 <div id="line2"></div>
             </div>
             <div id="faq-list">
+
             <Accordion id="accordionContent">
                 <AccordionSummary
                     expandIcon={<ExpandCircleDown id="expand-circle"/>}
@@ -56,6 +57,7 @@ const Support = () => {
                     </div>
                 </AccordionDetails>
             </Accordion>
+
             <Accordion id="accordionContent">
                 <AccordionSummary
                     expandIcon={<ExpandCircleDown id="expand-circle"/>}
@@ -71,6 +73,7 @@ const Support = () => {
                     </div>
                 </AccordionDetails>
             </Accordion>
+
             <Accordion id="accordionContent">
                 <AccordionSummary
                     expandIcon={<ExpandCircleDown id="expand-circle"/>}
@@ -86,6 +89,7 @@ const Support = () => {
                     </div>
                 </AccordionDetails>
             </Accordion>
+
             <Accordion id="accordionContent">
                 <AccordionSummary
                     expandIcon={<ExpandCircleDown id="expand-circle"/>}
@@ -101,6 +105,7 @@ const Support = () => {
                     </div>
                 </AccordionDetails>
             </Accordion>
+            
             </div>
 
 
