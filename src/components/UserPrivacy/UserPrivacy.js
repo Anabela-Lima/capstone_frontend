@@ -10,33 +10,13 @@ import { ReactComponent as ChevronRight } from '../../components/assets/images/c
 import { ReactComponent as Edit } from '../../components/assets/images/edit.svg'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import PrivacyNotifications from '../PrivacyNotification/PrivacyNotifications';
+import {useTransition, animated } from 'react-spring'
 
 
 const UserPrivacy = () => {
 
 
-
-  const createNotification = (notifType) => {
-    return () => {
-      switch (notifType) {
-        case 'info':
-          NotificationManager.info('Info message');
-          break;
-        case 'success':
-          NotificationManager.success('Settings have been sucessfully updated', 'Sucess');
-          break;
-        case 'warning':
-          NotificationManager.warning('You are about to make changes to this social Tag', 'Warning');
-          break;
-        case 'error':
-          NotificationManager.error('Error message', 3000, () => {
-            alert('callback');
-          });
-          break;
-          default:;
-      }
-    };
-  };
 
 // on change text  
 
@@ -58,7 +38,6 @@ const changeIcon = () => {
   
 }
 
-
 const changeIcon1 = () => {
 
   // alert("Field has been changed")
@@ -68,8 +47,6 @@ const changeIcon1 = () => {
   }, 1000)
   
 }
-
-
 
 const changeIcon2 = () => {
 
@@ -81,24 +58,88 @@ const changeIcon2 = () => {
   
 }
 
+//----------------------------------- Displays
+
+
+// initial notification state of display = false
+const [notification, setNotification] = useState(false);
+
+// initial notification state is empty 
+const [notificationText, setNotificationText] = useState("");
+
+
+const transition = { 
+  
+  // time delay before it comes in
+  delay: 200,
+  // just before it comes in
+  from: {opacity:0},
+  // when it comes in 
+  enter: {opacity:1},
+  // when it leaves 
+  leave: {opacity:0},
+  // if rendering 2 things- previous componenet should unmount, before next one mounts
+  exitBeforeEnter: true
+}
+
+
+// useTrandisition returns displayTransition
+const notificationTransition = useTransition(notification, transition)
+
+
+// function oninputchange
+const onInputChange = () => {
+  setNotificationText("WARNING!")
+  setNotification(true)
+
+  setTimeout(() => {
+      setNotification(false)
+      setNotificationText("")
+  }, 5000)
+}
+
+
+const  notif=()=> {
+  // rendering Notification
+  return (
+      <>
+          {   // displayTransition takes in a style + an item
+              notificationTransition((style, item) => {
+                // first we check to see if item boolean (i.e. display) is set to true/ false- if true
+                  return item ? 
+                  // apply fade transition using style= {style}
+ 
+                  <animated.div style={style}>             
+                     {/* if item boolean is true display notification  */}
+                      <PrivacyNotifications />
+                      {/* aimated.div = react's spring version of the div- has exactly same property */}
+                  </animated.div> 
+
+                  // if item boolean is false- return nothing "" or can just do empty div otherwise -return nothing
+                  : 
+                  <div></div>
+              })
+          }
+      </>
+  )
+}
 
 
   return (
-
-
-    
+  
     <section>
-      
-
 
       <NotificationContainer/>
+
+
+      <div id= "notification-Container"></div>
       <section id= "mainSection">
 
   
       <div id= "twitterSection1">
       <div id = "twitterSection2" className = "segment">  
         <TwitterIcon  className = "icon" id="twitterIcon"/> 
-        <span id= "twitterTag" contentEditable="true" onInput={changeIcon}  className= "mainText" onClick={createNotification('warning')}> @Ayana85 </span>
+        <span id= "twitterTag" contentEditable="true" onInput={changeIcon}  className= "mainText" onClick={notif}> @Ayana85 </span>
         <div id= "twitterCircleRight" className='circlesRight'> </div> 
         <div id= "twitterCircleLeft" className='circlesLeft'> </div> 
         {
@@ -155,7 +196,13 @@ const changeIcon2 = () => {
         <Chain  className = "icon" id="chain1Icon"/><span className= "mainText"> NoCap-Finance</span>  
         <div id= "chain1CircleRight" className='circlesRight'> </div> 
         <div id= "chain1CircleLeft" className='circlesLeft'> </div> 
-        <CheckIcon  className = "icon checkIcon" id="chain1CheckIcon"/>
+        {
+            isEditing3 ?  // if is edtiting is true return:
+            <Edit className = "icon checkIcon" id="twitterCheckIcon"/>
+            :  // else return 
+            <CheckIcon className = "icon checkIcon" id="twitterCheckIcon"/>
+        }
+  
       </div>
 
       </div>
