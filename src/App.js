@@ -8,6 +8,7 @@ import PieChartHistory from './components/PieChartHistory/PieChartHistory';
 import PieChartReport from './components/PieChartReport/PieChartReport';
 import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
 import Friends from './components/Friends/Friends';
+import UserTrip from './components/UserTrip/UserTrip';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
@@ -68,6 +69,7 @@ const App = () => {
     userProfile: true,
     userSocial: false,
     userPrivacy: false,
+    userTrip: false,
     piechartSplitPay: false,
     piechartReport: false,
     piechartHistory: false,
@@ -96,7 +98,7 @@ const App = () => {
 
     switch(true) {
       case parentElements.includes('user-icon'):
-        if (isVisible.user) break;
+        if (isVisible.user && !userNavSelection.userTrip) break;
         setVisual({
           slide: `${userIconLeft - 50}px`,
           secondaryNavHeight: "75px"
@@ -111,6 +113,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -136,6 +139,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -161,6 +165,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -186,6 +191,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
@@ -210,6 +216,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -318,6 +325,7 @@ const App = () => {
           userProfile: false,
           userSocial: true,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -333,6 +341,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: true,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -348,6 +357,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -362,6 +372,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,  
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -382,6 +393,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
@@ -397,6 +409,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: true,
@@ -412,6 +425,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: true,
           piechartHistory: false,
@@ -426,6 +440,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
@@ -446,6 +461,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -461,6 +477,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -476,6 +493,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -490,6 +508,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -676,6 +695,7 @@ const App = () => {
   const userProfileTransition = useTransition(userNavSelection, fadeTransition);
   const userSocialTransition = useTransition(userNavSelection, fadeTransition);
   const userPrivacyTransition = useTransition(userNavSelection, fadeTransition);
+  const userTripTransition = useTransition(userNavSelection, fadeTransition);
 
   const piechartSplitPayTransition = useTransition(userNavSelection, fadeTransition);
   const piechartReportTransition = useTransition(userNavSelection, fadeTransition);
@@ -685,13 +705,32 @@ const App = () => {
   const searchReportTransition = useTransition(userNavSelection, fadeTransition);
   const searchSupportTransition = useTransition(userNavSelection, fadeTransition);
 
-  const goToTripScreenFromUserProfile = (string) => {
-    console.log("Go to Trip Screen From User Profile Pressed " + string);
+
+  const [tripId, setTripId] = useState(null)
+
+  const goToTripScreenFromUserProfile = (id) => {
+    console.log("Go to Trip Screen From User Profile Pressed " + id);
+    setTripId(id)
+    setUserNavSelection({
+      userProfile: false,
+      userSocial: false,
+      userPrivacy: false,
+      userTrip: true,
+      piechartSplitPay: false,
+      piechartReport: false,
+      piechartHistory: false,
+      searchUsers: false,
+      searchSupport: false,
+      searchReport: false,
+      slide: userNavSelection.slide
+    })
+    
   }
 
   const goToUserProfileFromTripScreen = () => {
     console.log("Go to User Profile From Trip Screen Pressed")
   }
+
 
   const mainContentSection = () => {
 
@@ -733,6 +772,14 @@ const App = () => {
                 <UserPrivacy />
               </animated.div> 
               : ''
+            })
+          }
+          {
+            userTripTransition((style, item) => {
+              return item.userTrip ? 
+              <animated.div style={style} className="main-content-animated-div">
+                <UserTrip tripId={tripId}/>
+              </animated.div> : ''
             })
           }
           {/* USER SCREEN ------------------------------------------------------------------------------------------------ */}
