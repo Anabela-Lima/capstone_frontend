@@ -9,26 +9,27 @@ import { ReactComponent as CheckIcon } from '../../components/assets/images/chec
 import { ReactComponent as ChevronRight } from '../../components/assets/images/chevron-right.svg'
 import { ReactComponent as Edit } from '../../components/assets/images/edit.svg'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 const UserPrivacy = () => {
 
 
 
-  const createNotification = (type) => {
+  const createNotification = (notifType) => {
     return () => {
-      switch (type) {
+      switch (notifType) {
         case 'info':
           NotificationManager.info('Info message');
           break;
         case 'success':
-          NotificationManager.success('Success message', 'Title here');
+          NotificationManager.success('Settings have been sucessfully updated', 'Sucess');
           break;
         case 'warning':
-          NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+          NotificationManager.warning('You are about to make changes to this social Tag', 'Warning');
           break;
         case 'error':
-          NotificationManager.error('Error message', 'Click me!', 5000, () => {
+          NotificationManager.error('Error message', 3000, () => {
             alert('callback');
           });
           break;
