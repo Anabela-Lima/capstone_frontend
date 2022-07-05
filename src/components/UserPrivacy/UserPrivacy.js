@@ -8,10 +8,34 @@ import { ReactComponent as Chain } from '../../components/assets/images/link.svg
 import { ReactComponent as CheckIcon } from '../../components/assets/images/check.svg'
 import { ReactComponent as ChevronRight } from '../../components/assets/images/chevron-right.svg'
 import { ReactComponent as Edit } from '../../components/assets/images/edit.svg'
-
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 
 const UserPrivacy = () => {
+
+
+
+  const createNotification = (type) => {
+    return () => {
+      switch (type) {
+        case 'info':
+          NotificationManager.info('Info message');
+          break;
+        case 'success':
+          NotificationManager.success('Success message', 'Title here');
+          break;
+        case 'warning':
+          NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+          break;
+        case 'error':
+          NotificationManager.error('Error message', 'Click me!', 5000, () => {
+            alert('callback');
+          });
+          break;
+          default:;
+      }
+    };
+  };
 
 // on change text  
 
@@ -61,17 +85,19 @@ const changeIcon2 = () => {
   return (
 
 
-
+    
     <section>
+      
 
 
+      <NotificationContainer/>
       <section id= "mainSection">
 
   
       <div id= "twitterSection1">
       <div id = "twitterSection2" className = "segment">  
         <TwitterIcon  className = "icon" id="twitterIcon"/> 
-        <span id= "twitterTag" contentEditable="true" onInput={changeIcon} className= "mainText"> @Ayana85 </span>
+        <span id= "twitterTag" contentEditable="true" onInput={changeIcon}  className= "mainText" onClick={createNotification('warning')}> @Ayana85 </span>
         <div id= "twitterCircleRight" className='circlesRight'> </div> 
         <div id= "twitterCircleLeft" className='circlesLeft'> </div> 
         {
