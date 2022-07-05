@@ -8,9 +8,7 @@ function Friends() {
 
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState([]);
-  const [currentUserUsername, setCurrentUserUsername] = useState([]);
-  const [friendToAddUsername, setFriendToAddUsername] = useState([]);
-
+  
   const fetchUserProfiles = () => {
 
 
@@ -29,6 +27,7 @@ function Friends() {
 
 
   const searchUsers = async (e) => {
+    console.log(e);
     const username = e.target.value;
     console.log(username)
     try {
@@ -42,11 +41,20 @@ function Friends() {
     }
   }
 
+  const [ friends, setFriends ] = useState([]);
 
-const addFriend = (currentUserUsername, friendToAddUsername) => {
-    axios
-        .post(`http://localhost/friend-controller/addFriend/${currentUserUsername}/${friendToAddUsername}`)
-        .then(res => console.log(res)).catch(err => console.log(err))
+const addFriend = async (fA) => {
+
+  const currentUserUsername = "scottaccino123"
+  try {
+    const friends = await axios
+        .post(`http://localhost:8080/friend/addFriend/${currentUserUsername}/${fA.username}`)
+        const data = friends.data;
+        setFriends(data)
+  } catch (err) {
+    setFriends([])
+    console.error(err.response.data.message);
+  }
 }
 
 // function deleteFriend(){
@@ -57,9 +65,6 @@ const addFriend = (currentUserUsername, friendToAddUsername) => {
 // Show output in browser
   
   // Event listeners
-  const addFriendButton = () => {
-    addFriend();
-  }
 
 
     return (
@@ -87,7 +92,7 @@ const addFriend = (currentUserUsername, friendToAddUsername) => {
                       </div>
                       <h1 id="headingUser">{user.firstname} {user.lastname}</h1>
                         <p id="pUsername">{user.username}</p>
-                      <button id="addFriendBtn"onClick={addFriendButton}>Add Friend</button>
+                      <button id="addFriendBtn"onClick={() => addFriend(user)}>Add Friend</button>
                     </div>
                   )
                 })
