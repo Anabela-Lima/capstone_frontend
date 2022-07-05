@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BsListNested } from "react-icons/bs";
 import './Friends.css';
-import { ReactComponent as SearchIcon } from '../../components/assets/images/search.svg'
+import { ReactComponent as SearchIcon } from '../../components/assets/images/search.svg';
 
 function Friends() {
 

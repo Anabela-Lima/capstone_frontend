@@ -14,6 +14,8 @@ import { ReactComponent as HomeIcon } from './components/assets/images/home.svg'
 import { ReactComponent as PlusIcon } from './components/assets/images/plus.svg';
 import { ReactComponent as PieChartIcon } from './components/assets/images/pie-chart.svg';
 import { ReactComponent as SearchIcon } from './components/assets/images/search.svg';
+import Report from './components/Report/Report';
+import Support from './components/Support/Support';
 
 
 const App = () => {
@@ -782,7 +784,7 @@ const App = () => {
             searchReportTransition((style, item) => {
               return item.searchReport ?
               <animated.div style={style} className="main-content-animated-div">
-                SEARCH REPORT
+                <Report />
               </animated.div> : ''
             }) 
           }
@@ -790,7 +792,7 @@ const App = () => {
             searchSupportTransition((style, item) => {
               return item.searchSupport ?
               <animated.div style={style} className="main-content-animate-div">
-                SEARCH SUPPORT
+                <Support />
               </animated.div> : ''
             })
           }
