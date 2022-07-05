@@ -4,11 +4,11 @@ import './PrivacyNotifications.css'
 
 
 
-const PrivacyNotifications = () => {
+const PrivacyNotifications = ({notificationText}) => {    //using curly brackets to destructure 
 
     return (
         <>
-        <div id = "popBox"> </div>
+        <div id = "popupBox"> {notificationText} </div>
         
         </>
     )

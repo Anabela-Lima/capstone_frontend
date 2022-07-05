@@ -1,9 +1,10 @@
-
-
-.popupBox{
+#popupBox{
 
     width: 500px;
     height: 500px;
     color: white;
+    background-color: white ;
     z-index: 9;
 }
+
+

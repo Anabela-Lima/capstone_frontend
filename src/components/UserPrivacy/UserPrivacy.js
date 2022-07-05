@@ -24,9 +24,7 @@ const [isEditing, setIsEditing] = useState(false) ;  // use state (changes state
 const [isEditing1, setIsEditing1] = useState(false) ;
 const [isEditing2, setIsEditing2] = useState(false) ;
 const [isEditing3, setIsEditing3] = useState(false) ;
-const [isEditing4, setIsEditing4] = useState(false) ;
 // changeIcon
-
 
 const changeIcon = () => {
 
@@ -89,17 +87,19 @@ const notificationTransition = useTransition(notification, transition)
 
 // function oninputchange
 const onInputChange = () => {
+  console.log('clicked')
   setNotificationText("WARNING!")
   setNotification(true)
-
   setTimeout(() => {
       setNotification(false)
       setNotificationText("")
   }, 5000)
+
+
 }
 
 
-const  notif=()=> {
+const  notif =()=> {
   // rendering Notification
   return (
       <>
@@ -107,14 +107,16 @@ const  notif=()=> {
               notificationTransition((style, item) => {
                 // first we check to see if item boolean (i.e. display) is set to true/ false- if true
                   return item ? 
+
                   // apply fade transition using style= {style}
- 
-                  <animated.div style={style}>             
+
+                  <animated.div className="animatedDiv" style={style}>             
                      {/* if item boolean is true display notification  */}
-                      <PrivacyNotifications />
+                      <PrivacyNotifications notificationText= {notificationText} />
                       {/* aimated.div = react's spring version of the div- has exactly same property */}
                   </animated.div> 
 
+              
                   // if item boolean is false- return nothing "" or can just do empty div otherwise -return nothing
                   : 
                   <div></div>
@@ -129,7 +131,8 @@ const  notif=()=> {
   
     <section>
 
-      <NotificationContainer/>
+      {/* <NotificationContainer/> */}
+      {notif()}
 
 
       <div id= "notification-Container"></div>
@@ -139,7 +142,7 @@ const  notif=()=> {
       <div id= "twitterSection1">
       <div id = "twitterSection2" className = "segment">  
         <TwitterIcon  className = "icon" id="twitterIcon"/> 
-        <span id= "twitterTag" contentEditable="true" onInput={changeIcon}  className= "mainText" onClick={notif}> @Ayana85 </span>
+        <span id= "twitterTag" contentEditable="true" onInput={changeIcon}  className= "mainText" onClick={onInputChange}> @Ayana85 </span>
         <div id= "twitterCircleRight" className='circlesRight'> </div> 
         <div id= "twitterCircleLeft" className='circlesLeft'> </div> 
         {
