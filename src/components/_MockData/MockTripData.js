@@ -320,7 +320,8 @@ export const mockTripData = [
           day: 3,
           name: "Ebisu Local Food Tour: Shibuya's Most Popular Neighborhood",
           price: 830.00,
-          category: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/22/bf/b6.jpg",
+          category: "Food",
+          imgUrl: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/22/bf/b6.jpg",
           attendees: [1,2,3,4,5,6,7]
         },
 

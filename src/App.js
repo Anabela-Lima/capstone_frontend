@@ -728,7 +728,19 @@ const App = () => {
   }
 
   const goToUserProfileFromTripScreen = () => {
-    console.log("Go to User Profile From Trip Screen Pressed")
+    setUserNavSelection({
+      userProfile: true,
+      userSocial: false,
+      userPrivacy: false,
+      userTrip: false,
+      piechartSplitPay: false,
+      piechartReport: false,
+      piechartHistory: false,
+      searchUsers: false,
+      searchSupport: false,
+      searchReport: false,
+      slide: userNavSelection.slide
+    })
   }
 
 
@@ -778,7 +790,10 @@ const App = () => {
             userTripTransition((style, item) => {
               return item.userTrip ? 
               <animated.div style={style} className="main-content-animated-div">
-                <UserTrip tripId={tripId}/>
+                <UserTrip 
+                  tripId={tripId}
+                  goToUserProfileFromTripScreen={goToUserProfileFromTripScreen}
+                  />
               </animated.div> : ''
             })
           }

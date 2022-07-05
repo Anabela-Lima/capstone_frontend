@@ -43,11 +43,12 @@
 }
 
 #user-trip-drop-down-container {
-    width: 80%;
+    width: 60%;
     height: 15%;
     background-color: white;
     position: absolute;
     top: 15%;
+    left: 30%;
     background: 
     linear-gradient(
         264.58deg,
@@ -56,6 +57,35 @@
         );
     opacity: 0.8;
     backdrop-filter: blur(20px);
+    border-radius: 50px;
+}
+
+.go-back-arrow-container {
+    height: 100px;
+    width: 100px;
+    left: 10%;
+    top: 15%;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.go-back-arrow-background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: white;
+    opacity: 0.7;
+    border-radius: 50%;
+}
+
+#arrow-left {
+    height: 70%;
+    width: 70%;
+    stroke: black;
+    z-index: 11;
 }
 
 #user-trip-activities-container {
@@ -78,6 +108,10 @@
     display: flex;
     flex-direction: column;
     row-gap: 60px;
+}
+.no-activities-display {
+    font-size: 50px;
+    color: white;
 }
 
 .activity-card-container {

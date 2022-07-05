@@ -3,9 +3,10 @@ import './UserTrip.css'
 import { mockTripData } from '../_MockData/MockTripData'
 import { ReactComponent as UsersIcon } from '../assets/images/users.svg'
 import { ReactComponent as CircleCloseIcon } from '../assets/images/x-circle.svg'
+import { ReactComponent as ArrowLeftIcon } from '../assets/images/arrow-left.svg'
 import { useTransition, animated } from 'react-spring';
 
-const UserTrip = ({tripId}) => {
+const UserTrip = ({tripId, goToUserProfileFromTripScreen}) => {
 
     const trip = mockTripData.filter(data => data.id === tripId);
     console.log(trip)
@@ -79,11 +80,9 @@ const UserTrip = ({tripId}) => {
         )
     }
 
-    const splitOnClick = (id) => {
-        setActivityId(id)
-    }
+    const splitOnClick = (activity) => setActivity(activity)
 
-    const [activityId, setActivityId] = useState(null);
+    const [activity, setActivity] = useState(null);
 
     const fadeTransition = {
         from: {opacity: 0},
@@ -92,7 +91,7 @@ const UserTrip = ({tripId}) => {
         exitBeforeEnter: true
     }
 
-    const showAllActivities = useTransition(activityId, fadeTransition);
+    const showAllActivities = useTransition(activity, fadeTransition);
 
     const getOneActivityCard = (activity) => {
         return (
@@ -131,7 +130,7 @@ const UserTrip = ({tripId}) => {
                         <div className="whos-going">
                             <button 
                                 className="whos-going-button" 
-                                onClick={() => splitOnClick(activity.id)}
+                                onClick={() => splitOnClick(activity)}
                             >
                                 <div className="whos-going-button-background"></div>
                                 <div className="whos-going-button-text">
@@ -156,19 +155,25 @@ const UserTrip = ({tripId}) => {
     }
 
     const activityCard = () => {
-        const activities = sortedByDay.map(activity => {
+        let activities = sortedByDay.map(activity => {
             return (
                 <>
                     {getOneActivityCard(activity)}
                 </>
             )
         })
+        // activities = []
         return (
             <>
-                {activities}
+                {
+                    activities.length === 0 ? 
+                    <span className="no-activities-display">Nothing here yet.</span> : 
+                    activities
+                }
             </>
         )
     }
+
 
     return (
         <>
@@ -180,6 +185,13 @@ const UserTrip = ({tripId}) => {
                     <div id="user-trip-drop-down-container">
 
                     </div>
+                    <div 
+                        className="go-back-arrow-container"
+                        onClick={goToUserProfileFromTripScreen}
+                    >
+                        <ArrowLeftIcon id="arrow-left"/>
+                        <div className="go-back-arrow-background"></div>
+                    </div>
                 </div>
                 <div id="user-trip-activities-container">
                     {
@@ -188,7 +200,7 @@ const UserTrip = ({tripId}) => {
                             <animated.div 
                                 style={style}
                             >
-                                <span style={{color: 'white', fontSize: '50px'}}>{activityId}</span>
+                                <span style={{color: 'white', fontSize: '50px'}}>{activity.id}</span>
                             </animated.div> :
                             <animated.div 
                                 style={style} 
