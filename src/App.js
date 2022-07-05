@@ -8,6 +8,7 @@ import PieChartHistory from './components/PieChartHistory/PieChartHistory';
 import PieChartReport from './components/PieChartReport/PieChartReport';
 import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
 import Friends from './components/Friends/Friends';
+import UserTrip from './components/UserTrip/UserTrip';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
@@ -17,11 +18,42 @@ import { ReactComponent as SearchIcon } from './components/assets/images/search.
 import Report from './components/Report/Report';
 import Support from './components/Support/Support';
 
+import axios from 'axios';
+
 
 const App = () => {
 
-  // will be a prop
-  const userLoggedInID = 9;
+  const mockLoggedInAsID = 9;
+
+  const [userLoggedInDetails, setUserLoggedInDetails] = useState({});
+  const [tripInformation, setTripInformation] = useState([]);
+  const [friendData, setFriendData] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:8080/user/getUserByID?userID=${mockLoggedInAsID}`)
+    .then(response => {
+      const userInfo = response.data;
+      setUserLoggedInDetails(userInfo);
+    })
+    .catch(err => console.log(err));
+  }, []);
+
+  useEffect(() => { 
+    axios.get(`http://localhost:8080/user/tripsByUser?userID=${mockLoggedInAsID}`)
+    .then(response => {
+      const tripInfo = response.data;
+      setTripInformation(tripInfo);
+    })
+    .catch(err => console.log(err));
+  }, [tripInformation]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/friend/friendsByID?userID=${mockLoggedInAsID}`)
+    .then(response => {
+      const friendData = response.data;
+      setFriendData(friendData);
+    })
+  }, [friendData]);
 
   // new trip form 
   const [tripTitle, setTripTitle] = useState("");
@@ -37,12 +69,12 @@ const App = () => {
   const handleEndDate = (event) => setEndDate(event.target.value);
 
   const createNewTrip = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     const options = {
       method: "POST",
     }
 
-    fetch(`http://127.0.0.1:8080/user/trip/new?userId=${userLoggedInID}&name=${tripTitle}&country=${tripCountry}&description=${tripDescription}&startDate=${startDate}%2000%3A00%3A00&endDate=${endDate}%2000%3A00%3A00`,
+    fetch(`http://127.0.0.1:8080/user/trip/new?userId=${mockLoggedInAsID}&name=${tripTitle}&country=${tripCountry}&description=${tripDescription}&startDate=${startDate}%2000%3A00%3A00&endDate=${endDate}%2000%3A00%3A00`,
     options)
     .then((response) => {
       setTripTitle("");
@@ -70,6 +102,7 @@ const App = () => {
     userProfile: true,
     userSocial: false,
     userPrivacy: false,
+    userTrip: false,
     piechartSplitPay: false,
     piechartReport: false,
     piechartHistory: false,
@@ -98,7 +131,7 @@ const App = () => {
 
     switch(true) {
       case parentElements.includes('user-icon'):
-        if (isVisible.user) break;
+        if (isVisible.user && !userNavSelection.userTrip) break;
         setVisual({
           slide: `${userIconLeft - 50}px`,
           secondaryNavHeight: "75px"
@@ -113,6 +146,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -138,6 +172,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -163,6 +198,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -188,9 +224,10 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
-          piechartSplitPay: true,
+          userTrip: false,
+          piechartSplitPay: false,
           piechartReport: false,
-          piechartHistory: false,
+          piechartHistory: true,
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
@@ -212,6 +249,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -320,6 +358,7 @@ const App = () => {
           userProfile: false,
           userSocial: true,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -335,6 +374,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: true,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -350,6 +390,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -364,6 +405,7 @@ const App = () => {
           userProfile: true,
           userSocial: false,  
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -384,6 +426,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
@@ -399,6 +442,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: true,
@@ -414,6 +458,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: true,
           piechartHistory: false,
@@ -428,6 +473,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: true,
           piechartReport: false,
           piechartHistory: false,
@@ -448,6 +494,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -463,6 +510,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -478,6 +526,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -492,6 +541,7 @@ const App = () => {
           userProfile: false,
           userSocial: false,
           userPrivacy: false,
+          userTrip: false,
           piechartSplitPay: false,
           piechartReport: false,
           piechartHistory: false,
@@ -598,19 +648,24 @@ const App = () => {
                 <animated.div style={style} id="test-content">
                   <form onSubmit = {createNewTrip}>
                     <label>
-                      Trip name: <input type="text" placeholder='Trip Title' onChange={handleTripTitle}/>
+                      Trip name: <input type="text" placeholder='Trip Title' onChange={handleTripTitle}
+                      value={tripTitle}/>
                     </label>
                     <label>
-                      Country: <input type="text" placeholder='Country' onChange={handleTripCountry}/>
+                      Country: <input type="text" placeholder='Country' onChange={handleTripCountry}
+                      value={tripCountry}/>
                     </label>
                     <label>
-                      Trip Description: <input type="text" placeholder='Trip Description' onChange={handleTripDescription}/>
+                      Trip Description: <input type="text" placeholder='Trip Description' onChange={handleTripDescription}
+                      value={tripDescription}/>
                     </label>
                     <label>
-                      Start Date: <input type="date"  onChange={handleStartDate}/>
+                      Start Date: <input type="date"  onChange={handleStartDate}
+                      value={startDate}/>
                     </label>
                     <label>
-                      End Date: <input type="date" onChange={handleEndDate} />
+                      End Date: <input type="date" onChange={handleEndDate}
+                      value={endDate}/> 
                     </label>
                   
                   <input type="submit" value="Add Trip!"/>
@@ -623,8 +678,8 @@ const App = () => {
               pieChartContentTransition((style, item) => {
                 return item.pieChart ? 
                 <animated.div style={style} id="user-nav-content">
-                <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div>
-                    <div 
+                {/* <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div> */}
+                    {/* <div 
                       className="secondary-navigation-bar-text-container" 
                       onClick={piechartSecondaryNavHandleOnClick}
                     >
@@ -641,7 +696,7 @@ const App = () => {
                         className="secondary-navigation-bar-text" 
                         id="piechart-nav-report" 
                       >Report</span>
-                    </div>
+                    </div> */}
                     <div 
                       className="secondary-navigation-bar-text-container"
                       onClick={piechartSecondaryNavHandleOnClick}
@@ -678,6 +733,7 @@ const App = () => {
   const userProfileTransition = useTransition(userNavSelection, fadeTransition);
   const userSocialTransition = useTransition(userNavSelection, fadeTransition);
   const userPrivacyTransition = useTransition(userNavSelection, fadeTransition);
+  const userTripTransition = useTransition(userNavSelection, fadeTransition);
 
   const piechartSplitPayTransition = useTransition(userNavSelection, fadeTransition);
   const piechartReportTransition = useTransition(userNavSelection, fadeTransition);
@@ -687,13 +743,44 @@ const App = () => {
   const searchReportTransition = useTransition(userNavSelection, fadeTransition);
   const searchSupportTransition = useTransition(userNavSelection, fadeTransition);
 
-  const goToTripScreenFromUserProfile = (string) => {
-    console.log("Go to Trip Screen From User Profile Pressed " + string);
+
+  const [tripId, setTripId] = useState(null)
+
+  const goToTripScreenFromUserProfile = (id) => {
+    console.log("Go to Trip Screen From User Profile Pressed " + id);
+    setTripId(id)
+    setUserNavSelection({
+      userProfile: false,
+      userSocial: false,
+      userPrivacy: false,
+      userTrip: true,
+      piechartSplitPay: false,
+      piechartReport: false,
+      piechartHistory: false,
+      searchUsers: false,
+      searchSupport: false,
+      searchReport: false,
+      slide: userNavSelection.slide
+    })
+    
   }
 
   const goToUserProfileFromTripScreen = () => {
-    console.log("Go to User Profile From Trip Screen Pressed")
+    setUserNavSelection({
+      userProfile: true,
+      userSocial: false,
+      userPrivacy: false,
+      userTrip: false,
+      piechartSplitPay: false,
+      piechartReport: false,
+      piechartHistory: false,
+      searchUsers: false,
+      searchSupport: false,
+      searchReport: false,
+      slide: userNavSelection.slide
+    })
   }
+
 
   const mainContentSection = () => {
 
@@ -714,6 +801,9 @@ const App = () => {
                 <UserProfile 
                   goToTripScreenFromUserProfile={goToTripScreenFromUserProfile}
                   goToUserProfileFromTripScreen={goToUserProfileFromTripScreen}
+                  userLoggedInDetails={userLoggedInDetails}
+                  tripInformation={tripInformation}
+                  friendData={friendData}
                 />
               </animated.div> 
               : ''
@@ -737,11 +827,22 @@ const App = () => {
               : ''
             })
           }
+          {
+            userTripTransition((style, item) => {
+              return item.userTrip ? 
+              <animated.div style={style} className="main-content-animated-div">
+                <UserTrip 
+                  tripId={tripId}
+                  goToUserProfileFromTripScreen={goToUserProfileFromTripScreen}
+                  />
+              </animated.div> : ''
+            })
+          }
           {/* USER SCREEN ------------------------------------------------------------------------------------------------ */}
 
 
           {/* PIECHART SCREEN ------------------------------------------------------------------------------------------------ */}
-          {
+          {/* {
             piechartSplitPayTransition((style, item) => {
               return item.piechartSplitPay ?
               <animated.div style={style} className="main-content-animated-div">
@@ -758,12 +859,15 @@ const App = () => {
               </animated.div>
               : ''
             })
-          }
+          } */}
           {
             piechartHistoryTransition((style, item) => {
               return item.piechartHistory ?
               <animated.div style={style} className="main-content-animated-div">
-                <PieChartHistory />
+                <PieChartHistory 
+                  trips = {tripInformation} 
+                  user = {userLoggedInDetails}
+                />
               </animated.div>
               : ''
             }) 
