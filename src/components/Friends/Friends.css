@@ -95,14 +95,23 @@
     height: 200px;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 1cm;
     padding-bottom: 1cm;
     background: linear-gradient(264.58deg, rgba(255, 255, 255, 0.15) 6.52%, rgba(255, 255, 255, 0) 93.58%);
     opacity: 0.8;
     backdrop-filter: blur(20px);
+}
+
+#user-p-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    padding-top: 2cm;
 }
 
 #addFriendBtn{
@@ -117,4 +126,22 @@
     rgba(255, 255, 255, 0.8) 95.46%
   );
   border-radius: 20px;
+}
+
+
+#err-return{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
+    margin-right: 3%;
+}
+
+#friendBTNclick{
+    color:red;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
 }
