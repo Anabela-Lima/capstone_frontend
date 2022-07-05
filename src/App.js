@@ -225,9 +225,9 @@ const App = () => {
           userSocial: false,
           userPrivacy: false,
           userTrip: false,
-          piechartSplitPay: true,
+          piechartSplitPay: false,
           piechartReport: false,
-          piechartHistory: false,
+          piechartHistory: true,
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
@@ -678,8 +678,8 @@ const App = () => {
               pieChartContentTransition((style, item) => {
                 return item.pieChart ? 
                 <animated.div style={style} id="user-nav-content">
-                <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div>
-                    <div 
+                {/* <div id="navigation-bar-selected" style={{left: userNavSelection.slide}}></div> */}
+                    {/* <div 
                       className="secondary-navigation-bar-text-container" 
                       onClick={piechartSecondaryNavHandleOnClick}
                     >
@@ -696,7 +696,7 @@ const App = () => {
                         className="secondary-navigation-bar-text" 
                         id="piechart-nav-report" 
                       >Report</span>
-                    </div>
+                    </div> */}
                     <div 
                       className="secondary-navigation-bar-text-container"
                       onClick={piechartSecondaryNavHandleOnClick}
@@ -842,7 +842,7 @@ const App = () => {
 
 
           {/* PIECHART SCREEN ------------------------------------------------------------------------------------------------ */}
-          {
+          {/* {
             piechartSplitPayTransition((style, item) => {
               return item.piechartSplitPay ?
               <animated.div style={style} className="main-content-animated-div">
@@ -859,7 +859,7 @@ const App = () => {
               </animated.div>
               : ''
             })
-          }
+          } */}
           {
             piechartHistoryTransition((style, item) => {
               return item.piechartHistory ?
