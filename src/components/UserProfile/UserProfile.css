@@ -187,7 +187,7 @@
 }
 
 #user-profile-image {
-    transform: scale(0.6);
+    height: 100%;
 }
 
 #user-profile-name {
