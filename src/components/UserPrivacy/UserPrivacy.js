@@ -236,7 +236,10 @@ const  notif =()=> {
 
     </section>
     <section id= "buttonSection">
+
       <button id= "saveBtn"> <span id= "saveBtnText"> Save </span> </button>
+      <button id= "saveBtn2"> <span id= "saveBtnText2"> Deactivate Account </span> </button>
+      
     </section>
   
 
