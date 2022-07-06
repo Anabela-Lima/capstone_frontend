@@ -646,9 +646,12 @@ const App = () => {
                           Have a location in mind?
                         </span>
                         <span className="location-in-mind-main-text">
-                            See trip details above and edit
+                            See trip details above and edit any fields.
+                            Once confirmed, you should receive a confirmation e-mail.
                         </span>
-                        <span className="location-in-mind-small-text"></span>
+                        <span className="location-in-mind-small-text">
+                          Otherwise contact support: 0200 4566 3243
+                        </span>
                     </div>
                 </animated.div> : 
                 ''

@@ -161,10 +161,29 @@
 .location-in-mind-container {
   font-size: 40px;
   font-weight: 600;
+  height: 90%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 60px;
+}
+.location-in-mind-title {
+  width: 100%;
+  font-size: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+
+}
+.location-in-mind-main-text {
+  width: 100%;
+  font-size: 35px;
+}
+.location-in-mind-small-text {
+  width: 100%;
+  font-size: 20px;
 }
 
 #user-nav-content {
