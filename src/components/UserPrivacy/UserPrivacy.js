@@ -24,6 +24,7 @@ const [isEditing, setIsEditing] = useState(false) ;  // use state (changes state
 const [isEditing1, setIsEditing1] = useState(false) ;
 const [isEditing2, setIsEditing2] = useState(false) ;
 const [isEditing3, setIsEditing3] = useState(false) ;
+const [textBody, setTextBody]= useState("");
 // changeIcon
 
 const changeIcon = () => {
@@ -89,14 +90,16 @@ const notificationTransition = useTransition(notification, transition)
 const onInputChange = () => {
   console.log('clicked')
   setNotificationText("WARNING!")
+  setTextBody("You are about to make changes to your social Tags")
   setNotification(true)
   setTimeout(() => {
       setNotification(false)
-      setNotificationText("")
+      // setNotificationText("")
   }, 5000)
 
 
 }
+
 
 
 const  notif =()=> {
@@ -112,7 +115,7 @@ const  notif =()=> {
 
                   <animated.div className="animatedDiv" style={style}>             
                      {/* if item boolean is true display notification  */}
-                      <PrivacyNotifications notificationText= {notificationText} />
+                      <PrivacyNotifications notificationText= {notificationText} textBody={textBody} />
                       {/* aimated.div = react's spring version of the div- has exactly same property */}
                   </animated.div> 
 
@@ -134,8 +137,6 @@ const  notif =()=> {
       {/* <NotificationContainer/> */}
       {notif()}
 
-
-      <div id= "notification-Container"></div>
       <section id= "mainSection">
 
   
@@ -158,7 +159,7 @@ const  notif =()=> {
       <div id= "instaSection1">
       <div id = "instaSection2" className = "segment">  
         <InstaIcon className = "icon" id="instaIcon"/>
-        <span contentEditable= "true" onInput= {changeIcon1} className= "mainText">@AyanaZhen</span> 
+        <span contentEditable= "true" onInput= {changeIcon1} onClick={onInputChange} className= "mainText">@AyanaZhen</span> 
         <div id= "instaCircleRight" className='circlesRight'> </div> 
         <div id= "instaCircleLeft" className='circlesLeft'> </div> 
 
@@ -178,7 +179,7 @@ const  notif =()=> {
       <div id= "LinkedInSection1">
 
       <div id = "LinkedInSection2" className = "segment">  
-        <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span contentEditable= "true" onInput= {changeIcon2}  className= "mainText">Ayana Zhen</span> 
+        <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span contentEditable= "true" onInput= {changeIcon2}  onClick={onInputChange} className= "mainText">Ayana Zhen</span> 
         <div id= "instaCircleRight" className='circlesRight'> </div> 
         <div id= "instaCircleLeft" className='circlesLeft'> </div> 
         {
@@ -243,27 +244,6 @@ const  notif =()=> {
  
 
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   )
 }
 
