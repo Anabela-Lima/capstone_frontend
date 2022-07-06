@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+#welcome-carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#background-img-welcome{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    position: absolute;
+    filter: brightness(80%);
+}
+
+.welcomeButton{
+  position: absolute;
+  border: 2px solid #FFFFFF;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+  width: 70%;
+  height: 5%;
+  font-size: 2em;
+  border-radius: 10px;
+  top: 55vh;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  transition: .3s;
+  background-color: transparent;
+}
+
+
+.landing-bottom-container{
+    position: absolute;
+    bottom: 30%;
+    width: 70%;
+    height: 10%;
+    background: 
+    linear-gradient(216.22deg, rgba(218, 218, 218, 0.6) 13.37%, rgba(176, 176, 176, 0.2) 95.51%);
+    backdrop-filter: blur(20px);
+    border-radius: 80px;
+    display: inline-flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 11%;
+    padding-left: 1cm;
+    padding-right: 1cm;
+}
+
+#paragraph1{
+    font-family: 'Inter', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* graphic / text elements */
+
+.headerFix{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: white;
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+.header{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: white;
+    font-size: 80px;
+    font-weight: bolder;
+  }
+
+  #head1,#head2,#head3, #head4, #head5, #headx{
+    opacity: 0;
+  }
+
+  #gosplit-logo{
+      height: 300px;
+      width: 465px;
+      position: absolute;
+      top: 25%;
+      left: 27%;
+  }
+  
+  #headx{
+    -webkit-animation: fadeOut 5 25s ease-in;
+    -moz-animation: fadeOut 5 25s ease-in;
+    -o-animation: fadeOut 5 25s ease-in;
+    animation: fadeOut 5 25s ease-in;
+    color: #FFFFFF;
+  }
+
+  #head1{
+    color: #FFFFFF;
+  }
+  
+  #head2{
+    -webkit-animation: fadeOut 1 5s ease-in;
+    -moz-animation: fadeOut 1 5s ease-in;
+    -o-animation: fadeOut 1 5s ease-in;
+    animation: fadeOut 1 5s ease-in;
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    animation-delay: 6s;
+    color: #FFFFFF;
+  }
+  
+  #head3{
+    -webkit-animation: fadeOut 1 5s ease-in;
+    -moz-animation: fadeOut 1 5s ease-in;
+    -o-animation: fadeOut 1 5s ease-in;
+    animation: fadeOut 1 5s ease-in;
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    animation-delay: 12s;
+    color: #FFFFFF;
+  }
+  
+  #head4{
+    -webkit-animation: fadeOut 1 5s ease-in;
+    -moz-animation: fadeOut 1 5s ease-in;
+    -o-animation: fadeOut 1 5s ease-in;
+    animation: fadeOut 1 5s ease-in;
+    -webkit-animation-delay: 17s;
+    -moz-animation-delay: 17s;
+    -o-animation-delay: 17s;
+    animation-delay: 17s;
+    color: #FFFFFF;
+  }
+  
+  #head5{
+    -webkit-animation: finalFade 1 5s ease-in;
+    -moz-animation: finalFade 1 5s ease-in;
+    -o-animation: finalFade 1 5s ease-in;
+    animation: finalFade 1 5s ease-in;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 22s;
+    -moz-animation-delay: 22s;
+    -o-animation-delay: 22s;
+    animation-delay: 22s;
+    color: #FFFFFF;
+  }
+
+
+#log-in-carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#background-img-log-in {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    position: absolute;
+    filter: brightness(70%) blur(4px);
+    /* filter: blur(4px); */
+}
+
+
+#landing-center-container {
+    width: 100%;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#register-form-container-log-in {
+    position: absolute;
+    top: 20%;
+    width: 90%;
+    height: 30%;
+    background: 
+    linear-gradient(216.22deg, rgba(218, 218, 218, 0.6) 13.37%, rgba(176, 176, 176, 0.2) 95.51%);
+    backdrop-filter: blur(20px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+#pass-reg-container{
+    position: absolute;
+    bottom: 10%;
+    width: 80%;
+    height: 30%;
+    border-radius: 80px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    row-gap: 10px;
+}
+
+
+#forgot-pass-btn{
+    font-family: 'Inter', sans-serif;
+    font-size: 33px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: none;
+    font-weight: bold;
+    padding-left: 0.7cm;
+}
+
+#register-log-in-btn{
+    font-family: 'Inter', sans-serif;
+    font-size: 33px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: none;
+    font-weight: bold;
+    padding-right: 3cm;
+}
+
+#vertical-line{
+position: absolute;
+border-left: 2px solid white;
+height: 40px;
+position: absolute;
+left: 52%;
+margin-left: -3px;
+top: 0;
+}
+
+#sign-in-socials-container{
+    position: absolute;
+    top: 75%;
+    width: 80%;
+    height: 50%;
+    border-radius: 80px;
+    display: inline-flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: left;
+}
+
+#social-heading{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0%;
+    height: 10%;
+    top: 69%;
+    position: absolute;
+}
+
+#horizontal-line-1-sign-in-with{
+    position: absolute;
+    border-bottom: 2px solid white;
+    width: 20%;
+    position: absolute;
+    left: 5%;
+    top: 4%;
+}
+
+#horizontal-line-2-sign-in-with{
+        position: absolute;
+        border-bottom: 2px solid white;
+        width: 20%;
+        top: 4%;
+        position: absolute;
+        right: 5%;
+    
+}
+
+#tweet-btn{
+    background-color: transparent;
+    color: lightgray;
+    border: none;
+    font-size: 90px;
+}
+
+#insta-btn{
+    background-color: transparent;
+    color: lightgray;
+    border: none;
+    font-size: 90px;
+    margin-left: 15%;
+}
+
+#fb-btn{
+    background-color: transparent;
+    color: lightgray;
+    border: none;
+    font-size: 80px;
+    margin-top: 3%;
+    margin-left: -20%;
+}
+
+#log-in-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 80px;
+    color: white;
+    font-weight: normal;
+    display: inline-flex;
+    justify-content:center;
+    margin-bottom: 10%;
+    width: 80%;
+    height: 10%;
+}
+
+#create-account-btn{
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: none;
+    font-weight: bold;
+    padding-left: 0.3cm;
+    padding-top: 0cm;
+}
+
+.log-in-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid;
+    border-bottom-color: white;
+    column-gap: 18px;
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 7%;
+    margin-right: 10%;
+}
+
+
+.register-form-icons {
+    height: 70px;
+    width: 70px;
+    color: white;
+    stroke-width: 1px;
+}
+
+.register-form {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    height: 110px;
+    min-width: 80%;
+    text-justify: center;
+    font-size: 40px;
+    color: white;
+}
+
+::placeholder{
+    font-size: 40px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+#log-in-account-button-container {
+    width: 100%;
+    position: absolute;
+    bottom: 43%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log-in-account-button-background {
+    width: 80%;
+    height: 100px;
+    /* background-color: #FFFFFF; */
+    /* border: 1px solid #FFFFFF; */
+    backdrop-filter: blur(30px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 30px;
+    border-width: 2px;
+    background:
+     linear-gradient(216.22deg, rgba(218, 218, 218, 0.6) 13.37%, rgba(176, 176, 176, 0.35) 95.51%);
+}
+
+#log-in-account-button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+#log-in-account-button-text {
+    font-size: 40px;
+    color: white;
+    opacity: 1;
+}
+
+
+#swipe-indicator-container {
+    width: 100%;
+    position: absolute;
+    bottom: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#swipe-indicators {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+}
+
+
+#first-circle {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 50%;
+}
+
+
+#second-circle {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 50%;
+}
+
+
+#third-circle {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background: #FFC376;
+    border-radius: 50%;
+}
+
+
+#page-name-container {
+    width: 100%;
+    position: absolute;
+    bottom: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+#page-name-text {
+    font-size: 40px;
+    color: white;
+}

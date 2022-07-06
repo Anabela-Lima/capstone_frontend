@@ -1,0 +1,352 @@
+
+#user-trip-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-trip-image-container {
+    height: 40%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-trip-image {
+    height: auto;
+    width: 100%;
+    border-radius: 70px;
+}
+
+#user-trip-name {
+    position: absolute;
+    color: white;
+    font-size: 60px;
+    font-weight: 650;
+    left: 5%;
+    bottom: 20%;
+}
+
+#user-trip-day-num {
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    font-weight: 400;
+    left: 5%;
+    bottom: 13%;
+}
+
+#user-trip-drop-down-container {
+    width: 60%;
+    height: 15%;
+    background-color: white;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    background: 
+    linear-gradient(
+        264.58deg,
+         rgba(255, 255, 255, 0.35) 7.55%,
+          rgba(255, 255, 255, 0.15) 94.61%
+        );
+    opacity: 0.8;
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+}
+
+.go-back-arrow-container {
+    height: 100px;
+    width: 100px;
+    left: 10%;
+    top: 15%;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.go-back-arrow-background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: white;
+    opacity: 0.7;
+    border-radius: 50%;
+}
+
+#arrow-left {
+    height: 70%;
+    width: 70%;
+    stroke: black;
+    z-index: 11;
+}
+
+#user-trip-activities-container {
+    height: 60%;
+    width: 100%;
+    /* padding-top: 30px;
+    padding-bottom: 30px; */
+    /* overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px; */
+}
+
+.show-all-activity-animated-div {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+.no-activities-display {
+    font-size: 50px;
+    color: white;
+}
+
+.activity-card-container {
+    width: 100%;
+    min-height: 370px;
+    /* background: white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.activity-card-background {
+    position: absolute;
+    left: 10%;
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    border-radius: 40px;
+    z-index: 1;
+}
+
+.activity-card-image-container {
+    width: 28%;
+    height: 90%;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.55);
+    border: none;
+}
+.activity-card-image {
+    height: 100%;
+}
+
+.activity-card-info-container {
+    width: 72%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity-card-title-price {
+    width: 100%;
+    height: 43%;
+    display: flex;
+    flex-direction: row;
+}
+.activity-card-title {
+    height: 70%;
+    line-height: 1.25em;
+    overflow: hidden;
+    background: transparent;
+    width: 55%;
+    /* background-color: red; */
+    font-size: 45px;
+    font-weight: 700;
+    padding-top: 35px;
+    padding-left: 30px;
+}
+.activity-card-price {
+    height: 100%;
+    width: 45%;
+    /* background-color: green; */
+    font-size: 45px;
+    font-weight: 700;
+    padding-top: 55px;
+    padding-left: 30px;
+}
+
+.activity-card-type-attendee {
+    width: 100%;
+    height: 28.5%;
+    /* background-color: white; */
+    display: flex;
+    flex-direction: row;
+}
+.activity-card-type {
+    height: 100%;
+    width: 45%;
+    /* background-color: aquamarine; */
+    font-size: 40px;
+    color: grey;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.activity-card-attendee {
+    height: 100%;
+    width: 55%;
+    /* background-color: red; */
+    position: relative;
+}
+.attendee-one {
+    position: absolute;
+    left: 70px;
+    top: 15px;
+    height: 60px;
+    width: 60px;
+    background-color: black;
+    border-radius: 50%;
+}
+.attendee-two {
+    position: absolute;
+    left: 115px;
+    top: 15px;
+    height: 60px;
+    width: 60px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.attendee-three {
+    position: absolute;
+    left: 160px;
+    top: 15px;
+    height: 60px;
+    width: 60px;
+    background-color: red;
+    border-radius: 50%;
+}
+.attendee-extra {
+    position: absolute;
+    top: 25px;
+    left: 240px;
+    font-size: 30px;
+}
+
+.activity-card-control {
+    width: 100%;
+    height: 28.5%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+}
+
+.whos-going {
+    height: 100%;
+    width: 50%; 
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.whos-going-button {
+    border: none;
+    border-radius: 50px;
+    height: 70%;
+    width: 70%;
+    /* background: #D1E5E7;
+    opacity: 0.5; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.whos-going-button-background {
+    background: #D1E5E7;
+    opacity: 0.5;
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.whos-going-button-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.icon-container {
+    height: 100%;
+    width: 100%;
+}
+.users-icon-style {
+    stroke: black;
+    height: 60%;
+    width: 30%;
+}
+.split-text {
+    font-size: 35px;
+    font-weight: 650;
+}
+
+.cancel-trip {
+    height: 100%;
+    width: 50%;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cancel-trip-button { 
+    border: none;
+    border-radius: 50px;
+    background-color: transparent;
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.cancel-trip-button-background {
+    position: absolute;
+    border-radius: 50px;
+    background: #FF0000;
+    opacity: 0.15;
+    height: 100%;
+    width: 100%;
+}
+.cancel-trip-button-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.circle-close-icon-style {
+    stroke: black;
+    height: 60%;
+    width: 30%;
+}
+.cancel-text {
+    font-size: 35px;
+    font-weight: 650;
+}
+
