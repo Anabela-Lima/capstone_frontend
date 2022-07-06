@@ -4,6 +4,7 @@ import { useTransition, animated } from 'react-spring';
 import UserProfile from './components/UserProfile/UserProfile';
 import UserSocial from './components/UserSocial/UserSocial';
 import UserPrivacy from './components/UserPrivacy/UserPrivacy';
+// import UserPrivacy from './components/UserPrivacy'
 import PieChartHistory from './components/PieChartHistory/PieChartHistory';
 import PieChartReport from './components/PieChartReport/PieChartReport';
 import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
