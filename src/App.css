@@ -123,6 +123,7 @@
 
 /* this  */
 #secondary-nav-control-container {
+  width: 65%;
   position: relative;
   transition: all 0.55s ease-in-out 0.5s;
 }
@@ -152,40 +153,14 @@
   align-items: center;
 }
 
-#plus-nav-content {
+#test-content {
+  font-size: 40px;
   position: absolute;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.location-in-mind-container {
-  font-size: 40px;
-  font-weight: 600;
-  height: 90%;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 60px;
-}
-.location-in-mind-title {
-  width: 100%;
-  font-size: 40px;
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-
-}
-.location-in-mind-main-text {
-  width: 100%;
-  font-size: 35px;
-}
-.location-in-mind-small-text {
-  width: 100%;
+<<<<<<< HEAD
   font-size: 25px;
+=======
+>>>>>>> parent of 3b2e7ee (merged)
 }
 
 #user-nav-content {
