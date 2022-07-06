@@ -142,7 +142,8 @@ const  notif =()=> {
     <div id= "twitterSection1">
     <div id = "twitterSection2" className = "segment">  
 
-    <div id="lefticons1"> < Lock className = "icon" id="lock"/> 
+    <div id="lefticons1">
+    < Lock className = "icon" id="lock"/> 
     < UserIcon className = "icon" id="userIcon"/>  </div>
      
       <span id= "twitterTag" contentEditable="true" onInput={changeIcon}  className= "mainText" onClick={onInputChange}> UserName </span>
@@ -235,10 +236,11 @@ const  notif =()=> {
     
 
     </section>
+
     <section id= "buttonSection">
 
       <button id= "saveBtn"> <span id= "saveBtnText"> Save </span> </button>
-      <button id= "saveBtn2"> <span id= "saveBtnText2"> Deactivate Account </span> </button>
+      <button id= "deactivateBtn"> <span id= "deactivateBtnText"> Deactivate Account </span> </button>
       
     </section>
   
