@@ -11,6 +11,7 @@ import { ReactComponent as MessageSquareIcon } from '../../components/assets/ima
 
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen, userLoggedInDetails, tripInformation, friendData}) => {
 
+  // I HATE THIS
   
   const [isVisible, setIsVisible] = useState({
     activity: true,
