@@ -17,6 +17,8 @@ const CreateTrip = ({userId}) => {
 
     const createNewTrip = (event) => {
 
+      window.location.reload();
+
       console.log('clicked')
 
       const options = {
