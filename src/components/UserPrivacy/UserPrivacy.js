@@ -203,7 +203,7 @@ const  notif =()=> {
     <div id = "chain1Section2" className = "segment">  
     < Edit className = "icon" id="editIcon"/>  
     < Mail className = "icon" id="userIcon"/>  
-      <span className= "mainText"> Email </span>  
+      <span type= "Email"  contentEditable = "true" className= "mainText"> Email </span>  
       <div id= "chain1CircleRight" className='circlesRight'> </div> 
 
       {
@@ -223,7 +223,7 @@ const  notif =()=> {
     <div id = "chain2Section2" className = "segment">  
     < Edit className = "icon" id="editIcon"/>  
     < Lock className = "icon" id="userIcon"/>  
-       <span className= "mainText" id= "passwordText" >Password</span>  
+       <span type = "text" className= "mainText" contentEditable= "true" id= "passwordText" >Password</span>  
     
       <div id = "pwStrenght-container"> 
         <div  className= "pwStrength-class" id="pwStrength1"></div> 

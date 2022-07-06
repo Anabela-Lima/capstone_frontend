@@ -8,6 +8,9 @@ import { ReactComponent as SearchIcon } from '../../components/assets/images/sea
 import { ReactComponent as CreditCardIcon } from '../../components/assets/images/credit-card.svg'
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
+import MySlideshow from '../Slideshow/MySlideShow';
+
+
 
 import axios from 'axios';
 
@@ -775,10 +778,14 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
         userProfileMediaTransition((style, item) => {
           return item.media ? 
             <animated.div id="user-profile-media-content-background" style={style}>
-              MEDIA
+              
+            <MySlideshow/>
+            {/* MEDIA    */}
+
             </animated.div> :
+            
             ''
-        })
+        })   
       }
       {
         userProfileFriendsTransition((style, item) => {
