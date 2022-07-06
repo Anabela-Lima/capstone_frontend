@@ -101,7 +101,6 @@ const onInputChange = () => {
 }
 
 
-
 const  notif =()=> {
   // rendering Notification
   return (
