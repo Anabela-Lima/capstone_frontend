@@ -9,6 +9,7 @@ import axios from 'axios'
 import UserTrip from "./UserTrip"
 import { DataArrayOutlined } from '@mui/icons-material'
 import Activity from './Activity'
+import AddDayActivity from './AddDayActivity'
 
 const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
 
@@ -59,6 +60,8 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
 
     return (
         <>
+        <AddDayActivity day={dayDetails} />
+
          <div id="user-trip-container">
                 <div id="user-trip-image-container">
                     <img src={dayDetails.trip.imgURL} alt="" id="user-trip-image"/>
