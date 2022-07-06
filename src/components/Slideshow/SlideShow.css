@@ -1,3 +1,28 @@
 @import "react-slideshow-image/dist/styles.css";
 
 
+#memoriesTitle {
+
+  position: relative;
+  bottom:1em;
+  width: 850px;
+  height: 80px;
+  left:0.15em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.85);
+  border-radius:10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: linear-gradient(264.58deg, rgba(255, 255, 255, 0.15) 7.55%, rgba(255, 255, 255, 0) 94.61%);
+  opacity: 0.7;
+
+    
+}
+
+#memoriesText {
+    display: flex;
+    padding-top:0.25em;
+    color: white;
+    font-size: 70%;
+
+}

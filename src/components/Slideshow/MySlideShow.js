@@ -35,14 +35,6 @@ const slideshowPics = [
       
     }
 
-
-    // ,{
-    //   url: 'https://greenfins.net/wp-content/uploads/2020/10/Impact-Of-Scuba-Diving-On-A-Coral-Reef-Dos-Donts-Green-Living-Zone-2.jpg'
-    //   // caption: 'Slide3'
-      
-    // }
-
-
   
 ];
 
@@ -53,12 +45,11 @@ const MySlideshow = () => {
     return (
 
       <section>
-      <div id= "memoriesTitle"></div>
+      <div id= "memoriesTitle"><span id ="memoriesText"> Memories From: Work Crew</span></div>
       <div className="slide-container" style={{width:'870px'}} >
         <Slide>
          {slideshowPics.map((slideImage, index)=> (
             <div className="each-slide" key={index}>
-              {/* <div style={{backgroundImage: `url(${slideImage.url})`}}> */}
               <div>
                 <span>{slideImage.caption}</span>
                 <img id= "slideImages" width= "900"  height= "700" src={slideImage.url} alt="" />
