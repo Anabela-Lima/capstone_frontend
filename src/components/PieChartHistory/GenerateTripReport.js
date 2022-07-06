@@ -18,12 +18,14 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
     const handleReportButton = () => {  
         if (alreadyGenerated) {
             setReportVisible(!reportVisible);
-        } else {
+        } else if (organiser) {
             if (window.confirm("You can only generate a report for a trip once. Are you sure?")) {
                 fetch(`http://127.0.0.1:8080/generateOwingFromTrip?tripID=${trip.id}`)
                 .then(response => setAlreadyGenerated(true))
                 .catch(err => console.log(err));
             }
+        } else {
+
         }
     }
 
@@ -48,22 +50,31 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
     return (
         <>
         {!organiserOnly ? 
-        <h3>{trip.name} 
+        <>
+        <div className="tripGenerate">
+        <h1>{trip.name} </h1>
         {organiser && !alreadyGenerated ? <button onClick={handleReportButton}>Generate Report</button> :
-        <button onClick={handleReportButton}>View Report</button>}
-            {reportVisible ? <VisibleReport trip={trip} /> : null}
-        <button onClick={handlePieChartButton}>PieChart</button>
+            <button onClick={handleReportButton}>View Report</button>}
+            <button onClick={handlePieChartButton}>PieChart</button>
+        </div>
             {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}
-        </h3>
+            {reportVisible ? <VisibleReport trip={trip} /> : null}
+        
+        </>
         : 
         organiser ?
-        <h3>{trip.name} 
+        <>
+        <div className="tripGenerate">
+        <h1>{trip.name} </h1>
+        <div>
         {organiser && !alreadyGenerated ? <button onClick={handleReportButton}>Generate Report</button> :
-        <button onClick={handleReportButton}>View Report</button>}
-            {reportVisible ? <VisibleReport trip={trip} /> : null}
-        <button onClick={handlePieChartButton}>PieChart</button>
+            <button onClick={handleReportButton}>View Report</button>}
+            <button onClick={handlePieChartButton}>PieChart</button>
+        </div>
+        </div>
             {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}
-        </h3> : null }
+            {reportVisible ? <VisibleReport trip={trip} /> : null}
+        </>: null }
         </>
     )
 }

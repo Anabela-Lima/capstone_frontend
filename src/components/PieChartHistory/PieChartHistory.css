@@ -1,0 +1,14 @@
+.headingTripHistory {
+    display: flex;
+    border-radius: 8%;
+    justify-content: space-between;
+}
+
+.headingPicture {
+    border-radius: 50%;
+}
+
+.tripGenerate {
+    display: flex;
+    justify-content: space-between;
+}

@@ -13,7 +13,15 @@ const PieChartHistory = ({trips, user}) => {
   }
 
   return (
-    <div style={{color: 'white'}}>PieChartHistory
+    <>
+
+    <div className="headingTripHistory" style={{backgroundColor: '#395571', padding: '3px'}}>
+      <h1 style={{color: 'white', paddingLeft: '50px', paddingTop: '5px', fontSize: '50px'}}>Trip History</h1>
+      <img className="headingPicture" src={user.imgURL} height='150px' width='150px'/>
+    </div>
+
+
+    <div style={{color: 'white'}}>
 
     <button onClick={handleOrganiserOnly}>Where I'm Organiser</button>
 
@@ -25,7 +33,7 @@ const PieChartHistory = ({trips, user}) => {
     }
     
     </div>
-    
+    </>
   )
 }
 
