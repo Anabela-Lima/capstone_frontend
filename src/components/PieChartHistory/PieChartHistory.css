@@ -1,0 +1,44 @@
+.headingTripHistory {
+    display: flex;
+    border-radius: 8%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headingPicture {
+    border-radius: 50%;
+}
+
+.tripGenerate {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color: #395571;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4%;
+}
+
+.organiserBtn {
+   display: flex;
+   justify-content: flex-end;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   align-items: center;
+}
+
+input[type='checkbox'] {
+    width:25px;
+    height:25px;
+}
+
+.reportBtn {
+    width: 200px;
+    font-size:larger;
+}
+
+.pieChartBtn {
+    width: 100px;
+    font-size: larger;
+}
+
