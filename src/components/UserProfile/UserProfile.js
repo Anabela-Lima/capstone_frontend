@@ -13,6 +13,7 @@ import { ReactComponent as UserPlusIcon } from '../../components/assets/images/u
 
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen, userLoggedInDetails, tripInformation, friendData}) => {
 
+  // I HATE THIS
   
   const [isVisible, setIsVisible] = useState({
     activity: true,
