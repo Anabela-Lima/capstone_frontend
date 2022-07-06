@@ -14,6 +14,9 @@ import { ReactComponent as UserPlusIcon } from '../../components/assets/images/u
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen, userLoggedInDetails, tripInformation, friendData}) => {
 
   // I HATE THIS
+  const [friendBeingAdded, setFriendBeingAdded] = useState({});
+
+  const handleFriendBeingAddedChange = (event) => setFriendBeingAdded(event.target.value);
   
   const [isVisible, setIsVisible] = useState({
     activity: true,
@@ -72,10 +75,18 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
 
   const addUserToTrip = (tripCode) => {
     console.log(tripCode)
+    const options = {
+      method: "PUT",
+    }
+    fetch(`http://127.0.0.1:8080/user/trips/assign_user?userId=${friendBeingAdded}&tripCode=${tripCode}`, options)
   }
 
   const cancelTrip = (tripCode) => {
     console.log(tripCode)
+    const options = {
+      method: "DELETE",
+    }
+    fetch(`http://127.0.0.1:8080/user/trip/cancel_trip?tripCode=${tripCode}`, options)
   }
 
   const tripCardsList = () => {
@@ -134,7 +145,13 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
                       >
                         {/* <UserPlusIcon className="trip-card-button-icon"/> */}
                         <span style={{color: 'black', fontSize: '33px'}}>
-                          Add User
+                          <select onChange={handleFriendBeingAddedChange}>
+                            <option value="">Add User</option>
+                            {
+                              friendData.map(friend => <option value={friend.id}>{friend.username}</option>)
+                            }
+                          </select>
+                          <button onClick={addUserToTrip}>+</button>
                         </span>
                     </div>
                     <div 
@@ -304,10 +321,10 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           <div id="blue-circle"></div>
           <div id="magenta-circle"></div>
           <div id="user-profile-front-glass">
-            <div id="user-profile-add-button">
+            {/* <div id="user-profile-add-button">
                 <UserIcon className="user-profile-user-icon"/>
                 <span id="user-profile-add-button-text">Add +</span>
-            </div>
+            </div> */}
             <div id="user-profile-picture-container">
               <div id="user-profile-picture-ring"></div>
               <img src={userLoggedInDetails.imgURL} alt="" id="user-profile-image" />

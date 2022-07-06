@@ -34,7 +34,12 @@ const VisiblePieChart = ({trip}) => {
         <>
         {pieChartPercentages.totalSpend != 0 ?
         <>
+
+        <div style={{display: 'flex' ,justifyContent: 'center', paddingBottom: '10px'}}>
         <h1 style={{fontSize: "65px"}}>£{(pieChartPercentages.overallPercentageOfBudget - 1)*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget} Over Budget</h1>
+        </div>
+
+        <div style={{height: '600px'}}>
         <PieChart
          data={[
             { title: 'One', value: pieChartPercentages.foodPercentage, color: '#E38627', label:"Food" },
@@ -63,9 +68,10 @@ const VisiblePieChart = ({trip}) => {
         labelPosition={"50%"}
         animationDuration={"750"}
         /> 
+        </div>
 
         <h1>
-            <div style={{float:'right'}}>
+            <div style={{float:'right', fontSize: 'larger'}}>
                 Amount (£)
             </div>
             <br></br>
