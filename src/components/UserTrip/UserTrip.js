@@ -12,6 +12,7 @@ const UserTrip = ({tripId, goToUserProfileFromTripScreen}) => {
 
     const[daysByTrip, setDaysByTrip] = useState([]);
     const [dayNumber, setDayNumber] = useState(1);
+   
 
     const ChangeToValue = (event) => {
         setDayNumber(event.target.value);
@@ -39,6 +40,7 @@ const UserTrip = ({tripId, goToUserProfileFromTripScreen}) => {
                     })
                 }
             </select>
+            
     
             {
                 daysByTrip.map((data, index) => {

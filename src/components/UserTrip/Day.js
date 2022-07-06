@@ -19,6 +19,17 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
     const [activityBoolean, setActivity] = useState(null);
 
     const [showAddNewActivity, setShowAddNewActivity] = useState(false);
+    const [budget, setBudget] = useState(0);
+
+    const handleBudgetChange = (event) => setBudget(event.target.value);
+
+    const changeBudget = (event) => {
+        event.preventDefault();
+        const options = {
+            method: "PUT",
+          }
+        fetch(`http://127.0.0.1:8080/day/changeBudget?dayID=${dayDetails.id}&budget=${budget}`, options)
+    }
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:8080/day/getActivitiesByDayID?dayID=${dayDetails.id}`)
@@ -86,6 +97,12 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
 
     return (
         <> 
+        <form onSubmit={changeBudget}>
+                <label>
+                    <input onChange={handleBudgetChange} type="number" />
+                </label>
+            <input type="submit"/>
+            </form>
         {
             showAddNewActivityTransition((style, item) => {
                 return item ?

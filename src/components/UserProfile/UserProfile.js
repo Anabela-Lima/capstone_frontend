@@ -144,22 +144,25 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
                       onClick={() => addUserToTrip(data.tripCode)}
                       >
                         {/* <UserPlusIcon className="trip-card-button-icon"/> */}
+                        <div style={{display: 'flex', alignItems: 'center'}}>
                         <span style={{color: 'black', fontSize: '33px'}}>
-                          <select onChange={handleFriendBeingAddedChange}>
+                          <select onChange={handleFriendBeingAddedChange} style={{height:'50px', fontSize: '28px', width:'145px'}}>
                             <option value="">Add User</option>
                             {
-                              friendData.map(friend => <option value={friend.id}>{friend.username}</option>)
+                              friendData.map(friend => <option style={{fontSize: '15px'}} value={friend.id}>{friend.username}</option>)
                             }
                           </select>
-                          <button onClick={addUserToTrip}>+</button>
+                          <button onClick={addUserToTrip} style={{height: '50px', fontSize: '28px', width: '35px'}}>+</button>
+        
                         </span>
+                        </div>
                     </div>
                     <div 
                       className="trip-card-remove"
                       onClick={() => cancelTrip(data.tripCode)}
                     >
                         {/* <TrashIcon className="trip-card-button-icon"/> */}
-                        <span style={{color: 'black', fontSize: '33px'}}>
+                        <span style={{color: 'black', fontSize: '28px'}}>
                           Cancel
                         </span>
                     </div>
