@@ -36,7 +36,8 @@ const VisiblePieChart = ({trip}) => {
         <>
 
         <div style={{display: 'flex' ,justifyContent: 'center', paddingBottom: '10px'}}>
-        <h1 style={{fontSize: "65px"}}>£{((pieChartPercentages.overallPercentageOfBudget - 1)*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2)} Over Budget</h1>
+        <h1 style={{fontSize: "65px"}}>{pieChartPercentages.overallPercentageOfBudget>1 ? '£' + ((pieChartPercentages.overallPercentageOfBudget - 1)*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2) + 'Over Budget' 
+        : '£' + (-(pieChartPercentages.overallPercentageOfBudget - 1)*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2) +  ' Under Budget' }</h1>
         </div>
 
         <div style={{height: '600px'}}>
