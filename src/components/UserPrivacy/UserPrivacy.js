@@ -181,7 +181,7 @@ const  notif =()=> {
     <div id= "LinkedInSection1">
 
     <div id = "LinkedInSection2" className = "segment">  
-      <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span contentEditable= "true" onInput= {changeIcon2}  onClick={onInputChange} className= "mainText">Ayana Zhen</span> 
+      <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span contentEditable= "true" onInput= {changeIcon2}  onClick={onInputChange} className= "mainText">Last Name</span> 
       <div id= "instaCircleRight" className='circlesRight'> </div> 
       <div id= "instaCircleLeft" className='circlesLeft'> </div> 
       {
@@ -199,7 +199,7 @@ const  notif =()=> {
     <div id= "chain1Section1">
    
     <div id = "chain1Section2" className = "segment">  
-      <Chain  className = "icon" id="chain1Icon"/><span className= "mainText"> NoCap-Finance</span>  
+      <Chain  className = "icon" id="chain1Icon"/><span className= "mainText"> Email </span>  
       <div id= "chain1CircleRight" className='circlesRight'> </div> 
       <div id= "chain1CircleLeft" className='circlesLeft'> </div> 
       {
@@ -217,25 +217,21 @@ const  notif =()=> {
     <div id= "chain2Section1">
    
     <div id = "chain2Section2" className = "segment">  
-      <Chain  className = "icon" id="chain2Icon"/> <span className= "mainText" >Link Account</span>  
-      <div id= "chain2CircleRight" className='circlesRight'> </div> 
+      <Chain  className = "icon" id="chain2Icon"/> <span className= "mainText" >Password</span>  
+      
       <div id= "chain2CircleLeft" className='circlesLeft'> </div> 
-      <ChevronRight  className = "icon checkIcon" id="chevronRight1"/>
+      <div id = "pwStrenght-container"> 
+        <div  className= "pwStrength-class" id="pwStrength1"></div> 
+        <div  className= "pwStrength-class" id="pwStrength2"> </div>  
+        <div  className= "pwStrength-class" id="pwStrength2"> </div>  
+      
+      </div>
+      
     </div>
 
     </div>
     
 
-    <div id= "chain3Section1">
-   
-    <div id = "chain3Section2" className = "segment">  
-      <Chain  className = "icon" id="chain3Icon"/> <span className= "mainText">Link Account</span>  
-      <div id= "CircleRight" className='circlesRight'> </div> 
-      <div id= "twitterCircleLeft" className='circlesLeft'> </div> 
-      <ChevronRight  className = "icon checkIcon" id="chevronRight2"/>
-    </div>
-
-    </div>
     
 
     </section>
