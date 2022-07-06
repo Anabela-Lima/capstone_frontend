@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react"
 import VisiblePieChart from "./VisiblePieChart";
 import VisibleReport from "./VisibleReport";
+import './PieChartHistory.css'
 
 const GenerateTripReport = ({trip, organiserOnly, user}) => {
 
@@ -52,24 +53,31 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
         {!organiserOnly ? 
         <>
         <div className="tripGenerate">
-        <h1>{trip.name} </h1>
-        {organiser && !alreadyGenerated ? <button onClick={handleReportButton}>Generate Report</button> :
-            <button onClick={handleReportButton}>View Report</button>}
-            <button onClick={handlePieChartButton}>PieChart</button>
+            <div>
+                <h1>{trip.name} </h1>
+            </div>
+        <div>
+        {organiser && !alreadyGenerated ? <button className="reportBtn" onClick={handleReportButton}>Generate Report</button> :
+            <button className="reportBtn" onClick={handleReportButton}>View Report</button>}
+            <button className="pieChartBtn" onClick={handlePieChartButton}>PieChart</button>
+        </div>
         </div>
             {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}
             {reportVisible ? <VisibleReport trip={trip} /> : null}
+
         
         </>
         : 
         organiser ?
         <>
         <div className="tripGenerate">
-        <h1>{trip.name} </h1>
+            <div>
+                <h1>{trip.name} </h1>
+            </div>
         <div>
-        {organiser && !alreadyGenerated ? <button onClick={handleReportButton}>Generate Report</button> :
-            <button onClick={handleReportButton}>View Report</button>}
-            <button onClick={handlePieChartButton}>PieChart</button>
+        {organiser && !alreadyGenerated ? <button className="reportBtn" onClick={handleReportButton}>Generate Report</button> :
+            <button className="reportBtn" onClick={handleReportButton}>View Report</button>}
+            <button className="pieChartBtn" onClick={handlePieChartButton}>PieChart</button>
         </div>
         </div>
             {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}

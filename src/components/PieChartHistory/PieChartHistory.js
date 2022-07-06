@@ -14,24 +14,34 @@ const PieChartHistory = ({trips, user}) => {
 
   return (
     <>
+    <div>
 
     <div className="headingTripHistory" style={{backgroundColor: '#395571', padding: '3px'}}>
       <h1 style={{color: 'white', paddingLeft: '50px', paddingTop: '5px', fontSize: '50px'}}>Trip History</h1>
-      <img className="headingPicture" src={user.imgURL} height='150px' width='150px'/>
+      <div style={{height: '150px', width: '150px', overflow: 'hidden', borderRadius: '50%', display: 'flex', justifyContent: 'center'}}>
+        <img className="headingPicture" src={user.imgURL} height='100%' width='auto'/>
+      </div>
     </div>
 
 
     <div style={{color: 'white'}}>
 
-    <button onClick={handleOrganiserOnly}>Where I'm Organiser</button>
+    <div className="organiserBtn">
+      {/* <button onClick={handleOrganiserOnly}>Where I'm Organiser</button> */}
+      <h1 style={{paddingRight: '30px'}}>Where I'm Organiser</h1>
+      <input style={{}} type="checkbox" onChange={handleOrganiserOnly}/>
+    </div>
 
+    <div style={{overflowY: 'scroll', height: '1500px'}}>
     {
       trips.map(trip => {
         return <GenerateTripReport trip = {trip} organiserOnly={organiserOnly}
         user = {user}/>
       })
     }
-    
+    </div>
+
+    </div>
     </div>
     </>
   )
