@@ -10,6 +10,7 @@ const VisiblePieChart = ({trip}) => {
 
     const [pieChartPercentages, setPieChartPercentages] = useState({
         "tripID": trip.id,
+        "totalSpend": 0,
         "overallPercentageOfBudget": 0,
         "foodPercentage": 0,
         "physicalPercentage": 0,

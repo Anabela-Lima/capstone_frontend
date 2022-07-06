@@ -52,7 +52,7 @@ const addFriend = async (fA) => {
         .post(`http://localhost:8080/friend/addFriend/${currentUserUsername}/${fA.username}`)
         const data = friends.data;
         setFriends(data)
-        document.getElementById("friendBTNclick").innerHTML = "This user has been added to your friend list";
+        document.getElementById("addFriendBtn").innerHTML = "Added";
   } catch (err) {
     setFriends([])
     document.getElementById("friendBTNclick").innerHTML = `${err.response.data.message}`;
@@ -88,7 +88,7 @@ const addFriend = async (fA) => {
               {
                 users.map((user, index) => {
                   return (
-                    <div key={index} className="one-user">
+                    <div key={index} id="one-user">
                       <div id="user-p-container">
                       <div className="search-user-image-container">
                         <img src={user.imgURL} alt="" className="user-image-style"/>
@@ -97,7 +97,7 @@ const addFriend = async (fA) => {
                         <p id="pUsername">{user.username}</p>
                       <button id="addFriendBtn" onClick={() => addFriend(user)}>Add Friend</button>
                       </div>
-                      <div id="err-return">
+                      <div className="err-return">
                       <p id="friendBTNclick"></p>
                       </div>
                     </div>
