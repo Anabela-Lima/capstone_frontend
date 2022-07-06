@@ -4,7 +4,7 @@
 #memoriesTitle {
 
   position: relative;
-  bottom:1em;
+bottom:0.8em;
   width: 850px;
   height: 80px;
   left:0.15em;
@@ -24,5 +24,15 @@
     padding-top:0.25em;
     color: white;
     font-size: 70%;
+
+}
+
+#caption {
+     display: flex;
+    padding-top:0.25em;
+    color: white;
+    font-size: 70%;
+    background-color: rgb(118, 134, 134);
+    border-bottom-right-radius: 0.6em;
 
 }
