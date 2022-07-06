@@ -5,12 +5,14 @@
     font-size: xx-large;
 }
 
+
 #pUsername{
     color: lightcyan;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: x-large;
 }
+
 
 #search-page-container{
     height: 100%;
@@ -21,11 +23,13 @@
     align-items: left;
 }
 
+
 #search-users-container {
     width: 100%;
     height: 100px;
     position: relative;
 }
+
 
 #search-users-searchbox-background {
     width: 100%;
@@ -43,6 +47,7 @@
     /* border: none; */
 }
 
+
 #search-users-searchbox {
     position: absolute;
     background: transparent;
@@ -54,6 +59,7 @@
     padding-left: 5%;
     padding-right: 5%;
 }
+
 
 #search-users-searchbox-icon-container {
     height: 80%;
@@ -69,10 +75,12 @@
     align-items: center;
 }
 
+
 #search-users-search-icon {
     height: 50%;
     width: 50%;
 }
+
 
 .search-user-image-container {
     height: 100px;
@@ -81,8 +89,10 @@
     border-radius: 50%;
 }
 
+
 #users-list{
-    display: contents;
+    display:flex;
+    flex-direction: column;
 }
 
 
@@ -91,7 +101,7 @@
     width: auto;
 }
 
-.one-user {
+#one-user {
     height: 200px;
     width: 100%;
     display: flex;
@@ -104,15 +114,20 @@
     backdrop-filter: blur(20px);
 }
 
+
 #user-p-container{
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: left;
     padding-top: 2cm;
 }
+
+.err-return{
+   display: flex;
+}
+
 
 #addFriendBtn{
     font-family: 'Inter', sans-serif;
@@ -128,19 +143,8 @@
   border-radius: 20px;
 }
 
-
-#err-return{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: left;
-    margin-right: 3%;
-}
-
 #friendBTNclick{
-    color:red;
+    color: red;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
     font-size: 30px;
