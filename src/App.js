@@ -4,11 +4,13 @@ import { useTransition, animated } from 'react-spring';
 import UserProfile from './components/UserProfile/UserProfile';
 import UserSocial from './components/UserSocial/UserSocial';
 import UserPrivacy from './components/UserPrivacy/UserPrivacy';
+// import UserPrivacy from './components/UserPrivacy'
 import PieChartHistory from './components/PieChartHistory/PieChartHistory';
 import PieChartReport from './components/PieChartReport/PieChartReport';
 import PieChartSplitPay from './components/PieChartSplitPay/PieChartSplitPay';
 import Friends from './components/Friends/Friends';
 import UserTrip from './components/UserTrip/UserTrip';
+import CreateTrip from './components/CreateTrip/CreateTrip';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import { ReactComponent as UserIcon } from './components/assets/images/user.svg';
 import { ReactComponent as HomeIcon } from './components/assets/images/home.svg';
@@ -55,37 +57,6 @@ const App = () => {
     })
   }, [friendData]);
 
-  // new trip form 
-  const [tripTitle, setTripTitle] = useState("");
-  const [tripCountry, setTripCountry] = useState("");
-  const [tripDescription, setTripDescription] = useState("");
-  const[startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-
-  const handleTripTitle = (event)  => setTripTitle(event.target.value);
-  const handleTripCountry = (event) => setTripCountry(event.target.value);
-  const handleTripDescription = (event) => setTripDescription(event.target.value);
-  const handleStartDate = (event) => setStartDate(event.target.value);
-  const handleEndDate = (event) => setEndDate(event.target.value);
-
-  const createNewTrip = (event) => {
-    // event.preventDefault();
-    const options = {
-      method: "POST",
-    }
-
-    fetch(`http://127.0.0.1:8080/user/trip/new?userId=${mockLoggedInAsID}&name=${tripTitle}&country=${tripCountry}&description=${tripDescription}&startDate=${startDate}%2000%3A00%3A00&endDate=${endDate}%2000%3A00%3A00`,
-    options)
-    .then((response) => {
-      setTripTitle("");
-      setTripCountry("");
-      setTripDescription("");
-      setStartDate(new Date());
-      setEndDate(new Date());
-    })
-    .catch(err => console.log(err))
-  };
-
   const [isVisible, setIsVisible] = useState({
     user: true,
     home: false,
@@ -93,11 +64,14 @@ const App = () => {
     pieChart: false
   })
 
+  // This controls the secondary nav bar's size- gray display sliding up
   const [visual, setVisual] = useState({
     slide: null,
-    secondaryNavHeight: "75px"
+    secondaryNavHeight: "75px",
+    secondaryNavWidth: "65%"
   })
 
+  // decides what shows up on the main screen
   const [userNavSelection, setUserNavSelection] = useState({
     userProfile: true,
     userSocial: false,
@@ -109,13 +83,15 @@ const App = () => {
     searchUsers: false,
     searchSupport: false,
     searchReport: false,
+    createTrip : false,
     slide: "27px"
   })
 
   useEffect(() => {
     setVisual({
       slide: `${document.getElementById('user-icon').getBoundingClientRect().left - 50}px`,
-      secondaryNavHeight: "75px"
+      secondaryNavHeight: "75px",
+      secondaryNavWidth: "65%"
     })
   }, [])
 
@@ -134,7 +110,8 @@ const App = () => {
         if (isVisible.user && !userNavSelection.userTrip) break;
         setVisual({
           slide: `${userIconLeft - 50}px`,
-          secondaryNavHeight: "75px"
+          secondaryNavHeight: "75px",
+          secondaryNavWidth: "65%"
         })
         setIsVisible({
           user: true,
@@ -153,6 +130,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "27px"
         })
         break;
@@ -160,7 +138,8 @@ const App = () => {
         if (isVisible.home) break;
         setVisual({
           slide: `${userIconLeft + elementDistance - 50}px`,
-          secondaryNavHeight: "75px"
+          secondaryNavHeight: "75px",
+          secondaryNavWidth: "65%"
         })
         setIsVisible({
           user: false,
@@ -179,6 +158,7 @@ const App = () => {
           searchUsers: true,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: '30px'
         })
         break;
@@ -186,7 +166,8 @@ const App = () => {
         if (isVisible.plus) break;
         setVisual({
           slide: `${userIconLeft + elementDistance * 2 - 50}px`,
-          secondaryNavHeight: "1575px"
+          secondaryNavHeight: "375px",
+          secondaryNavWidth: "80%"
         })
         setIsVisible({
           user: false,
@@ -205,6 +186,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : true,
           slide: userNavSelection.slide
         })
         break;
@@ -212,7 +194,8 @@ const App = () => {
         if (isVisible.pieChart) break;
         setVisual({
           slide: `${userIconLeft + elementDistance * 3 - 50}px`,
-          secondaryNavHeight: '75px'
+          secondaryNavHeight: '75px',
+          secondaryNavWidth: "65%"
         })
         setIsVisible({
           user: false,
@@ -231,13 +214,15 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip: false,
           slide: "40px"
         })
         break;
       default:
         setVisual({
           slide: `${userIconLeft - 50}px`,
-          secondaryNavHeight: "75px"
+          secondaryNavHeight: "75px",
+          secondaryNavWidth: "65%"
         })
         setIsVisible({
           user: true,
@@ -256,11 +241,14 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: userNavSelection.slide
         })
         break;
     }
   }
+
+  // html for main nav bar
 
   const mainNav = () => {
     return (
@@ -365,6 +353,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "214px"
         })
         break;
@@ -381,6 +370,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "410px"
         })
         break;
@@ -397,6 +387,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "27px"
         })
         break;
@@ -412,6 +403,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "27px"
         })
         break;
@@ -433,6 +425,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "40px"
         })
         break;
@@ -449,6 +442,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "410px"
         })
         break;
@@ -465,6 +459,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "214px"
         })
         break;
@@ -480,6 +475,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "40px"
         })
         break;
@@ -501,6 +497,7 @@ const App = () => {
           searchUsers: true,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "30px"
         })
         break;
@@ -517,6 +514,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: false,
           searchReport: true,
+          createTrip : false,
           slide: "214px"
         })
         break;
@@ -533,6 +531,7 @@ const App = () => {
           searchUsers: false,
           searchSupport: true,
           searchReport: false,
+          createTrip : false,
           slide: "410px"
         })
         break;
@@ -548,6 +547,7 @@ const App = () => {
           searchUsers: true,
           searchSupport: false,
           searchReport: false,
+          createTrip : false,
           slide: "40px"
         })
         break;
@@ -645,31 +645,19 @@ const App = () => {
             {
               plusContentTransition((style, item) => {
                 return item.plus ? 
-                <animated.div style={style} id="test-content">
-                  <form onSubmit = {createNewTrip}>
-                    <label>
-                      Trip name: <input type="text" placeholder='Trip Title' onChange={handleTripTitle}
-                      value={tripTitle}/>
-                    </label>
-                    <label>
-                      Country: <input type="text" placeholder='Country' onChange={handleTripCountry}
-                      value={tripCountry}/>
-                    </label>
-                    <label>
-                      Trip Description: <input type="text" placeholder='Trip Description' onChange={handleTripDescription}
-                      value={tripDescription}/>
-                    </label>
-                    <label>
-                      Start Date: <input type="date"  onChange={handleStartDate}
-                      value={startDate}/>
-                    </label>
-                    <label>
-                      End Date: <input type="date" onChange={handleEndDate}
-                      value={endDate}/> 
-                    </label>
-                  
-                  <input type="submit" value="Add Trip!"/>
-                  </form>
+                <animated.div style={style} id="plus-nav-content">
+                    <div className="location-in-mind-container">
+                        <span className="location-in-mind-title">
+                          Have a location in mind?
+                        </span>
+                        <span className="location-in-mind-main-text">
+                            See trip details above and edit any fields.
+                            Once confirmed, you should receive a confirmation e-mail.
+                        </span>
+                        <span className="location-in-mind-small-text">
+                          Otherwise contact support: 0200 4566 3243
+                        </span>
+                    </div>
                 </animated.div> : 
                 ''
               })
@@ -719,7 +707,10 @@ const App = () => {
     return (
       <>
         <div id="secondary-nav-section">
-          <div id="secondary-nav-control-container" style={{height: visual.secondaryNavHeight}}>
+          <div id="secondary-nav-control-container" style={{
+              height: visual.secondaryNavHeight,
+              width: visual.secondaryNavWidth
+            }}>
             <div id="secondary-nav-background"></div>
             <div id="secondary-nav-content-container">
               {secondaryNavContent()}
@@ -743,6 +734,8 @@ const App = () => {
   const searchReportTransition = useTransition(userNavSelection, fadeTransition);
   const searchSupportTransition = useTransition(userNavSelection, fadeTransition);
 
+  const createTripTransition = useTransition(userNavSelection, fadeTransition);
+
 
   const [tripId, setTripId] = useState(null)
 
@@ -760,6 +753,7 @@ const App = () => {
       searchUsers: false,
       searchSupport: false,
       searchReport: false,
+      createTrip : false,
       slide: userNavSelection.slide
     })
     
@@ -777,6 +771,7 @@ const App = () => {
       searchUsers: false,
       searchSupport: false,
       searchReport: false,
+      createTrip : false,
       slide: userNavSelection.slide
     })
   }
@@ -902,6 +897,16 @@ const App = () => {
           }
           {/* MAGNIFIER SCREEN ------------------------------------------------------------------------------------------------ */}
 
+          {/* PLUS SCREEN  ----------------------------------------------------------------------------------------------- */}
+          {
+              createTripTransition((style, item) => {
+                return item.createTrip ?
+                <animated.div style={style} className="main-content-animated-div">
+                  <CreateTrip userId={mockLoggedInAsID}/>
+                </animated.div> : ''
+              })
+          }
+          {/* PLUS SCREEN  ----------------------------------------------------------------------------------------------- */}
 
           </div>
         </div>
