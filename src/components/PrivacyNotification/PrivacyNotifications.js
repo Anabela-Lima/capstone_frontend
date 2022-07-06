@@ -15,6 +15,8 @@ const PrivacyNotifications = ({notificationText, textBody, notificationText2, te
         <span  className="popupbox-text">
         {textBody}
         </span>
+        
+
         </div>
         
         
