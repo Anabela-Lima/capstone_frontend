@@ -216,12 +216,8 @@ const App = () => {
         if (isVisible.pieChart) break;
         setVisual({
           slide: `${userIconLeft + elementDistance * 3 - 50}px`,
-<<<<<<< HEAD
           secondaryNavHeight: '75px',
           secondaryNavWidth: "35%"
-=======
-          secondaryNavHeight: '75px'
->>>>>>> parent of 3b2e7ee (merged)
         })
         setIsVisible({
           user: false,
