@@ -1,0 +1,18 @@
+
+.dont-add-up-container {
+    position: absolute;
+    z-index: 99;
+    height: 50px;
+    width: 50px; 
+    right: 3%;
+    top: 5%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dont-add-up-icon {
+    height: 100%;
+    width: 100%;
+    stroke: red;
+}

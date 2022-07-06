@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-const AddDayActivity = ({day}) => {
+const AddDayActivity = ({day, closeAddNewFromAddNew}) => {
 
     const [type, setType] = useState(0);
     const [location, setLocation] = useState("");
@@ -15,10 +15,10 @@ const AddDayActivity = ({day}) => {
     const handlePrice = (event) => setPrice(event.target.value);
 
     const handleNewActivity = (event) => {
+        event.preventDefault();
         const options = {
             method: "POST",
           }
-        event.preventDefault();
         fetch(`http://127.0.0.1:8080/dayActivity?activityType=${type}&location=${location}&name=${title}&price=${price}&day_id=${day.id}`,
         options)
     }
@@ -47,6 +47,7 @@ const AddDayActivity = ({day}) => {
             </label>
 
         <input type="submit"/>
+        <button style={{height: '100px', width: '100px'}} onClick={closeAddNewFromAddNew}></button>
         </form>
         </>
     )

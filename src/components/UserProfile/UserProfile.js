@@ -8,6 +8,8 @@ import { ReactComponent as SearchIcon } from '../../components/assets/images/sea
 import { ReactComponent as CreditCardIcon } from '../../components/assets/images/credit-card.svg'
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
+import { ReactComponent as TrashIcon } from '../../components/assets/images/trash-2.svg'
+import { ReactComponent as UserPlusIcon } from '../../components/assets/images/user-plus.svg'
 
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen, userLoggedInDetails, tripInformation, friendData}) => {
 
@@ -67,6 +69,14 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
     }
   }
 
+  const addUserToTrip = (tripCode) => {
+    console.log(tripCode)
+  }
+
+  const cancelTrip = (tripCode) => {
+    console.log(tripCode)
+  }
+
   const tripCardsList = () => {
     const tripList = tripInformation.map(data => {
       const id = data.id;
@@ -75,38 +85,69 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
             className="trip-section" 
             key={data.id}
           >
-            <div className="trip-indicator">-</div>
+
+            {/* <div className="trip-indicator">-</div> */}
+
             <div 
               className="trip-card"
-              onClick={() => goToTripScreenFromUserProfile(id)}
             >
               <div className="trip-card-background"></div>
-              <div className="trip-card-layout">
-                <div className="trip-card-layout-top">
-                  <div className="trip-card-layout-top-left">
-                    <div className="trip-image-container">
-                      <img 
-                        src={data.imgURL}
-                        alt="" 
-                        className="trip-image"
-                      />
+
+              <div className="trip-card-info-control-layout">
+
+                <div className="trip-card-info" onClick={() => goToTripScreenFromUserProfile(id)}>
+                  <div className="trip-card-layout">
+                    <div className="trip-card-layout-top">
+                      <div className="trip-card-layout-top-left">
+                        <div className="trip-image-container">
+                          <img 
+                            src={data.imgURL}
+                            alt="" 
+                            className="trip-image"
+                          />
+                        </div>
+                      </div>
+                      <div className="trip-card-layout-top-right">
+                        <span className="trip-title">{data.name}</span>
+                        <span className="trip-country">{data.country}</span>
+                      </div>
+                    </div>
+                    <div className="trip-card-layout-bottom">
+                      <div className="trip-card-layout-bottom-left">
+                        {attendeeIconsGenerator(data.tripAssignments.map(
+                          user => user.id
+                        ))}
+                      </div>
+                      <div className="trip-card-layout-bottom-right">
+                        {data.startDate.substring(0,10)}
+                      </div>
                     </div>
                   </div>
-                  <div className="trip-card-layout-top-right">
-                    <span className="trip-title">{data.name}</span>
-                    <span className="trip-country">{data.country}</span>
+                </div>
+
+                <div className="trip-card-control">
+                  <div className="trip-card-control-buttons">
+                    <div 
+                      className="trip-card-assign"
+                      onClick={() => addUserToTrip(data.tripCode)}
+                      >
+                        {/* <UserPlusIcon className="trip-card-button-icon"/> */}
+                        <span style={{color: 'black', fontSize: '33px'}}>
+                          Add User
+                        </span>
+                    </div>
+                    <div 
+                      className="trip-card-remove"
+                      onClick={() => cancelTrip(data.tripCode)}
+                    >
+                        {/* <TrashIcon className="trip-card-button-icon"/> */}
+                        <span style={{color: 'black', fontSize: '33px'}}>
+                          Cancel
+                        </span>
+                    </div>
                   </div>
                 </div>
-                <div className="trip-card-layout-bottom">
-                  <div className="trip-card-layout-bottom-left">
-                    {attendeeIconsGenerator(data.tripAssignments.map(
-                      user => user.id
-                    ))}
-                  </div>
-                  <div className="trip-card-layout-bottom-right">
-                    {data.startDate.substring(0,10)}
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -262,10 +303,10 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           <div id="blue-circle"></div>
           <div id="magenta-circle"></div>
           <div id="user-profile-front-glass">
-            {/* <div id="user-profile-add-button">
+            <div id="user-profile-add-button">
                 <UserIcon className="user-profile-user-icon"/>
                 <span id="user-profile-add-button-text">Add +</span>
-            </div> */}
+            </div>
             <div id="user-profile-picture-container">
               <div id="user-profile-picture-ring"></div>
               <img src={userLoggedInDetails.imgURL} alt="" id="user-profile-image" />

@@ -28,20 +28,29 @@ const UserTrip = ({tripId, goToUserProfileFromTripScreen}) => {
 
     return (
         <>
-        <select name="days" style={{width: "100px"}} onChange={ChangeToValue}>
-                {daysByTrip.map((day, index) => {
-                    return <option value={index+1}> Day {index+1}</option>
-                })}
-        </select>
-
-        
-        {
-            daysByTrip.map((data, index) => {
-                if (dayNumber == index+1) {
-                    return <Day dayDetails={data} dayNumber = {index+1} goToUserProfileFromTripScreen={goToUserProfileFromTripScreen}/> 
-                }   
-            })
-        }    
+            <select 
+                name="days" 
+                style={{width: "100px"}} 
+                onChange={ChangeToValue}
+            >
+                {
+                    daysByTrip.map((day, index) => {
+                        return <option value={index+1}> Day {index+1}</option>
+                    })
+                }
+            </select>
+    
+            {
+                daysByTrip.map((data, index) => {
+                    if (dayNumber == index+1) {
+                        return <Day 
+                                    dayDetails={data} 
+                                    dayNumber = {index+1} 
+                                    goToUserProfileFromTripScreen={goToUserProfileFromTripScreen}
+                                /> 
+                    }   
+                })
+            }    
         </>
     )
 }

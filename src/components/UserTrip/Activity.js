@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './UserTrip.css'
+import './Activity.css'
 import { mockTripData } from '../_MockData/MockTripData'
 import { ReactComponent as UsersIcon } from '../assets/images/users.svg'
 import { ReactComponent as CircleCloseIcon } from '../assets/images/x-circle.svg'
 import { ReactComponent as ArrowLeftIcon } from '../assets/images/arrow-left.svg'
+import { ReactComponent as AlertIcon } from '../assets/images/alert-circle.svg'
 import { useTransition, animated } from 'react-spring';
 import axios from 'axios'
 import ChangePayments from './ChangePayments'
 
-const Activity = ({activity, activityBoolean, setActivity, reRender}) => {
+const Activity = ({activity, reRender}) => {
 
     const [activityAssignment, setActivityAssignment] = useState([]);
     const [paymentsAddUp, setPaymentsAddUp] = useState(false);
@@ -160,8 +162,15 @@ const Activity = ({activity, activityBoolean, setActivity, reRender}) => {
                         </div>
                     </div>
                 </div>
+                {
+                    !paymentsAddUp ?
+                        <div className="dont-add-up-container">
+                            <AlertIcon className="dont-add-up-icon"/>
+                        </div>
+                    : 
+                        null
+                }  
             </div> 
-            {!paymentsAddUp ? <h1 style={{color:"red"}}>THESE DON'T ADD UP</h1> : null}  
             {canSeePayments ? 
             activityAssignment.map(assignment => {
                 return <ChangePayments assignment={assignment} reRender={reRenderAssignments}

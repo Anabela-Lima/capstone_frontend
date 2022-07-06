@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './UserTrip.css'
+import './Day.css'
 import { mockTripData } from '../_MockData/MockTripData'
 import { ReactComponent as UsersIcon } from '../assets/images/users.svg'
 import { ReactComponent as CircleCloseIcon } from '../assets/images/x-circle.svg'
+import { ReactComponent as PlusIcon } from '../assets/images/plus.svg'
 import { ReactComponent as ArrowLeftIcon } from '../assets/images/arrow-left.svg'
 import { useTransition, animated } from 'react-spring';
 import axios from 'axios'
@@ -16,6 +18,8 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
     const [dayActivities, setActivities] = useState([]);
     const [activityBoolean, setActivity] = useState(null);
 
+    const [showAddNewActivity, setShowAddNewActivity] = useState(false);
+
     useEffect(() => {
         axios.get(`http://127.0.0.1:8080/day/getActivitiesByDayID?dayID=${dayDetails.id}`)
         .then(response => {
@@ -25,9 +29,7 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
         .catch(err => console.log(err));
     },[dayActivities]);
 
-    const reRenderActivites = () => {
-        setActivities([]);
-    }
+    const reRenderActivites = () => setActivities([])
 
     const fadeTransition = {
         from: {opacity: 0},
@@ -36,14 +38,38 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
         exitBeforeEnter: true
     }
 
+    const slideFadeTransition = {
+        from: {
+            x: -999,
+            y: 0
+        },
+        enter: {
+            x: 0,
+            y: 0
+        },
+        leave : {
+            x: 999,
+            y: 0
+        },
+        exitBeforeEnter: true
+    }
+
     const showAllActivities = useTransition(activityBoolean, fadeTransition);
+
+    const showAddNewActivityTransition = useTransition(showAddNewActivity, slideFadeTransition)
+
+    const showAddNewActivityOnClick = () => setShowAddNewActivity(!showAddNewActivity)
+    const closeAddNewFromAddNew = () => setShowAddNewActivity(false)
 
 
     const activityCard = () => {
         let activities = dayActivities.map(activity => {
             return (
                 <>
-                    <Activity reRender={reRenderActivites} activityBoolean={activityBoolean} setActivity={setActivity} activity={activity}/>
+                    <Activity 
+                        reRender={reRenderActivites}
+                        activity={activity}
+                    />
                 </>
             )
         })
@@ -59,8 +85,23 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
     }
 
     return (
-        <>
-        <AddDayActivity day={dayDetails} />
+        <> 
+        {
+            showAddNewActivityTransition((style, item) => {
+                return item ?
+                    <animated.div 
+                        style={style} 
+                        className="add-new-activity-animated-div"
+                    >
+                        <AddDayActivity 
+                            day={dayDetails} 
+                            closeAddNewFromAddNew={closeAddNewFromAddNew}
+                        />
+                    </animated.div>
+                :
+                    ''
+            })
+        }
 
          <div id="user-trip-container">
                 <div id="user-trip-image-container">
@@ -77,6 +118,16 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
                         <ArrowLeftIcon id="arrow-left"/>
                         <div className="go-back-arrow-background"></div>
                     </div>
+                    <div 
+                        className="add-new-activity-container"
+                        onClick={showAddNewActivityOnClick}
+                    >
+                        <div className="add-new-activity-background"></div>
+                        <div className="add-new-icon-background"></div>
+                        <PlusIcon id="add-new-activity-icon" />
+                        <span className="add-new-text">New Activity</span>
+                    </div>
+                    
                 </div>
                 <div id="user-trip-activities-container">
                     {

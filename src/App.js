@@ -195,7 +195,7 @@ const App = () => {
         setVisual({
           slide: `${userIconLeft + elementDistance * 3 - 50}px`,
           secondaryNavHeight: '75px',
-          secondaryNavWidth: "65%"
+          secondaryNavWidth: "35%"
         })
         setIsVisible({
           user: false,
