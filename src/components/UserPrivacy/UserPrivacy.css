@@ -1,0 +1,154 @@
+
+
+
+#mainSection {
+
+    position: relative;
+    padding-top:4.5em;
+    
+    
+    }
+    .segment {
+        
+        color: white;
+        font-size: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 3em;
+        padding-bottom: 0.9em;
+        border-bottom: solid 1.9px white;
+    
+       
+        /* position relative tells css that all children of this 
+        class, that uses absolute position will be relative to this one */
+    
+        position: relative;
+    
+    }
+    
+    
+    #saveBtn {
+    
+    position: absolute;
+    width: 500px;
+    height: 80px;
+    background: #FFFFFF;
+    opacity: 0.25;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    
+    }
+    
+    
+    #saveBtn:hover {
+        box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.85);
+    }
+    
+    /* when it is clicked */
+    #saveBtn:active {
+        box-shadow: none;
+        top: 85px;
+    }
+    
+    #buttonSection {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top:80px;
+        position: relative;
+    
+    }
+    
+    #saveBtnText{
+    
+        color: rgb(0, 0, 0);
+        padding-top: 0.5em;
+        font-size: 33px;
+        font-weight: 600;
+    }
+    
+    
+    
+    
+    .icon {
+        color: white;
+        height: 140px;
+        width: 60px;
+        stroke-width: 2px;
+        position: absolute;
+        left: 5%;
+        bottom: 5%;
+        stroke:rgba(255, 255, 255, 0.85);
+        z-index:1
+    }
+    
+    
+    .circlesRight{
+    
+    background: #EAEAEA;
+    opacity: 0.35;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+    
+    position: absolute;
+    z-index: 1;
+    right: 0.5em;
+    top: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 8px;
+    
+    }
+    
+    
+    .circlesLeft {
+    
+        background: #EAEAEA;
+        opacity: 0.35;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        left: 0.5em;
+        top: 2.4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+        
+    
+    .mainText {
+        font-style: normal;
+        font-weight: 300; 
+        color: #FFFFFF;
+    }  
+    
+    
+    .checkIcon {
+    
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        left: 88.5%;
+        top:41%;
+        
+    
+    }
+    
+    .animatedDiv{
+        position:fixed;
+        
+    }
