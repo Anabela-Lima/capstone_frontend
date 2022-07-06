@@ -33,12 +33,23 @@ input[type='checkbox'] {
 }
 
 .reportBtn {
-    width: 200px;
-    font-size:larger;
+    width: 300px;
+    height: 65px;
+    font-size: 27px;
+    border-radius: 30px;
+    background-color: #29D729;
 }
 
 .pieChartBtn {
     width: 100px;
-    font-size: larger;
+    font-size: x-large;
 }
 
+
+
+.bigTitle {
+    color: white;
+    padding-left: 50px;
+    padding-top: 5px;
+    font-size: 60px;
+}

@@ -54,12 +54,14 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
         <>
         <div className="tripGenerate">
             <div>
-                <h1>{trip.name} </h1>
+                <h1 style={{fontSize: '50px'}}>{trip.name} </h1>
             </div>
-        <div>
+        <div style={{display: 'flex', justifyContent : 'flex-end', paddingTop : '50px', paddingBottom : '50px', alignItems : 'center', columnGap : '20px'}}>
         {organiser && !alreadyGenerated ? <button className="reportBtn" onClick={handleReportButton}>Generate Report</button> :
             <button className="reportBtn" onClick={handleReportButton}>View Report</button>}
-            <button className="pieChartBtn" onClick={handlePieChartButton}>PieChart</button>
+            <input src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Noun_Project_pie_chart_icon_1379121_cc.svg/1024px-Noun_Project_pie_chart_icon_1379121_cc.svg.png'
+             type="image" className="pieChartBtn" onClick={handlePieChartButton} 
+             style={{height: '100px'}}/>
         </div>
         </div>
             {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}
@@ -72,12 +74,14 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
         <>
         <div className="tripGenerate">
             <div>
-                <h1>{trip.name} </h1>
+                <h1 style={{fontSize: '50px'}}>{trip.name} </h1>
             </div>
-        <div>
+        <div style={{display: 'flex', justifyContent : 'flex-end', paddingTop : '50px', paddingBottom : '50px', alignItems : 'center', columnGap : '20px'}}>
         {organiser && !alreadyGenerated ? <button className="reportBtn" onClick={handleReportButton}>Generate Report</button> :
             <button className="reportBtn" onClick={handleReportButton}>View Report</button>}
-            <button className="pieChartBtn" onClick={handlePieChartButton}>PieChart</button>
+            <input src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Noun_Project_pie_chart_icon_1379121_cc.svg/1024px-Noun_Project_pie_chart_icon_1379121_cc.svg.png'
+             type="image" className="pieChartBtn" onClick={handlePieChartButton} 
+             style={{height: '100px'}}/>
         </div>
         </div>
             {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}

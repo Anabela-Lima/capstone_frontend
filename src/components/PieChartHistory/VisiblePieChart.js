@@ -36,7 +36,7 @@ const VisiblePieChart = ({trip}) => {
         <>
 
         <div style={{display: 'flex' ,justifyContent: 'center', paddingBottom: '10px'}}>
-        <h1 style={{fontSize: "65px"}}>£{(pieChartPercentages.overallPercentageOfBudget - 1)*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget} Over Budget</h1>
+        <h1 style={{fontSize: "65px"}}>£{((pieChartPercentages.overallPercentageOfBudget - 1)*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2)} Over Budget</h1>
         </div>
 
         <div style={{height: '600px'}}>
@@ -76,11 +76,11 @@ const VisiblePieChart = ({trip}) => {
             </div>
             <br></br>
             <ul>
-                <li style={{color: '#E38627'}}><span className="inside">Food ------------------------------- <span className="toTheRight">{pieChartPercentages.foodPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget}</span></span> </li>
-                <li style={{color: '#C13C37'}}><span className="inside">Physical&nbsp;&nbsp;---------------------------    <span className="toTheRight">{pieChartPercentages.physicalPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget}</span></span></li>
-                <li style={{color: '#6A2135'}}><span className="inside">Entertainment &nbsp;--------------------- <span className="toTheRight">{pieChartPercentages.entertainmentPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget}</span></span></li>
-                <li style={{color: 'rgb(223, 214, 115)'}}><span className="inside">Travel&nbsp;&nbsp; -----------------------------<span className="toTheRight">{pieChartPercentages.travelPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget}</span></span></li>
-                <li style={{color: 'rgb(245, 222, 14)'}}><span className="inside">Other&nbsp;------------------------------ <span className="toTheRight">{pieChartPercentages.otherPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget}</span></span></li>
+                <li style={{color: '#E38627'}}><span className="inside">Food ---------------------------- <span className="toTheRight">{(pieChartPercentages.foodPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2)}</span></span> </li>
+                <li style={{color: '#C13C37'}}><span className="inside">Physical&nbsp;&nbsp;------------------------    <span className="toTheRight">{(pieChartPercentages.physicalPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2)}</span></span></li>
+                <li style={{color: '#6A2135'}}><span className="inside">Entertainment &nbsp;------------------ <span className="toTheRight">{(pieChartPercentages.entertainmentPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2)}</span></span></li>
+                <li style={{color: 'rgb(223, 214, 115)'}}><span className="inside">Travel&nbsp;&nbsp; --------------------------<span className="toTheRight">{(pieChartPercentages.travelPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2)}</span></span></li>
+                <li style={{color: 'rgb(245, 222, 14)'}}><span className="inside">Other&nbsp;--------------------------- <span className="toTheRight">{(pieChartPercentages.otherPercentage*pieChartPercentages.totalSpend/pieChartPercentages.overallPercentageOfBudget).toFixed(2)}</span></span></li>
             </ul>
         </h1>
 

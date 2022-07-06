@@ -18,13 +18,15 @@ const VisibleReport = ({trip}) => {
 
     return (
         <>
-        {
+        <div style={{fontSize: 'x-large', textAlign: 'center'}}>
+        {   
             moneyOwed.map(owing => {
-                return <div>
+                return <div style={{borderTop: '1px solid white'}}>
                     <h3>{owing.payer.firstname} owes {owing.payee.firstname} £{owing.owed}</h3>
                 </div>
             })
         }
+        </div>
         </>
     )
 }
