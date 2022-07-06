@@ -16,10 +16,14 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
     }
 
     const handleReportButton = () => {  
-        if (alreadyGenerated.success) {
+        if (alreadyGenerated) {
             setReportVisible(!reportVisible);
         } else {
-            window.confirm("You can only generate a report for a trip once. Are you sure?")
+            if (window.confirm("You can only generate a report for a trip once. Are you sure?")) {
+                fetch(`http://127.0.0.1:8080/generateOwingFromTrip?tripID=${trip.id}`)
+                .then(response => setAlreadyGenerated(true))
+                .catch(err => console.log(err));
+            }
         }
     }
 
@@ -27,7 +31,7 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
         axios.get(`http://127.0.0.1:8080/user/didUserOrganiseTrip?tripID=${trip.id}&userID=${user.id}`)
         .then(response => {
             const organiser = response.data;
-            setOrganiser(organiser);
+            setOrganiser(organiser.success);
         })
         .catch(err => console.log(err));
      }, []);
@@ -36,20 +40,30 @@ const GenerateTripReport = ({trip, organiserOnly, user}) => {
         axios.get(`http://127.0.0.1:8080/trips/hasReportBeenGeneratedByTrip?tripID=${trip.id}`)
         .then(response => {
             const alreadyGenerated = response.data;
-            setAlreadyGenerated(alreadyGenerated);
+            setAlreadyGenerated(alreadyGenerated.success);
         })
         .catch(err => console.log(err));
      } , []);
 
     return (
         <>
+        {!organiserOnly ? 
         <h3>{trip.name} 
-        {organiser.success && !alreadyGenerated.success ? <button onClick={handleReportButton}>Generate Report</button> :
+        {organiser && !alreadyGenerated ? <button onClick={handleReportButton}>Generate Report</button> :
         <button onClick={handleReportButton}>View Report</button>}
             {reportVisible ? <VisibleReport trip={trip} /> : null}
         <button onClick={handlePieChartButton}>PieChart</button>
             {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}
         </h3>
+        : 
+        organiser ?
+        <h3>{trip.name} 
+        {organiser && !alreadyGenerated ? <button onClick={handleReportButton}>Generate Report</button> :
+        <button onClick={handleReportButton}>View Report</button>}
+            {reportVisible ? <VisibleReport trip={trip} /> : null}
+        <button onClick={handlePieChartButton}>PieChart</button>
+            {pieChartVisible ? <VisiblePieChart trip={trip}/> : null}
+        </h3> : null }
         </>
     )
 }

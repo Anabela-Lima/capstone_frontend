@@ -11,6 +11,7 @@ import ChangePayments from './ChangePayments'
 const Activity = ({activity, activityBoolean, setActivity, reRender}) => {
 
     const [activityAssignment, setActivityAssignment] = useState([]);
+    const [paymentsAddUp, setPaymentsAddUp] = useState(false);
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:8080/DayActivityAssignmentsByDayActivityID?dayActivityID=${activity.id}`)
@@ -20,6 +21,20 @@ const Activity = ({activity, activityBoolean, setActivity, reRender}) => {
         })
         .catch(err => console.error(err));
     }, [activityAssignment]);
+
+
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:8080/canSubmitActivityPaymentForm?dayActivityID=${activity.id}`)
+        .then(response => {
+            const paymentsAddUp = response.data;
+            setPaymentsAddUp(paymentsAddUp.success);
+        })
+        .catch(err => console.error(err));
+    }, [paymentsAddUp]);
+
+    const reRenderAddUp = () => {
+        setPaymentsAddUp(!paymentsAddUp);
+    }
 
     const reRenderAssignments = () => {
         setActivityAssignment([]);
@@ -145,10 +160,12 @@ const Activity = ({activity, activityBoolean, setActivity, reRender}) => {
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div> 
+            {!paymentsAddUp ? <h1 style={{color:"red"}}>THESE DON'T ADD UP</h1> : null}  
             {canSeePayments ? 
             activityAssignment.map(assignment => {
-                return <ChangePayments assignment={assignment} reRender={reRenderAssignments}/>
+                return <ChangePayments assignment={assignment} reRender={reRenderAssignments}
+                reRenderAddUp={reRenderAddUp}/>
             })
             : null}
         </>

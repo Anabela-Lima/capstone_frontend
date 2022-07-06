@@ -8,10 +8,14 @@ const PieChartHistory = ({trips, user}) => {
 
   const [organiserOnly, setOrganiserOnly] = useState(false);
 
+  const handleOrganiserOnly = () => {
+    setOrganiserOnly(!organiserOnly);
+  }
+
   return (
     <div style={{color: 'white'}}>PieChartHistory
 
-    <button>Where I'm Organiser</button>
+    <button onClick={handleOrganiserOnly}>Where I'm Organiser</button>
 
     {
       trips.map(trip => {
