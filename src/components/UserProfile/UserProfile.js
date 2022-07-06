@@ -9,6 +9,7 @@ import { ReactComponent as CreditCardIcon } from '../../components/assets/images
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
 import MySlideshow from '../Slideshow/MySlideShow';
+import MyGallery from '../Gallery/Gallery';
 
 
 
@@ -778,8 +779,8 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
         userProfileMediaTransition((style, item) => {
           return item.media ? 
             <animated.div id="user-profile-media-content-background" style={style}>
-              
-            <MySlideshow/>
+            <MyGallery/>  
+            {/* <MySlideshow/> */}
             {/* MEDIA    */}
 
             </animated.div> :

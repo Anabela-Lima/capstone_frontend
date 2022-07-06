@@ -51,7 +51,6 @@ const MySlideshow = () => {
          {slideshowPics.map((slideImage, index)=> (
             <div className="each-slide" key={index}>
               <div>
-               
                 <img id= "slideImages" width= "900"  height= "700" src={slideImage.url} alt="" />
                  <span id ="caption">{slideImage.caption}</span>
               </div>
