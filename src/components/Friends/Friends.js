@@ -2,16 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BsListNested } from "react-icons/bs";
 import './Friends.css';
-import { ReactComponent as SearchIcon } from '../../components/assets/images/search.svg'
+import { ReactComponent as SearchIcon } from '../../components/assets/images/search.svg';
 
 
 function Friends() {
 
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState([]);
-  const [currentUserUsername, setCurrentUserUsername] = useState([]);
-  const [friendToAddUsername, setFriendToAddUsername] = useState([]);
-
+  
   const fetchUserProfiles = () => {
 
 
@@ -30,6 +28,7 @@ function Friends() {
 
 
   const searchUsers = async (e) => {
+    console.log(e);
     const username = e.target.value;
     console.log(username)
     try {
@@ -43,11 +42,21 @@ function Friends() {
     }
   }
 
+  const [ friends, setFriends ] = useState([]);
 
-const addFriend = (currentUserUsername, friendToAddUsername) => {
-    axios
-        .post(`http://localhost/friend-controller/addFriend/${currentUserUsername}/${friendToAddUsername}`)
-        .then(res => console.log(res)).catch(err => console.log(err))
+const addFriend = async (fA) => {
+
+  const currentUserUsername = "scottaccino123"
+  try {
+    const friends = await axios
+        .post(`http://localhost:8080/friend/addFriend/${currentUserUsername}/${fA.username}`)
+        const data = friends.data;
+        setFriends(data)
+        document.getElementById("friendBTNclick").innerHTML = "This user has been added to your friend list";
+  } catch (err) {
+    setFriends([])
+    document.getElementById("friendBTNclick").innerHTML = `${err.response.data.message}`;
+  }
 }
 
 // function deleteFriend(){
@@ -58,9 +67,6 @@ const addFriend = (currentUserUsername, friendToAddUsername) => {
 // Show output in browser
   
   // Event listeners
-  const addFriendButton = () => {
-    addFriend();
-  }
 
 
     return (
@@ -83,12 +89,17 @@ const addFriend = (currentUserUsername, friendToAddUsername) => {
                 users.map((user, index) => {
                   return (
                     <div key={index} className="one-user">
+                      <div id="user-p-container">
                       <div className="search-user-image-container">
                         <img src={user.imgURL} alt="" className="user-image-style"/>
                       </div>
                       <h1 id="headingUser">{user.firstname} {user.lastname}</h1>
                         <p id="pUsername">{user.username}</p>
-                      <button id="addFriendBtn"onClick={addFriendButton}>Add Friend</button>
+                      <button id="addFriendBtn" onClick={() => addFriend(user)}>Add Friend</button>
+                      </div>
+                      <div id="err-return">
+                      <p id="friendBTNclick"></p>
+                      </div>
                     </div>
                   )
                 })
