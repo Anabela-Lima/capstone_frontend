@@ -262,10 +262,10 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
           <div id="blue-circle"></div>
           <div id="magenta-circle"></div>
           <div id="user-profile-front-glass">
-            <div id="user-profile-add-button">
+            {/* <div id="user-profile-add-button">
                 <UserIcon className="user-profile-user-icon"/>
                 <span id="user-profile-add-button-text">Add +</span>
-            </div>
+            </div> */}
             <div id="user-profile-picture-container">
               <div id="user-profile-picture-ring"></div>
               <img src={userLoggedInDetails.imgURL} alt="" id="user-profile-image" />
