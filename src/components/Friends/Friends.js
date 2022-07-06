@@ -4,7 +4,6 @@ import { BsListNested } from "react-icons/bs";
 import './Friends.css';
 import { ReactComponent as SearchIcon } from '../../components/assets/images/search.svg';
 
-
 function Friends() {
 
   const [users, setUsers] = useState([]);
