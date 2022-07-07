@@ -7,8 +7,11 @@ import { ReactComponent as SearchIcon } from '../../components/assets/images/sea
 
 function Friends() {
 
+  const mockUsername = "thelifeandtimesofnaeem"
+
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState([]);
+  const [ friends, setFriends ] = useState([]);
   
   const fetchUserProfiles = () => {
 
@@ -28,9 +31,7 @@ function Friends() {
 
 
   const searchUsers = async (e) => {
-    console.log(e);
     const username = e.target.value;
-    console.log(username)
     try {
       const users = await axios.get(`http://localhost:8080/user/getUserByUserName/${username}`)
       const data = users.data;
@@ -42,20 +43,31 @@ function Friends() {
     }
   }
 
-  const [ friends, setFriends ] = useState([]);
+  const deleteFriend = async (e) => {
+    const username = e.target.value;
+    try {
+      const friends = await axios
+          .delete(`http://localhost:8080/friend/deleteFriend/${mockUsername}/${username}`)
+          const data = friends.data;
+          setFriends(data)
+          console.log("friend deleted");
+    } catch (err) {
+      setFriends([])
+    }
+  }
 
 const addFriend = async (fA) => {
 
-  const currentUserUsername = "scottaccino123"
+  const currentUserUsername = "thelifeandtimesofnaeem"
   try {
     const friends = await axios
         .post(`http://localhost:8080/friend/addFriend/${currentUserUsername}/${fA.username}`)
         const data = friends.data;
         setFriends(data)
-        document.getElementById("addFriendBtn").innerHTML = "Added";
+        document.getElementById(`${fA.id}addFriendBtn`).innerHTML = "Added";
   } catch (err) {
     setFriends([])
-    document.getElementById("friendBTNclick").innerHTML = `${err.response.data.message}`;
+    document.getElementById(`${fA.id}friendBTNclick`).innerHTML = `${err.response.data.message}`;
   }
 }
 
@@ -95,10 +107,10 @@ const addFriend = async (fA) => {
                       </div>
                       <h1 id="headingUser">{user.firstname} {user.lastname}</h1>
                         <p id="pUsername">{user.username}</p>
-                      <button id="addFriendBtn" onClick={() => addFriend(user)}>Add Friend</button>
+                      <button id={`${user.id}addFriendBtn`} className="addFriendBtn" onClick={() => addFriend(user)}>Add Friend</button>
                       </div>
                       <div className="err-return">
-                      <p id="friendBTNclick"></p>
+                      <p id={`${user.id}friendBTNclick`} className="friendBtnclick"></p>
                       </div>
                     </div>
                   )

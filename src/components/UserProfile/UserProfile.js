@@ -8,10 +8,11 @@ import { ReactComponent as SearchIcon } from '../../components/assets/images/sea
 import { ReactComponent as CreditCardIcon } from '../../components/assets/images/credit-card.svg'
 import { ReactComponent as UserMinusIcon } from '../../components/assets/images/user-minus.svg'
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
+import axios from 'axios';
 
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen, userLoggedInDetails, tripInformation, friendData}) => {
 
-  
+
   const [isVisible, setIsVisible] = useState({
     activity: true,
     media: false,
@@ -122,10 +123,10 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
 
   const friendsCardsList = () => {
 
-    const friendsList = friendData.map(data => {
+    const friendsList = friendData.map((data, index) => {
     // const friendsList = mockFriendData.map(data => {
       return (
-        <div className="friend-section">
+        <div key={index} className="friend-section">
           <div className="friend-section-background"></div>
           <div className="friend-section-top-content">
             <div className="friend-section-friend-image-container"
