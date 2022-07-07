@@ -69,6 +69,7 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
                     <Activity 
                         reRender={reRenderActivites}
                         activity={activity}
+                        dayNumber={dayNumber}
                     />
                 </>
             )
@@ -100,6 +101,7 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
                     </animated.div>
                 :
                     ''
+
             })
         }
 
@@ -136,7 +138,8 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
                             <animated.div 
                                 style={style}
                             >
-                                <span style={{color: 'white', fontSize: '50px'}}>{activityBoolean.id}</span>
+                                <span 
+                                    style={{color: 'white', fontSize: '50px'}}>{activityBoolean.id}</span>
                             </animated.div> :
                             <animated.div 
                                 style={style} 
