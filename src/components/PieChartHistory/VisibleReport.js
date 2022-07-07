@@ -22,7 +22,7 @@ const VisibleReport = ({trip}) => {
         {   
             moneyOwed.map(owing => {
                 return <div style={{borderTop: '1px solid white'}}>
-                    <h3>{owing.payer.firstname} owes {owing.payee.firstname} £{owing.owed}</h3>
+                    <h3>{owing.payer.firstname} owes {owing.payee.firstname} £{(owing.owed).toFixed(2)}</h3>
                 </div>
             })
         }

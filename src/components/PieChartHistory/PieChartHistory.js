@@ -32,7 +32,7 @@ const PieChartHistory = ({trips, user}) => {
       <input style={{}} type="checkbox" onChange={handleOrganiserOnly}/>
     </div>
 
-    <div style={{overflowY: 'scroll', height: '1500px'}}>
+    <div style={{overflowY: 'scroll', height: '1350px'}}>
     {
       trips.map(trip => {
         return <GenerateTripReport trip = {trip} organiserOnly={organiserOnly}
