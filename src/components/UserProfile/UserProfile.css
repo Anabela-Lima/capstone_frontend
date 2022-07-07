@@ -307,8 +307,12 @@
 #galleryBtn {
 
     position: absolute;
-    top : 75em;
-    background-color: gray;
-
+    top : 73em;
+    background-color: rgb(229, 229, 229);
+    opacity: 0.4;
+    width: 100px;
+    height: 50px;
+    border-radius: 1em;  
 
 }
+

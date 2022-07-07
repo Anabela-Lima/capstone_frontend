@@ -10,7 +10,7 @@ const MyGallery = () => {
 
 
 
-        <section>
+        <section id= "slideshowContainer">
          <div id= "memoriesTitle"><span id ="memoriesText"> Crew Trip Gallery</span></div>
 
         <div class="gallery">
@@ -28,6 +28,7 @@ const MyGallery = () => {
             <img src= "https://www.surfertoday.com/images/stories/seawater.jpg"className="pic"/>
             
         </div>  
+
 
 
       </section>
