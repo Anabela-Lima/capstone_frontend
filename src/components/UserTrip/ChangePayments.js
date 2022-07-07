@@ -130,7 +130,9 @@ const ChangePayments = ({assignment, reRender, reRenderAddUp}) => {
                         </td>
 
                         <td>
-                            <input type="submit" style={
+                            <input 
+                                type="submit" 
+                                style={
                                     {
                                         height: '70px', 
                                         width: '140px',
@@ -140,6 +142,7 @@ const ChangePayments = ({assignment, reRender, reRenderAddUp}) => {
                                         border: 'none'
                                     }
                                 }
+                                onClick={SubmitPaymentChange}
                             />
                         </td>
 
