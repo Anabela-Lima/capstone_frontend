@@ -289,7 +289,7 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
         userProfileMediaTransition((style, item) => {
           return item.media ? 
             <animated.div id="user-profile-media-content-background" style={style}>
-                <button id= "galleryBtn"  onClick={handleOnGalleryChange}>{!onGallery ? 'Gallery' : 'Slideshow' }</button>
+                <button id= "galleryBtn"  onClick={handleOnGalleryChange}>{!onGallery ? <span style={{fontSize: '35px', fontWeight: '600'}}>Gallery</span> : <span style={{fontSize: '35px', fontWeight: '600'}}>Slideshow</span> }</button>
             { onGallery ?
             <MyGallery/> : 
             <MySlideshow/> }

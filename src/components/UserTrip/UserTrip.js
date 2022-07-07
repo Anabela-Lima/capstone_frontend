@@ -31,7 +31,23 @@ const UserTrip = ({tripId, goToUserProfileFromTripScreen}) => {
         <>
             <select 
                 name="days" 
-                style={{width: "100px"}} 
+                style={{
+                    position: "absolute",
+                    right: '50px',
+                    top: '115px',
+                    zIndex: '999',
+                    height: '80px',
+                    width: '200px',
+                    borderRadius: '40px',
+                    paddingLeft: '20px',
+                    fontSize: '30px',
+                    border: 'none',
+                    background: 'white',
+                    opacity: '0.7',
+                    textAlign: 'center',
+                    paddingRight: '20px',
+                    fontWeight: '600'
+                }} 
                 onChange={ChangeToValue}
             >
                 {

@@ -8,6 +8,15 @@
     z-index: 999;
 }
 
+
+.set-budget-input::placeholder {
+    color: black;
+}
+
+.set-budget-input::-webkit-input-placeholder {
+    color: black;
+}
+
 #add-new-activity-icon {
     height: 80%;
     width: auto;
@@ -58,4 +67,11 @@
     align-items: center;
     z-index: 1000;
     /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.55); */
+    background: 
+    linear-gradient(
+        268.47deg,
+        #dadada 29.45%,
+        rgba(222, 222, 222, 0.8) 95.46%
+        );
+    opacity: 1;
 }

@@ -304,10 +304,11 @@
 
 
 #galleryBtn {
-
     position: absolute;
-    top : 75em;
+    top : 72.1em;
     background-color: gray;
-
-
+    height: 70px;
+    width: 200px;
+    color: white;
+    border-radius: 40px;
 }
