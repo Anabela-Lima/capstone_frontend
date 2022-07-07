@@ -184,10 +184,10 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
 
   const friendsCardsList = () => {
 
-    const friendsList = friendData.map(data => {
+    const friendsList = friendData.map((data, index) => {
     // const friendsList = mockFriendData.map(data => {
       return (
-        <div className="friend-section">
+        <div key={index} className="friend-section">
           <div className="friend-section-background"></div>
           <div className="friend-section-top-content">
             <div className="friend-section-friend-image-container"
