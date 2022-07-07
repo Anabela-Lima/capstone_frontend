@@ -870,7 +870,7 @@ const App = () => {
             searchUsersTransition((style, item) => {
               return item.searchUsers ?
               <animated.div style={style} className="main-content-animated-div">
-                <Friends user={userLoggedInDetails} />
+                <Friends userLoggedIn={userLoggedInDetails} />
               </animated.div> 
               : ''
             })

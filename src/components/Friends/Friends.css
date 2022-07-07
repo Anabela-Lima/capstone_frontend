@@ -141,3 +141,17 @@
     font-family: 'Inter', sans-serif;
     font-size: 30px;
 }
+
+.addFriendBtn{
+    font-family: 'Inter', sans-serif;
+    height: 60px;
+    font-size: 30px;
+    color: darkblue;
+    font-weight: bold;
+    padding-top: 0cm;
+    background: linear-gradient(268.47deg,
+    #FFFFFF 29.45%,
+    rgba(255, 255, 255, 0.8) 95.46%
+  );
+  border-radius: 20px;
+}

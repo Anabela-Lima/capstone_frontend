@@ -4,7 +4,7 @@ import { BsListNested } from "react-icons/bs";
 import './Friends.css';
 import { ReactComponent as SearchIcon } from '../../components/assets/images/search.svg';
 
-function Friends({user}) {
+function Friends({userLoggedIn}) {
 
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState([]);
@@ -45,7 +45,7 @@ function Friends({user}) {
 
 const addFriend = async (fA) => {
 
-  const currentUserUsername = user.username;
+  const currentUserUsername = userLoggedIn.username;
   try {
     const friends = await axios
         .post(`http://localhost:8080/friend/addFriend/${currentUserUsername}/${fA.username}`)
@@ -94,7 +94,10 @@ const addFriend = async (fA) => {
                       </div>
                       <h1 id="headingUser">{user.firstname} {user.lastname}</h1>
                         <p id="pUsername">{user.username}</p>
+
                       <button id="addFriendBtn" onClick={() => addFriend(user)}>Add Friend</button>
+
+                        
                       </div>
                       <div className="err-return">
                       <p id="friendBTNclick"></p>
