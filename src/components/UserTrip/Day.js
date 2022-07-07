@@ -6,6 +6,8 @@ import { ReactComponent as UsersIcon } from '../assets/images/users.svg'
 import { ReactComponent as CircleCloseIcon } from '../assets/images/x-circle.svg'
 import { ReactComponent as PlusIcon } from '../assets/images/plus.svg'
 import { ReactComponent as ArrowLeftIcon } from '../assets/images/arrow-left.svg'
+import { ReactComponent as CheckIcon } from '../assets/images/check.svg'
+import { ReactComponent as EditIcon } from '../assets/images/edit-2.svg'
 import { useTransition, animated } from 'react-spring';
 import axios from 'axios'
 import UserTrip from "./UserTrip"
@@ -98,12 +100,59 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
 
     return (
         <> 
-        <form onSubmit={changeBudget}>
+        <form 
+            onSubmit={changeBudget}
+            style={{
+                position: 'absolute',
+                background: 'white',
+                height: '100px',
+                width: '360px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: '999',
+                borderRadius: '50px',
+                border: 'none',
+                opacity: '0.75',
+                left: '480px',
+                top: '400px'
+            }}
+        >
                 <label>
-                    <input onChange={handleBudgetChange} type="number" />
+                    <input 
+                        onChange={handleBudgetChange} 
+                        type="text" 
+                        placeholder={"Set Budget"}
+                        style={{
+                            width: '220px',
+                            height: '70px',
+                            fontSize: '40px',
+                            color: 'black',
+                            border: 'none',
+                            textAlign: 'center'
+                        }}
+                        className="set-budget-input"
+                    />
                 </label>
-            <input type="submit"/>
-            </form>
+            <button 
+                type="submit"
+                style={{
+                    border: 'none',
+                    width: '80px',
+                    height: '80px',
+                    marginLeft: '0px',
+                    boxShadow: 'none',
+                    background: 'transparent'
+                }}
+                onClick={() => {}}
+            >
+                <CheckIcon style={{
+                    height: '100%',
+                    width: '100%',
+                    background: 'transparent'
+                }}/>
+            </button>
+        </form>
         {
             showAddNewActivityTransition((style, item) => {
                 return item ?
