@@ -34,7 +34,7 @@ const UserTrip = ({tripId, goToUserProfileFromTripScreen}) => {
                 style={{
                     position: "absolute",
                     right: '50px',
-                    top: '140px',
+                    top: '115px',
                     zIndex: '999',
                     height: '80px',
                     width: '200px',
