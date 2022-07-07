@@ -10,11 +10,50 @@ import { ReactComponent as UserMinusIcon } from '../../components/assets/images/
 import { ReactComponent as MessageSquareIcon } from '../../components/assets/images/message-square.svg' 
 import { ReactComponent as TrashIcon } from '../../components/assets/images/trash-2.svg'
 import { ReactComponent as UserPlusIcon } from '../../components/assets/images/user-plus.svg'
+import MySlideshow from '../Slideshow/MySlideShow';
+import MyGallery from '../Gallery/Gallery';
+
+
 
 const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScreen, userLoggedInDetails, tripInformation, friendData}) => {
 
   // I HATE THIS
   const [friendBeingAdded, setFriendBeingAdded] = useState({});
+
+  // const mockLoggedInAsID = 9;
+
+  // const [userLoggedInDetails, setUserLoggedInDetails] = useState({});
+  // const [tripInformation, setTripInformation] = useState([]);
+  // const [friendData, setFriendData] = useState([]);
+
+  const [onGallery, setOnGallery] = useState(false);
+
+  const handleOnGalleryChange = () => setOnGallery(!onGallery);
+
+  // useEffect(() => {
+  //   axios.get(`http://127.0.0.1:8080/user/getUserByID?userID=${mockLoggedInAsID}`)
+  //   .then(response => {
+  //     const userInfo = response.data;
+  //     setUserLoggedInDetails(userInfo);
+  //   })
+  // }, []);
+
+  // useEffect(() => { 
+  //   axios.get(`http://localhost:8080/user/tripsByUser?userID=${mockLoggedInAsID}`)
+  //   .then(response => {
+  //     const tripInfo = response.data;
+  //     setTripInformation(tripInfo);
+  //   })
+  //   .catch(err => console.log(err));
+  // }, [tripInformation]);
+
+  // useEffect(() => {
+  //   axios.get(`http://localhost:8080/friend/friendsByID?userID=${mockLoggedInAsID}`)
+  //   .then(response => {
+  //     const friendData = response.data;
+  //     setFriendData(friendData);
+  //   })
+  // }, [friendData]);
 
   const handleFriendBeingAddedChange = (event) => setFriendBeingAdded(event.target.value);
   
@@ -250,10 +289,15 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
         userProfileMediaTransition((style, item) => {
           return item.media ? 
             <animated.div id="user-profile-media-content-background" style={style}>
-              MEDIA
+                <button id= "galleryBtn"  onClick={handleOnGalleryChange}>{!onGallery ? 'Gallery' : 'Slideshow' }</button>
+            { onGallery ?
+            <MyGallery/> : 
+            <MySlideshow/> }
+
             </animated.div> :
+            
             ''
-        })
+        })   
       }
       {
         userProfileFriendsTransition((style, item) => {
