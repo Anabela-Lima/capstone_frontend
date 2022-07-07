@@ -23,7 +23,14 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
     const [showAddNewActivity, setShowAddNewActivity] = useState(false);
     const [budget, setBudget] = useState(0);
 
-    const handleBudgetChange = (event) => setBudget(event.target.value);
+    const [changedButNotSubmitted, setChangedButNotSubmitted] = useState(true);
+
+    const handleNotSubmitted = () => setChangedButNotSubmitted(false);
+
+    const handleBudgetChange = (event) => {
+        setBudget(event.target.value);
+        setChangedButNotSubmitted(true);
+    }
 
     const changeBudget = (event) => {
         event.preventDefault();
@@ -31,6 +38,8 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
             method: "PUT",
           }
         fetch(`http://127.0.0.1:8080/day/changeBudget?dayID=${dayDetails.id}&budget=${budget}`, options)
+        .then(response => handleNotSubmitted())
+        .catch(err => console.log(err));
     }
 
     useEffect(() => {
@@ -146,11 +155,19 @@ const Day = ({dayDetails, goToUserProfileFromTripScreen, dayNumber}) => {
                 }}
                 onClick={() => {}}
             >
+                {!changedButNotSubmitted ?
                 <CheckIcon style={{
                     height: '100%',
                     width: '100%',
                     background: 'transparent'
                 }}/>
+                :
+                <EditIcon style={{
+                    height: '100%',
+                    width: '100%',
+                    background: 'transparent'
+                }}/>
+                }
             </button>
         </form>
         {
