@@ -1,8 +1,9 @@
-
+import './AddDayActivity.css'
 import axios from 'axios';
 import { useState } from 'react';
+import { ReactComponent as CloseIcon } from '../../components/assets/images/x.svg'
 
-const AddDayActivity = ({day, closeAddNewFromAddNew}) => {
+const AddDayActivity = ({day, closeAddNewFromAddNew, dayNumber}) => {
 
     const [type, setType] = useState(0);
     const [location, setLocation] = useState("");
@@ -25,30 +26,48 @@ const AddDayActivity = ({day, closeAddNewFromAddNew}) => {
 
     return (
         <>
-        <form onSubmit={handleNewActivity}>
-            <label onChange={handleType}>
-                <select>
-                    <option value="">Choose a Category!</option>
-                    <option value="Food">FOOD</option>
-                    <option value="Physical">PHYSICAL</option>
-                    <option value="Entertainment">ENTERTAINMENT</option>
-                    <option value="Travel">TRAVEL</option>
-                    <option value="Other">OTHER</option>
-                </select>
-            </label>
-            <label>
-                <input onChange={handleLocation} type="text" placeholder="Activity Location"/>
-            </label>
-            <label>
-                <input onChange={handleTitle} type="text" placeholder="Activity Title"/>
-            </label>
-            <label>
-                <input onChange={handlePrice} type="number" placeholder="Activity Price" />
-            </label>
+            <div className="add-activity-container">
+                <CloseIcon className="add-activity-close-icon"/>
+                <form onSubmit={handleNewActivity} className="add-activity-form">
+                    <label onChange={handleType}>
+                        <select className="add-activity-drop-down">
+                            <option value="">Choose a Category!</option>
+                            <option value="Food">FOOD</option>
+                            <option value="Physical">PHYSICAL</option>
+                            <option value="Entertainment">ENTERTAINMENT</option>
+                            <option value="Travel">TRAVEL</option>
+                            <option value="Other">OTHER</option>
+                        </select>
+                    </label>
+                    <label>
+                        <input 
+                            onChange={handleLocation} 
+                            type="text" 
+                            placeholder="Activity Location"
+                            className="add-activity-input-form"    
+                        />
+                    </label>
+                    <label>
+                        <input 
+                            onChange={handleTitle} 
+                            type="text" 
+                            placeholder="Activity Title"
+                            className="add-activity-input-form"
+                        />
+                    </label>
+                    <label>
+                        <input 
+                            onChange={handlePrice} 
+                            type="number" 
+                            placeholder="Activity Price" 
+                            className="add-activity-input-form"
+                        />
+                    </label>
+                    {/* <input type="submit"/> */}
+                    <button style={{height: '100px', width: '100px'}} onClick={closeAddNewFromAddNew}></button>
 
-        <input type="submit"/>
-        <button style={{height: '100px', width: '100px'}} onClick={closeAddNewFromAddNew}></button>
-        </form>
+                </form>
+            </div>
         </>
     )
 }

@@ -1,0 +1,19 @@
+
+
+
+ .pic {
+    height: 200px;
+    width: 200px;
+ }
+
+
+ .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:15px;
+ }
+
+
+ 

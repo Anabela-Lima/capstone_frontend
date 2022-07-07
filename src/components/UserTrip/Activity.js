@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './UserTrip.css'
 import './Activity.css'
+import './ChangePayment.css'
 import { mockTripData } from '../_MockData/MockTripData'
 import { ReactComponent as UsersIcon } from '../assets/images/users.svg'
 import { ReactComponent as CircleCloseIcon } from '../assets/images/x-circle.svg'
@@ -9,6 +10,7 @@ import { ReactComponent as AlertIcon } from '../assets/images/alert-circle.svg'
 import { useTransition, animated } from 'react-spring';
 import axios from 'axios'
 import ChangePayments from './ChangePayments'
+import { Table } from 'react-bootstrap'
 
 const Activity = ({activity, reRender}) => {
 
@@ -105,6 +107,54 @@ const Activity = ({activity, reRender}) => {
         }
     }
 
+    const changePaymentContainer = () => {
+        return (
+            <>
+                <div className="change-payment-container">
+                    <div className="change-payment-background"></div>
+                    <div className="change-payment-content">
+                        <div 
+                            className="change-payment-title" 
+                            style={{
+                                    fontSize: '60px',
+                                    fontWeight: '700',
+                                    color: 'white'
+                                }}
+                        >
+                            SplitPay for {activity.name}
+                        </div>
+                        <Table id="change-payment-table" striped bordered hover variant="light">
+                            <thead>
+                                <tr>
+                                    <th className="change-payment-header-text">Attendee</th>
+                                    <th className="change-payment-header-text">Paid</th>
+                                    <th className="change-payment-header-text">ShouldPay</th>
+                                    <th className="change-payment-header-text"></th>
+                                    <th className="change-payment-header-text"></th>
+                                </tr>
+                            </thead>
+                            {   
+                                
+                                activityAssignment.map(assignment => {
+                                    return (
+                                        <tbody>
+                                            <ChangePayments 
+                                                        assignment={assignment} 
+                                                        reRender={reRenderAssignments}
+                                                        reRenderAddUp={reRenderAddUp}
+                                                    />
+                                        </tbody>
+
+                                    )
+                                })
+                            }
+                        </Table>
+                    </div>
+                </div>
+            </>
+        )
+    }
+
     return (
         <>
         <div className="activity-card-container">
@@ -170,13 +220,14 @@ const Activity = ({activity, reRender}) => {
                     : 
                         null
                 }  
+
             </div> 
-            {canSeePayments ? 
-            activityAssignment.map(assignment => {
-                return <ChangePayments assignment={assignment} reRender={reRenderAssignments}
-                reRenderAddUp={reRenderAddUp}/>
-            })
-            : null}
+            {
+                canSeePayments ?  
+                    changePaymentContainer() 
+                : 
+                    null
+            }
         </>
     )
 }

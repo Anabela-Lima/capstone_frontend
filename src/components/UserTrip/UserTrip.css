@@ -132,7 +132,14 @@
     left: 10%;
     width: 90%;
     height: 100%;
-    background-color: white;
+    /* background-color: white; */
+    background: 
+    linear-gradient(
+        268.47deg,
+        #dadada 29.45%,
+        rgba(222, 222, 222, 0.8) 95.46%
+        );
+    opacity: 1;
     border-radius: 40px;
     z-index: 1;
 }
@@ -200,7 +207,7 @@
     width: 45%;
     /* background-color: aquamarine; */
     font-size: 40px;
-    color: grey;
+    color: #0c0c0c;
     padding-left: 30px;
     padding-top: 20px;
 }

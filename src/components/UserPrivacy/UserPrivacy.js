@@ -11,6 +11,7 @@ import { ReactComponent as ChevronRight } from '../../components/assets/images/c
 import { ReactComponent as Edit } from '../../components/assets/images/edit.svg'
 import { ReactComponent as Lock } from '../../components/assets/images/lock.svg'
 import { ReactComponent as UserIcon } from '../../components/assets/images/user (3).svg'
+import { ReactComponent as Mail } from '../../components/assets/images/mail.svg'
 
 const UserPrivacy = () => {
 
@@ -142,12 +143,12 @@ const  notif =()=> {
     <div id= "twitterSection1">
     <div id = "twitterSection2" className = "segment">  
 
-    <div id="lefticons1"> < Lock className = "icon" id="lock"/> 
+    <div id="lefticons1">
+    < Edit className = "icon" id="editIcon"/>  
     < UserIcon className = "icon" id="userIcon"/>  </div>
      
       <span id= "twitterTag" contentEditable="true" onInput={changeIcon}  className= "mainText" onClick={onInputChange}> UserName </span>
       <div id= "twitterCircleRight" className='circlesRight'> </div> 
-      <div id= "twitterCircleLeft" className='circlesLeft'> </div> 
       {
           isEditing ?  // if is edtiting is true return:
           <Edit className = "icon checkIcon" id="twitterCheckIcon"/>
@@ -160,10 +161,10 @@ const  notif =()=> {
     </div>
     <div id= "instaSection1">
     <div id = "instaSection2" className = "segment">  
-      <InstaIcon className = "icon" id="instaIcon"/>
+
+    < Edit className = "icon" id="editIcon"/>  
       <span contentEditable= "true" onInput= {changeIcon1} onClick={onInputChange} className= "mainText">First Name </span> 
       <div id= "instaCircleRight" className='circlesRight'> </div> 
-      <div id= "instaCircleLeft" className='circlesLeft'> </div> 
 
       {
           isEditing1 ?  // if is edtiting is true return:
@@ -181,9 +182,10 @@ const  notif =()=> {
     <div id= "LinkedInSection1">
 
     <div id = "LinkedInSection2" className = "segment">  
-      <LinkedInIcon  className = "icon" id="linkedInIcon"/> <span contentEditable= "true" onInput= {changeIcon2}  onClick={onInputChange} className= "mainText">Ayana Zhen</span> 
+    < Edit className = "icon" id="editIcon"/>  
+     <span contentEditable= "true" onInput= {changeIcon2}  onClick={onInputChange} className= "mainText">Last Name</span> 
       <div id= "instaCircleRight" className='circlesRight'> </div> 
-      <div id= "instaCircleLeft" className='circlesLeft'> </div> 
+
       {
           isEditing2 ?  // if is edtiting is true return:
           <Edit className = "icon checkIcon" id="twitterCheckIcon"/>
@@ -199,9 +201,11 @@ const  notif =()=> {
     <div id= "chain1Section1">
    
     <div id = "chain1Section2" className = "segment">  
-      <Chain  className = "icon" id="chain1Icon"/><span className= "mainText"> NoCap-Finance</span>  
+    < Edit className = "icon" id="editIcon"/>  
+    < Mail className = "icon" id="userIcon"/>  
+      <span type= "Email"  contentEditable = "true" className= "mainText"> Email </span>  
       <div id= "chain1CircleRight" className='circlesRight'> </div> 
-      <div id= "chain1CircleLeft" className='circlesLeft'> </div> 
+
       {
           isEditing3 ?  // if is edtiting is true return:
           <Edit className = "icon checkIcon" id="twitterCheckIcon"/>
@@ -217,30 +221,31 @@ const  notif =()=> {
     <div id= "chain2Section1">
    
     <div id = "chain2Section2" className = "segment">  
-      <Chain  className = "icon" id="chain2Icon"/> <span className= "mainText" >Link Account</span>  
-      <div id= "chain2CircleRight" className='circlesRight'> </div> 
-      <div id= "chain2CircleLeft" className='circlesLeft'> </div> 
-      <ChevronRight  className = "icon checkIcon" id="chevronRight1"/>
+    < Edit className = "icon" id="editIcon"/>  
+    < Lock className = "icon" id="userIcon"/>  
+       <span type = "text" className= "mainText" contentEditable= "true" id= "passwordText" >Password</span>  
+    
+      <div id = "pwStrenght-container"> 
+        <div  className= "pwStrength-class" id="pwStrength1"></div> 
+        <div  className= "pwStrength-class" id="pwStrength2"> </div>  
+        <div  className= "pwStrength-class" id="pwStrength2"> </div>  
+      
+      </div>
+      
     </div>
 
     </div>
     
 
-    <div id= "chain3Section1">
-   
-    <div id = "chain3Section2" className = "segment">  
-      <Chain  className = "icon" id="chain3Icon"/> <span className= "mainText">Link Account</span>  
-      <div id= "CircleRight" className='circlesRight'> </div> 
-      <div id= "twitterCircleLeft" className='circlesLeft'> </div> 
-      <ChevronRight  className = "icon checkIcon" id="chevronRight2"/>
-    </div>
-
-    </div>
     
 
     </section>
+
     <section id= "buttonSection">
+
       <button id= "saveBtn"> <span id= "saveBtnText"> Save </span> </button>
+      <button id= "deactivateBtn"> <span id= "deactivateBtnText"> Deactivate Account </span> </button>
+      
     </section>
   
 

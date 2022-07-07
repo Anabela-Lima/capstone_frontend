@@ -57,6 +57,8 @@ const App = () => {
     })
   }, [friendData]);
 
+
+
   const [isVisible, setIsVisible] = useState({
     user: true,
     home: false,
