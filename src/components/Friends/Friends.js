@@ -107,7 +107,7 @@ const addFriend = async (fA) => {
                       <h1 id="headingUser">{user.firstname} {user.lastname}</h1>
                         <p id="pUsername">{user.username}</p>
 
-                      <button id="addFriendBtn" onClick={() => addFriend(user)}>Add Friend</button>
+                      <button id={`${user.id}addFriendBtn`} className="addFriendBtn" onClick={() => addFriend(user)}>Add Friend</button>
 
                         
                       </div>
