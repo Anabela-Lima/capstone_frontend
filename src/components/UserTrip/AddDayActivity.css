@@ -1,0 +1,39 @@
+
+.add-activity-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-activity-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    row-gap: 20px;
+}
+
+.add-activity-drop-down {
+    height: 100px;
+    width: 800px;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 60px;
+}
+
+.add-activity-input-form {
+    height: 100px;
+    width: 800px;
+    border-radius: 40px;
+    font-size: 60px;
+}
+
+.add-activity-close-icon {
+    position: absolute;
+    z-index: 1000;
+}
