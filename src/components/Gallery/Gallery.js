@@ -1,14 +1,18 @@
+import { useState } from "react";
 import Gallery from "../Gallery/Gallery.css"
 
 const MyGallery = () => {
 
+
+
     return (
+
+
 
 
         <section>
          <div id= "memoriesTitle"><span id ="memoriesText"> Crew Trip Gallery</span></div>
 
-           
         <div class="gallery">
             <img src= "https://images.unsplash.com/photo-1544551763-8dd44758c2dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" className="pic"/>
             <img src ="https://images.unsplash.com/photo-1519329475180-feddc4230aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" className="pic"/>
@@ -24,8 +28,6 @@ const MyGallery = () => {
             <img src= "https://www.surfertoday.com/images/stories/seawater.jpg"className="pic"/>
             
         </div>  
-
-
 
 
       </section>

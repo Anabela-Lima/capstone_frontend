@@ -303,3 +303,12 @@
     top: 2px;
 }
 
+
+#galleryBtn {
+
+    position: absolute;
+    top : 75em;
+    background-color: gray;
+
+
+}

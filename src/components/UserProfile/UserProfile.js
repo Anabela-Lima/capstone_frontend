@@ -23,6 +23,10 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
   const [tripInformation, setTripInformation] = useState([]);
   const [friendData, setFriendData] = useState([]);
 
+  const [onGallery, setOnGallery] = useState(false);
+
+  const handleOnGalleryChange = () => setOnGallery(!onGallery);
+
   useEffect(() => {
     axios.get(`http://127.0.0.1:8080/user/getUserByID?userID=${mockLoggedInAsID}`)
     .then(response => {
@@ -779,8 +783,10 @@ const UserProfile = ({goToTripScreenFromUserProfile, goToUserProfileFromTripScre
         userProfileMediaTransition((style, item) => {
           return item.media ? 
             <animated.div id="user-profile-media-content-background" style={style}>
-            <MyGallery/>  
-            {/* <MySlideshow/> */}
+                <button id= "galleryBtn"  onClick={handleOnGalleryChange}>{!onGallery ? 'Gallery' : 'Slideshow' }</button>
+            { onGallery ?
+            <MyGallery/> : 
+            <MySlideshow/> }
             {/* MEDIA    */}
 
             </animated.div> :
