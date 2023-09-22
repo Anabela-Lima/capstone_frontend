@@ -1,5 +1,7 @@
-**Capstone Project:
-**
+# Capstone Projeect 
+
+**Wireframes:**
+
 ![Wireframe1](https://github.com/Anabela-Lima/capstone_frontend/assets/101633036/da014379-6ef4-4683-9310-10173dc1afbe)
 
 ![WireFrame2](https://github.com/Anabela-Lima/capstone_frontend/assets/101633036/140a374d-2142-46fc-8612-6bc8300039e8)
