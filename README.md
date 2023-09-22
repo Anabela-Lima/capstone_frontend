@@ -1,4 +1,4 @@
-# Capstone Projeect 
+# Capstone Project 
 
 **Wireframes:**
 
